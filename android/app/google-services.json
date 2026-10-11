@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489694310253",
+    "project_id": "shekinah-tabernacle-f5346",
+    "storage_bucket": "shekinah-tabernacle-f5346.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489694310253:android:21fc9ae08f71efda3e7464",
+        "android_client_info": {
+          "package_name": "com.shekinah.tabernacle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaLOv2LdxG66KBzzy_jDGdR7WqTu4U0no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

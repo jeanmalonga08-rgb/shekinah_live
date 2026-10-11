@@ -1,0 +1,31 @@
+---
+description: Toujours incrémenter la version avant de générer un AAB
+alwaysApply: true
+---
+
+# AAB — bump de version obligatoire
+
+Avant **tout** `flutter build appbundle` (ou génération d’un nouvel AAB) :
+
+1. Exécuter le script de bump :
+   - Windows : `.\scripts\bump_version_for_aab.ps1`
+   - Mac : `./scripts/bump_version_for_aab.sh`
+   - Ou : `python scripts/bump_version_for_aab.py`
+2. Confirmer la nouvelle version à l’utilisateur, **puis** lancer le build.
+
+## Politique de version (`x.y.z+build`)
+
+Format dans `pubspec.yaml` : `major.minor.patch+build` (ex. `1.0.2+9`).
+
+| Situation | Action |
+|-----------|--------|
+| `+build` &lt; 9 | Incrémenter seulement `+build` (ex. `1.0.2+3` → `1.0.2+4`) |
+| `+build` = 9 | **Rollover** : `major+1`, puis `x.0.0+0` (ex. `1.0.2+9` → `2.0.0+0`) |
+
+Le script synchronise aussi `AppConstants.appVersion` dans `lib/core/constants/app_constants.dart`.
+
+## Play Store
+
+Le **versionCode** Android correspond au `+build`. Il doit **toujours** augmenter par rapport au dernier AAB publié. Si `+9` est déjà en ligne, le prochain build ne peut pas être `+0` : ajuster manuellement (ex. `2.0.0+10`) avant upload.
+
+Ne jamais produire un nouvel AAB avec la même version que le précédent.

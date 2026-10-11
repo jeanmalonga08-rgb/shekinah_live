@@ -1,0 +1,809 @@
+{
+  "plusContact": {
+    "fr": "Contact",
+    "en": "Contact",
+    "es": "Contacto",
+    "pt": "Contato",
+    "zh": "联系"
+  },
+  "plusProfile": {
+    "fr": "Profil",
+    "en": "Profile",
+    "es": "Perfil",
+    "pt": "Perfil",
+    "zh": "个人资料"
+  },
+  "plusCultes": {
+    "fr": "Programme des cultes",
+    "en": "Worship schedule",
+    "es": "Programa de cultos",
+    "pt": "Programa de cultos",
+    "zh": "礼拜安排"
+  },
+  "offlineNextTrack": {
+    "fr": "Piste suivante",
+    "en": "Next track",
+    "es": "Pista siguiente",
+    "pt": "Faixa seguinte",
+    "zh": "下一首"
+  },
+  "offlinePause": {
+    "fr": "Pause",
+    "en": "Pause",
+    "es": "Pausa",
+    "pt": "Pausar",
+    "zh": "暂停"
+  },
+  "offlinePlay": {
+    "fr": "Lecture",
+    "en": "Play",
+    "es": "Reproducir",
+    "pt": "Reproduzir",
+    "zh": "播放"
+  },
+  "offlineRepeat": {
+    "fr": "Répéter",
+    "en": "Repeat",
+    "es": "Repetir",
+    "pt": "Repetir",
+    "zh": "重复"
+  },
+  "offlineShuffle": {
+    "fr": "Aléatoire",
+    "en": "Shuffle",
+    "es": "Aleatorio",
+    "pt": "Aleatório",
+    "zh": "随机"
+  },
+  "offlineSkipBack": {
+    "fr": "Reculer de 15 s",
+    "en": "Skip back 15 s",
+    "es": "Retroceder 15 s",
+    "pt": "Voltar 15 s",
+    "zh": "后退 15 秒"
+  },
+  "offlineSkipForward": {
+    "fr": "Avancer de 15 s",
+    "en": "Skip forward 15 s",
+    "es": "Avanzar 15 s",
+    "pt": "Avançar 15 s",
+    "zh": "前进 15 秒"
+  },
+  "offlineStop": {
+    "fr": "Arrêter la lecture",
+    "en": "Stop playback",
+    "es": "Detener reproducción",
+    "pt": "Parar reprodução",
+    "zh": "停止播放"
+  },
+  "authCreateAccount": {
+    "fr": "Créer un compte"
+  },
+  "authCreateAccountTitle": {
+    "fr": "Créer un compte",
+    "en": "Create an account",
+    "es": "Crear una cuenta",
+    "pt": "Criar uma conta",
+    "zh": "创建账户"
+  },
+  "authCreateAccountUnavailableTitle": {
+    "fr": "Inscription temporairement indisponible",
+    "en": "Registration temporarily unavailable",
+    "es": "Registro temporalmente no disponible",
+    "pt": "Cadastro temporariamente indisponível",
+    "zh": "注册功能暂时不可用"
+  },
+  "authCreateAccountUnavailableMessage": {
+    "fr": "La création de compte en ligne n'est pas encore ouverte sur cette version de l'application. Nous finalisons un espace personnel sécurisé pour personnaliser votre expérience (préférences, activité et contenus sauvegardés). En attendant, vous pouvez utiliser librement tous les services — cultes, prédications, cantiques et lecture hors ligne — sans inscription. Merci pour votre patience ; cette fonctionnalité sera prochainement activée.",
+    "en": "Online account creation is not yet available in this version of the app. We are finalizing a secure personal space to personalize your experience (preferences, activity, and saved content). In the meantime, you can freely use all services — worship, sermons, hymns, and offline playback — without signing up. Thank you for your patience; this feature will be enabled soon.",
+    "es": "La creación de cuenta en línea aún no está disponible en esta versión de la aplicación. Estamos finalizando un espacio personal seguro para personalizar su experiencia (preferencias, actividad y contenidos guardados). Mientras tanto, puede utilizar libremente todos los servicios — cultos, prédicas, cantos y lectura sin conexión — sin registrarse. Gracias por su paciencia; esta función se activará próximamente.",
+    "pt": "A criação de conta online ainda não está disponível nesta versão do aplicativo. Estamos finalizando um espaço pessoal seguro para personalizar sua experiência (preferências, atividade e conteúdos salvos). Enquanto isso, você pode usar livremente todos os serviços — cultos, pregações, cânticos e leitura offline — sem cadastro. Obrigado pela paciência; este recurso será ativado em breve.",
+    "zh": "此版本应用尚未开放在线注册。我们正在完善安全的个人空间，以便个性化您的体验（偏好设置、活动记录和已保存内容）。在此期间，您无需注册即可自由使用所有服务——礼拜、讲道、赞美诗和离线播放。感谢您的耐心，此功能即将开放。"
+  },
+  "offlineNoResults": {
+    "fr": "Aucun résultat",
+    "en": "No results",
+    "es": "Sin resultados",
+    "pt": "Nenhum resultado",
+    "zh": "无结果"
+  },
+  "homeMyProfile": {
+    "fr": "Mon profil",
+    "en": "My profile",
+    "es": "Mi perfil",
+    "pt": "Meu perfil",
+    "zh": "我的资料"
+  },
+  "homeMenuTitle": {
+    "fr": "Menu",
+    "en": "Menu",
+    "es": "Menú",
+    "pt": "Menu",
+    "zh": "菜单"
+  },
+  "homeMenuSubtitle": {
+    "fr": "Mode, langue et profil",
+    "en": "Theme, language and profile",
+    "es": "Modo, idioma y perfil",
+    "pt": "Modo, idioma e perfil",
+    "zh": "模式、语言与个人资料"
+  },
+  "notreEgliseTitle": {
+    "fr": "Notre Église",
+    "en": "Our Church",
+    "es": "Nuestra Iglesia",
+    "pt": "Nossa Igreja",
+    "zh": "我们的教会"
+  },
+  "notreEgliseHeaderSummary": {
+    "fr": "Assemblée interdénominationnelle à Kinshasa, porteuse du Message de l'Heure et engagée dans l'œuvre missionnaire à travers le monde.",
+    "en": "An interdenominational assembly in Kinshasa, carrying the Message of the Hour and engaged in missionary work around the world.",
+    "es": "Asamblea interdenominacional en Kinshasa, portadora del Mensaje de la Hora y comprometida con la obra misionera en todo el mundo.",
+    "pt": "Assembleia interdenominacional em Kinshasa, portadora da Mensagem da Hora e comprometida com a obra missionária em todo o mundo.",
+    "zh": "金沙萨的跨宗派教会，传扬时代信息，致力于在世界各地开展宣教事工。"
+  },
+  "notreEglisePastorGreeting": {
+    "fr": "Chers frères et sœurs, que la grâce et la paix vous soient accordés avec abondance de la part de Dieu et Père, le Seigneur Jésus-Christ, notre Sauveur et Rédempteur. Nous vous saluons très cordialement en Son Nom par ces paroles :",
+    "en": "Dear brothers and sisters, may grace and peace be granted to you abundantly from God the Father and the Lord Jesus Christ, our Savior and Redeemer. We greet you warmly in His Name with these words:",
+    "es": "Queridos hermanos y hermanas, que la gracia y la paz les sean concedidas abundantemente por Dios Padre y el Señor Jesucristo, nuestro Salvador y Redentor. Los saludamos cordialmente en Su Nombre con estas palabras:",
+    "pt": "Queridos irmãos e irmãs, que a graça e a paz vos sejam concedidas abundantemente por Deus Pai e pelo Senhor Jesus Cristo, nosso Salvador e Redentor. Saudamo-vos cordialmente em Seu Nome com estas palavras:",
+    "zh": "亲爱的弟兄姊妹，愿上帝我们的父和主耶稣基督我们的救主与救赎主，丰丰富富地赐给你们恩典与平安。我们以这些话在祂的名里衷心问候你们："
+  },
+  "notreEglisePastorMessage": {
+    "fr": "Mot du pasteur",
+    "en": "Pastor's message",
+    "es": "Mensaje del pastor",
+    "pt": "Mensagem do pastor",
+    "zh": "牧师寄语"
+  },
+  "notreEglisePastorP1": {
+    "fr": "Depuis quelques années, le nombre de ceux qui reçoivent les sermons du prophète William Marrion Branham traduits en français ainsi que dans d'autres langues et édités par Shekinah Publications, ont exprimé le désir d'en savoir un peu plus sur cette œuvre missionnaire, notamment sur son fondement, son fonctionnement, ses ressources et/ou ses moyens, etc.",
+    "en": "For several years, many who receive the sermons of Prophet William Marrion Branham translated into French and other languages and published by Shekinah Publications have expressed a desire to learn more about this missionary work—its foundation, operation, resources, and means.",
+    "es": "Desde hace algunos años, muchos de los que reciben los sermones del profeta William Marrion Branham traducidos al francés y a otros idiomas y editados por Shekinah Publications han expresado el deseo de saber más sobre esta obra misionera: su fundamento, funcionamiento, recursos y medios.",
+    "pt": "Há alguns anos, muitos dos que recebem os sermões do profeta William Marrion Branham traduzidos para francês e outros idiomas e editados pela Shekinah Publications expressaram o desejo de saber mais sobre esta obra missionária — seu fundamento, funcionamento, recursos e meios.",
+    "zh": "多年来，许多领受先知威廉·马利昂·布兰汉姆讲道（由Shekinah Publications翻译成法语及其他语言并出版）的弟兄姊妹，都希望更多了解这项宣教工作——其根基、运作、资源与方式等。"
+  },
+  "notreEglisePastorP2": {
+    "fr": "En outre, après ces seize années dans l'œuvre du Seigneur, nous avons senti dans le cœur la nécessité de partager avec vous notre expérience dans ce domaine et d'apporter tant soit peu notre réconfort à tous les ouvriers de la onzième heure qui sont dans le champ, pour l'exécution de la grande et dernière commission du Seigneur à Son Église (Marc 16.15-16). Ainsi, aujourd'hui, le Seigneur notre Dieu a mis sur notre cœur de publier toutes ces œuvres, qui nous pensons seront une bénédiction pour l'épouse de Christ.",
+    "en": "Furthermore, after sixteen years in the Lord's work, we felt in our hearts the need to share our experience in this field and to bring some comfort to all the eleventh-hour workers in the harvest, for the fulfillment of the Lord's great and final commission to His Church (Mark 16:15-16). Today, the Lord our God has laid it on our hearts to publish all these works, which we believe will be a blessing to the Bride of Christ.",
+    "es": "Además, después de dieciséis años en la obra del Señor, sentimos en el corazón la necesidad de compartir con ustedes nuestra experiencia en este campo y de consolar a todos los obreros de la undécima hora que están en el campo, para cumplir la gran y última comisión del Señor a Su Iglesia (Marcos 16:15-16). Hoy, el Señor nuestro Dios ha puesto en nuestro corazón publicar todas estas obras, que creemos serán una bendición para la Esposa de Cristo.",
+    "pt": "Além disso, após dezesseis anos na obra do Senhor, sentimos no coração a necessidade de partilhar convosco a nossa experiência neste domínio e de confortar todos os obreiros da undécima hora que estão no campo, para cumprir a grande e última comissão do Senhor à Sua Igreja (Marcos 16:15-16). Hoje, o Senhor nosso Deus pôs no nosso coração publicar todas estas obras, que cremos serão uma bênção para a Esposa de Cristo.",
+    "zh": "此外，在主的工作中经过十六年之后，我们内心感到需要与你们分享我们在这方面的经历，并稍稍安慰所有在禾场上第十一小时的工人，以完成主赐给祂教会伟大而最后的使命（马可福音16:15-16）。今天，主我们的上帝感动我们出版所有这些工作，我们相信这将成为基督新妇的祝福。"
+  },
+  "notreEglisePastorP3": {
+    "fr": "Or, le Seigneur, notre Dieu, a de nouveau manifesté Son amour envers Son peuple en accomplissant en ce temps de la fin de grandes œuvres que nul autre âge n'a connues. Les mystères restés cachés dans tous les âges ont été révélés aujourd'hui et doivent être portés à la connaissance du peuple de Dieu pour qu'il soit blanchi, purifié et préparé pour l'enlèvement (Daniel 12.4-12). Cette œuvre poursuit un double objectif : partager avec vous l'œuvre que le Seigneur accomplit parmi nous, une œuvre certes difficile, mais si merveilleuse, et amener le croyant à faire du salut des âmes perdues sa préoccupation majeure.",
+    "en": "The Lord our God has once again shown His love to His people by accomplishing in this end time great works that no other age has known. Mysteries hidden through all ages have been revealed today and must be brought to God's people so they may be washed, purified, and prepared for the rapture (Daniel 12:4-12). This work has a twofold purpose: to share with you the work the Lord is accomplishing among us—a difficult yet wonderful work—and to lead believers to make the salvation of lost souls their chief concern.",
+    "es": "El Señor nuestro Dios ha manifestado de nuevo Su amor hacia Su pueblo al realizar en este tiempo del fin grandes obras que ninguna otra edad ha conocido. Los misterios ocultos en todas las edades han sido revelados hoy y deben llevarse al pueblo de Dios para que sea lavado, purificado y preparado para el arrebatamiento (Daniel 12:4-12). Esta obra tiene un doble objetivo: compartir con ustedes la obra que el Señor realiza entre nosotros—una obra difícil pero maravillosa—y llevar al creyente a hacer de la salvación de las almas perdidas su mayor preocupación.",
+    "pt": "O Senhor nosso Deus manifestou novamente Seu amor ao Seu povo ao realizar neste tempo do fim grandes obras que nenhuma outra era conheceu. Os mistérios ocultos em todas as eras foram revelados hoje e devem ser levados ao povo de Deus para que seja lavado, purificado e preparado para o arrebatamento (Daniel 12:4-12). Esta obra tem um duplo objetivo: partilhar convosco a obra que o Senhor realiza entre nós — uma obra difícil, mas maravilhosa — e levar o crente a fazer da salvação das almas perdidas sua maior preocupação.",
+    "zh": "主我们的上帝再次向祂的子民显明祂的爱，在这末世成就了历代所未曾见过的大事。历代隐藏的奥秘今日已被揭示，必须传达给神的子民，使他们得洁净、成圣，预备被提（但以理书12:4-12）。这项工作有双重目标：与你们分享主在我们中间所成就的工作——固然艰难，却奇妙无比；并引导信徒以失丧灵魂的得救为首要关切。"
+  },
+  "notreEglisePastorP4": {
+    "fr": "Nous croyons que le même Saint-Esprit vous révélera votre part de responsabilité dans ce grand et immense travail d'annoncer ce glorieux Évangile, le Message du temps de la fin, aux gens de notre temps, sachant que c'est un âge très court et que le Seigneur est en train d'accomplir une œuvre rapide.",
+    "en": "We believe the same Holy Spirit will reveal to you your share of responsibility in this great work of proclaiming the glorious Gospel, the end-time Message, to the people of our day, knowing that this is a very short age and the Lord is accomplishing a swift work.",
+    "es": "Creemos que el mismo Espíritu Santo les revelará su parte de responsabilidad en esta gran obra de anunciar el glorioso Evangelio, el Mensaje del tiempo del fin, a la gente de nuestro tiempo, sabiendo que es una edad muy corta y que el Señor está realizando una obra rápida.",
+    "pt": "Cremos que o mesmo Espírito Santo vos revelará a vossa parte de responsabilidade nesta grande obra de anunciar o glorioso Evangelho, a Mensagem do tempo do fim, ao povo do nosso tempo, sabendo que é uma era muito curta e que o Senhor está realizando uma obra rápida.",
+    "zh": "我们相信同一位圣灵会向你们显明，在这宣告荣耀福音、末世信息给当代人的伟大工作中，你们当负的责任。我们知道这是一个非常短暂的世代，主正在快速成就祂的工作。"
+  },
+  "notreEglisePastorP5": {
+    "fr": "Que le Seigneur vous accorde donc Sa parfaite grâce pour saisir cette vision afin que tous ensemble, convaincus que le Message est la vérité, c'est le salut de l'humanité et la Lumière dans ce temps des ténèbres, nous nous sentions concernés pour L'apporter à nos frères que l'ennemi tient encore captifs à travers le monde, dans la superstition, dans l'ignorance et dans les ténèbres. Puissions-nous sentir l'urgence d'unir nos efforts et nos talents pour apporter à ce monde mourant l'Évangile de notre Seigneur Jésus-Christ et achever rapidement cette grande mission qu'Il a confiée à Son Église. Puisse le Seigneur vous bénir richement.",
+    "en": "May the Lord grant you His perfect grace to grasp this vision so that together, convinced that the Message is the truth—the salvation of humanity and the Light in this time of darkness—we may feel concerned to bring it to our brothers still held captive by the enemy throughout the world in superstition, ignorance, and darkness. May we feel the urgency to unite our efforts and talents to bring the Gospel of our Lord Jesus Christ to this dying world and quickly finish the great mission He entrusted to His Church. May the Lord bless you richly.",
+    "es": "Que el Señor les conceda Su perfecta gracia para captar esta visión, de modo que juntos, convencidos de que el Mensaje es la verdad—la salvación de la humanidad y la Luz en este tiempo de tinieblas—nos sintamos concernidos por llevarlo a nuestros hermanos que el enemigo aún tiene cautivos en el mundo, en la superstición, la ignorancia y las tinieblas. Sintamos la urgencia de unir nuestros esfuerzos y talentos para llevar el Evangelio de nuestro Señor Jesucristo a este mundo moribundo y terminar rápidamente la gran misión que Él confió a Su Iglesia. Que el Señor los bendiga ricamente.",
+    "pt": "Que o Senhor vos conceda Sua perfeita graça para captar esta visão, de modo que juntos, convencidos de que a Mensagem é a verdade — a salvação da humanidade e a Luz neste tempo de trevas — nos sintamos concernidos em levá-la aos nossos irmãos que o inimigo ainda mantém cativos pelo mundo, na superstição, na ignorância e nas trevas. Sintamos a urgência de unir nossos esforços e talentos para levar o Evangelho de nosso Senhor Jesus Cristo a este mundo moribundo e concluir rapidamente a grande missão que Ele confiou à Sua Igreja. Que o Senhor vos abençoe ricamente.",
+    "zh": "愿主赐给你们完全的恩典，使你们得着这异象，一同确信信息就是真理——是人类的救恩，是黑暗时代的亮光——关心那些仍被仇敌囚禁在迷信、无知与黑暗中的弟兄，并迫切联合我们的力量与恩赐，将这垂死的世界带向主耶稣基督的福音，迅速完成祂托付给教会的伟大使命。愿主大大赐福给你们。"
+  },
+  "notreEglisePastorSignature": {
+    "fr": "Votre serviteur,",
+    "en": "Your servant,",
+    "es": "Su servidor,",
+    "pt": "Vosso servo,",
+    "zh": "你们的仆人，"
+  },
+  "notreEgliseSisterChurchesSubtitle": {
+    "fr": "Nos églises sœurs à travers le monde",
+    "en": "Our sister churches around the world",
+    "es": "Nuestras iglesias hermanas en todo el mundo",
+    "pt": "Nossas igrejas irmãs em todo o mundo",
+    "zh": "我们在世界各地的姐妹教会"
+  },
+  "notreEgliseSisterChurchPastor": {
+    "fr": "Pasteur / Contact",
+    "en": "Pastor / Contact",
+    "es": "Pastor / Contacto",
+    "pt": "Pastor / Contacto",
+    "zh": "牧师 / 联系人"
+  },
+  "notreEgliseSisterChurchesCount": {
+    "fr": "{count, plural, =1{1 église répertoriée} other{{count} églises répertoriées}}",
+    "en": "{count, plural, =1{1 church listed} other{{count} churches listed}}",
+    "es": "{count, plural, =1{1 iglesia registrada} other{{count} iglesias registradas}}",
+    "pt": "{count, plural, =1{1 igreja listada} other{{count} igrejas listadas}}",
+    "zh": "{count, plural, other{已收录 {count} 间教会}}"
+  },
+  "notreEgliseAbout": {
+    "fr": "À propos",
+    "en": "About",
+    "es": "Acerca de",
+    "pt": "Sobre",
+    "zh": "简介"
+  },
+  "notreEglisePastor": {
+    "fr": "Notre Pasteur",
+    "en": "Our Pastor",
+    "es": "Nuestro Pastor",
+    "pt": "Nosso Pastor",
+    "zh": "我们的牧师"
+  },
+  "notreEgliseSisterChurches": {
+    "fr": "Nos Églises sœurs",
+    "en": "Our Sister Churches",
+    "es": "Nuestras Iglesias hermanas",
+    "pt": "Nossas Igrejas irmãs",
+    "zh": "我们的姐妹教会"
+  },
+  "branhamTitle": {
+    "fr": "William Marrion Branham",
+    "en": "William Marrion Branham",
+    "es": "William Marrion Branham",
+    "pt": "William Marrion Branham",
+    "zh": "William Marrion Branham"
+  },
+  "branhamSubtitle": {
+    "fr": "Le Prophète de Malachie 4:5-6",
+    "en": "The Prophet of Malachi 4:5-6",
+    "es": "El Profeta de Malaquías 4:5-6",
+    "pt": "O Profeta de Malaquias 4:5-6",
+    "zh": "玛拉基书4:5-6的先知"
+  },
+  "branhamHeaderSummary": {
+    "fr": "Prophète confirmé par Dieu pour notre génération, porteur du Message du temps de la fin et des signes surnaturels.",
+    "en": "A prophet confirmed by God for our generation, bearing the end-time Message and supernatural signs.",
+    "es": "Profeta confirmado por Dios para nuestra generación, portador del Mensaje del tiempo del fin y de señales sobrenaturales.",
+    "pt": "Profeta confirmado por Deus para a nossa geração, portador da Mensagem do tempo do fim e de sinais sobrenaturais.",
+    "zh": "神为我们这一代所确认的先知，传扬末世信息，并带有超自然的神迹印证。"
+  },
+  "branhamScriptureHoseaQuote": {
+    "fr": "« Par un prophète, l'Eternel fit monter Israël hors d'Egypte, et par un prophète Israël fut gardé »",
+    "en": "\"By a prophet the Lord brought Israel up out of Egypt, and by a prophet Israel was preserved.\"",
+    "es": "« Por un profeta Jehová hizo subir a Israel de Egipto, y por un profeta fue guardado »",
+    "pt": "« Por um profeta o Senhor fez subir Israel do Egito, e por um profeta Israel foi guardado »",
+    "zh": "「耶和华曾借先知领以色列从埃及上来，又借先知保守以色列。」"
+  },
+  "branhamScriptureHoseaRef": {
+    "fr": "Osée 12:13",
+    "en": "Hosea 12:13",
+    "es": "Oseas 12:13",
+    "pt": "Oséias 12:13",
+    "zh": "何西阿书 12:13"
+  },
+  "branhamSectionIntro": {
+    "fr": "Sa vie et son ministère",
+    "en": "His life and ministry",
+    "es": "Su vida y su ministerio",
+    "pt": "Sua vida e seu ministério",
+    "zh": "他的生平与事奉"
+  },
+  "branhamIntroP1": {
+    "fr": "En ce temps de la fin, Dieu a visité cette dernière génération de manière extraordinaire par le ministère prophétique de son serviteur, William Marrion Branham. Né le 6 avril 1909 à Burkesville, Kentucky, USA, sa vie particulière a été marquée par des phénomènes surnaturels tels que : visions et prophéties (qui se sont toujours accomplies), apparition des anges, guérisons miracles, résurrection des morts, etc. William Marrion Branham est réellement un prophète envoyé par le Dieu tout puissant avec des signes et des prodiges pour préparer le peuple à l'Enlèvement avant la venue du grand et terrible jour du jugement de Dieu, comme annoncé et promis.",
+    "en": "In this end time, God has visited this last generation in an extraordinary way through the prophetic ministry of His servant William Marrion Branham. Born April 6, 1909 in Burkesville, Kentucky, USA, his remarkable life was marked by supernatural phenomena: visions and prophecies (always fulfilled), angelic appearances, miraculous healings, raising of the dead, and more. William Marrion Branham is truly a prophet sent by Almighty God with signs and wonders to prepare the people for the Rapture before the great and terrible day of God's judgment, as announced and promised.",
+    "es": "En este tiempo del fin, Dios ha visitado a esta última generación de manera extraordinaria por el ministerio profético de su siervo William Marrion Branham. Nacido el 6 de abril de 1909 en Burkesville, Kentucky, EE.UU., su vida particular estuvo marcada por fenómenos sobrenaturales: visiones y profecías (siempre cumplidas), aparición de ángeles, sanidades milagrosas, resurrección de muertos, etc. William Marrion Branham es verdaderamente un profeta enviado por el Dios Todopoderoso con señales y prodigios para preparar al pueblo para el Arrebatamiento antes de la venida del gran y terrible día del juicio de Dios.",
+    "pt": "Neste tempo do fim, Deus visitou esta última geração de maneira extraordinária pelo ministério profético de seu servo William Marrion Branham. Nascido em 6 de abril de 1909 em Burkesville, Kentucky, EUA, sua vida particular foi marcada por fenômenos sobrenaturais: visões e profecias (sempre cumpridas), aparição de anjos, curas milagrosas, ressurreição de mortos, etc. William Marrion Branham é verdadeiramente um profeta enviado pelo Deus Todo-Poderoso com sinais e prodígios para preparar o povo para o Arrebatamento antes da vinda do grande e terrível dia do juízo de Deus.",
+    "zh": "在这末世，神借祂仆人William Marrion Branham的先知职事，以非凡的方式眷顾了这最后一代。他于1909年4月6日生于美国肯塔基州Burkesville，他的一生充满超自然现象：异象与预言（总是应验）、天使显现、神迹医治、死人复活等。William Marrion Branham确实是全能神所差遣的先知，带着神迹奇事，为要在神大而可畏的审判日来临之前，预备百姓被提。"
+  },
+  "branhamScriptureMalachiQuote": {
+    "fr": "« Voici, je vous enverrai Elie, le prophète, avant que le jour de l'Eternel arrive, ce jour grand et redoutable. Il ramènera le cœur… des enfants à leurs pères. De peur que je ne vienne frapper le pays d'interdit. »",
+    "en": "\"Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of the Lord. And he shall turn the heart of the children to their fathers, lest I come and smite the earth with a curse.\"",
+    "es": "« He aquí, yo os envío el profeta Elías, antes que venga el día de Jehová, grande y terrible. Él hará volver el corazón de los hijos hacia los padres… no venga yo y hiera la tierra con maldición. »",
+    "pt": "« Eis que eu vos envio o profeta Elias, antes que venha o dia do Senhor, grande e terrível. Ele converterá o coração dos filhos aos pais… para que eu não venha e fira a terra com maldição. »",
+    "zh": "「看哪，耶和华大而可畏之日未到以前，我必差遣先知以利亚到你们那里去。他必使父亲的心转向儿女……免得我来咒诅遍地。」"
+  },
+  "branhamScriptureMalachiRef": {
+    "fr": "Malachie 4:5-6",
+    "en": "Malachi 4:5-6",
+    "es": "Malaquías 4:5-6",
+    "pt": "Malaquias 4:5-6",
+    "zh": "玛拉基书 4:5-6"
+  },
+  "branhamSectionDoctrine": {
+    "fr": "Ses enseignements",
+    "en": "His teachings",
+    "es": "Sus enseñanzas",
+    "pt": "Seus ensinamentos",
+    "zh": "他的教导"
+  },
+  "branhamDoctrineP1": {
+    "fr": "Ses enseignements et doctrines strictement basés sur les Saintes Ecritures, la Bible, qu'il reconnaît comme la seule autorité en matière de foi, ont montré que c'est le Seigneur Jésus-Christ, la Divinité suprême, qui est le seul vrai Dieu fait chair, et que Son Nom, Jésus-Christ, est le seul Vrai Nom parmi les hommes pour le salut ; que seule la foi en Lui amène à la Vie Eternelle, et que le seul baptême biblique est celui par immersion dans le Nom du Seigneur Jésus-Christ.",
+    "en": "His teachings and doctrines, strictly based on the Holy Scriptures—the Bible, which he recognized as the sole authority of faith—showed that the Lord Jesus Christ, supreme Deity, is the only true God made flesh, and that His Name, Jesus Christ, is the only true Name among men for salvation; that faith in Him alone brings Eternal Life, and that the only biblical baptism is by immersion in the Name of the Lord Jesus Christ.",
+    "es": "Sus enseñanzas y doctrinas, estrictamente basadas en las Sagradas Escrituras, la Biblia, que reconoce como la única autoridad de fe, mostraron que el Señor Jesucristo, la Deidad suprema, es el único Dios verdadero hecho carne, y que Su Nombre, Jesucristo, es el único Nombre verdadero entre los hombres para la salvación; que solo la fe en Él conduce a la Vida Eterna, y que el único bautismo bíblico es por inmersión en el Nombre del Señor Jesucristo.",
+    "pt": "Seus ensinamentos e doutrinas, estritamente baseados nas Sagradas Escrituras, a Bíblia, que reconhece como a única autoridade de fé, mostraram que o Senhor Jesus Cristo, a Divindade suprema, é o único Deus verdadeiro feito carne, e que Seu Nome, Jesus Cristo, é o único Nome verdadeiro entre os homens para a salvação; que somente a fé Nele conduz à Vida Eterna, e que o único batismo bíblico é por imersão no Nome do Senhor Jesus Cristo.",
+    "zh": "他的教导与教义严格基于圣经——他承认圣经是信仰的唯一权威——表明主耶稣基督是至高神性，是道成肉身的独一真神；祂的名耶稣基督是人间得救的独一真名；唯独信祂得永生；唯独符合圣经的洗礼是在主耶稣基督的名里浸入水中。"
+  },
+  "branhamSectionBeginning": {
+    "fr": "Le début",
+    "en": "The beginning",
+    "es": "El comienzo",
+    "pt": "O começo",
+    "zh": "起初"
+  },
+  "branhamBeginningQuote": {
+    "fr": "« Quand je suis né dans une petite cabane là-bas au Kentucky, l'Ange du Seigneur est entré par la fenêtre et s'est tenu là. C'était une Colonne de Feu. »",
+    "en": "\"When I was born in a little cabin back there in Kentucky, the Angel of the Lord came in the window and stood there. It was a Pillar of Fire.\"",
+    "es": "« Cuando nací en una pequeña cabaña allá en Kentucky, el Ángel del Señor entró por la ventana y se quedó allí. Era una Columna de Fuego. »",
+    "pt": "« Quando nasci numa pequena cabana lá no Kentucky, o Anjo do Senhor entrou pela janela e ficou ali. Era uma Coluna de Fogo. »",
+    "zh": "「当我在肯塔基州那间小木屋里出生时，主的使者从窗户进来，站在那里。那是一根火柱。」"
+  },
+  "branhamBeginningP1": {
+    "fr": "L'aube venait tout juste de percer l'obscurité de ce ciel frais d'avril. L'unique fenêtre en bois s'ouvrit pour laisser entrer la lumière matinale dans la minuscule cabane d'une seule pièce. À l'intérieur, le jeune Charles Branham mit ses mains dans ses salopettes flambant neuves et regarda sa femme âgée de 15 ans. « Nous l'appellerons William », dit le père.",
+    "en": "Dawn was just breaking through the cool April sky. The single wooden window opened to let morning light into the tiny one-room cabin. Inside, young Charles Branham put his hands in his brand-new overalls and looked at his 15-year-old wife. \"We'll call him William,\" said the father.",
+    "es": "El alba acababa de romper la oscuridad de ese cielo fresco de abril. La única ventana de madera se abrió para dejar entrar la luz matutina en la minúscula cabaña de una sola habitación. Dentro, el joven Charles Branham se puso las manos en sus overoles nuevos y miró a su esposa de 15 años. « Lo llamaremos William », dijo el padre.",
+    "pt": "A aurora acabava de romper a escuridão daquele céu fresco de abril. A única janela de madeira abriu-se para deixar entrar a luz matinal na minúscula cabana de um só cômodo. Dentro, o jovem Charles Branham colocou as mãos nas calças novas e olhou para sua esposa de 15 anos. « Vamos chamá-lo de William », disse o pai.",
+    "zh": "四月的清晨，曙光刚刚穿透清凉的天空。唯一的木窗打开，让晨光进入那间狭小的一室木屋。屋里，年轻的Charles Branham把手插进崭新的工装裤，望着他15岁的妻子。「我们叫他William，」父亲说。"
+  },
+  "branhamBeginningP2": {
+    "fr": "Une Lumière surnaturelle entra par la fenêtre. La Lumière se déplaça dans la pièce et s'arrêta au-dessus du lit où se trouvait le nouveau-né. C'est cette même Lumière qui avait fait sortir les enfants hébreux d'Égypte. C'est cette même Lumière qui avait rencontré Paul sur le chemin de Damas. Et c'est Elle qui allait maintenant conduire cet enfant destiné à appeler l'Épouse de Christ à sortir du monde. Cette Lumière n'était nul autre que l'Ange du Seigneur, la Colonne de Feu : Elle était de nouveau apparue à l'homme.",
+    "en": "A supernatural Light entered through the window. The Light moved through the room and stopped above the bed where the newborn lay. It was the same Light that had led the Hebrew children out of Egypt. The same Light that had met Paul on the road to Damascus. And it would now lead this child destined to call the Bride of Christ out of the world. This Light was none other than the Angel of the Lord, the Pillar of Fire: it had appeared to man once again.",
+    "es": "Una Luz sobrenatural entró por la ventana. La Luz se movió por la habitación y se detuvo sobre la cama donde estaba el recién nacido. Era la misma Luz que había sacado a los hijos hebreos de Egipto. La misma Luz que había encontrado a Pablo en el camino de Damasco. Y era Ella quien ahora guiaría a este niño destinado a llamar a la Esposa de Cristo a salir del mundo. Esta Luz no era otra que el Ángel del Señor, la Columna de Fuego: había aparecido de nuevo al hombre.",
+    "pt": "Uma Luz sobrenatural entrou pela janela. A Luz moveu-se pela sala e parou sobre a cama onde estava o recém-nascido. Era a mesma Luz que havia tirado os filhos hebreus do Egito. A mesma Luz que havia encontrado Paulo no caminho de Damasco. E era Ela quem agora conduziria esta criança destinada a chamar a Esposa de Cristo a sair do mundo. Esta Luz não era outra senão o Anjo do Senhor, a Coluna de Fogo: havia aparecido novamente ao homem.",
+    "zh": "一道超自然的光从窗户进入。光在屋里移动，停在新生的婴儿床上方。这正是带领希伯来儿女出埃及的光，也是在通往大马士革路上遇见保罗的光。如今，它将引导这个蒙召叫基督新妇出离世界的孩子。这光正是主的使者——火柱：它再次向人显现。"
+  },
+  "branhamBeginningP3": {
+    "fr": "« Et là, dans cette petite cabane en rondins, ce matin du 6 avril, la sage-femme a ouvert la fenêtre pour laisser pénétrer la lumière, afin que maman et papa puissent voir comment j'étais. C'est alors qu'une Lumière de la grandeur d'un oreiller est entrée par la fenêtre en tourbillonnant. Elle a décrit un cercle autour de l'endroit où je me trouvais et Elle est descendue sur le lit. Plusieurs montagnards se tenaient là. Ils pleuraient. »",
+    "en": "\"And there, in that little log cabin on the morning of April 6, the midwife opened the window to let in the light so Mom and Dad could see how I was. That's when a Light the size of a pillow swirled in through the window. It circled around where I was and came down on the bed. Several mountain people stood there. They were weeping.\"",
+    "es": "« Y allí, en esa pequeña cabaña de troncos, esa mañana del 6 de abril, la partera abrió la ventana para dejar entrar la luz, para que mamá y papá pudieran ver cómo estaba yo. Fue entonces cuando una Luz del tamaño de una almohada entró girando por la ventana. Dibujó un círculo alrededor de donde estaba y descendió sobre la cama. Varios montañeses estaban allí. Lloraban. »",
+    "pt": "« E ali, naquela pequena cabana de toras, na manhã de 6 de abril, a parteira abriu a janela para deixar entrar a luz, para que mamãe e papai pudessem ver como eu estava. Foi então que uma Luz do tamanho de um travesseiro entrou girando pela janela. Fez um círculo ao redor de onde eu estava e desceu sobre a cama. Vários montanheses estavam ali. Choravam. »",
+    "zh": "「就在那间小圆木屋，4月6日那天早晨，接生婆打开窗户让光线进来，好让父母看我是什么样子。就在这时，一道枕头大小的光旋入窗户，在我周围画了一个圈，降落在床上。几位山里人站在那里，他们在哭泣。」"
+  },
+  "branhamBeginningP4": {
+    "fr": "La modeste demeure se trouvait dans les collines du sud du Kentucky, près de la petite ville de Burkesville. C'était le 6 avril 1909. Le bébé était le premier des dix enfants qu'ont eus Charles et Ella Branham.",
+    "en": "The humble home stood in the hills of southern Kentucky, near the small town of Burkesville. It was April 6, 1909. The baby was the first of ten children born to Charles and Ella Branham.",
+    "es": "La modesta vivienda se encontraba en las colinas del sur de Kentucky, cerca del pequeño pueblo de Burkesville. Era el 6 de abril de 1909. El bebé era el primero de diez hijos de Charles y Ella Branham.",
+    "pt": "A modesta moradia ficava nas colinas do sul do Kentucky, perto da pequena cidade de Burkesville. Era 6 de abril de 1909. O bebê era o primeiro de dez filhos de Charles e Ella Branham.",
+    "zh": "这简朴的住处在肯塔基州南部山丘上，靠近Burkesville小镇。那是1909年4月6日。这婴儿是Charles和Ella Branham十个孩子中的长子。"
+  },
+  "branhamSectionVisions": {
+    "fr": "Visites surnaturelles",
+    "en": "Supernatural visitations",
+    "es": "Visitaciones sobrenaturales",
+    "pt": "Visitações sobrenaturais",
+    "zh": "超自然的显现"
+  },
+  "branhamVisionsP1": {
+    "fr": "Il était enfant lorsque l'Ange lui parla pour la première fois, lui disant qu'il allait habiter et passer sa vie près d'une ville du nom de New Albany. Deux ans plus tard, sa famille alla s'installer à Jeffersonville, dans l'Indiana, à quelques kilomètres seulement de New Albany. Quelques années plus tard, l'Ange parla de nouveau au jeune prophète. C'était une journée tranquille de septembre : le garçon s'assit à l'ombre d'un grand peuplier. Tout à coup, une Voix parla : « Ne bois pas, ne fume pas et ne souille ton corps d'aucune façon, tu auras une œuvre à accomplir quand tu seras plus âgé. » Effrayé, le garçon de sept ans laissa tomber ses seaux et courut vers sa mère.",
+    "en": "As a child, the Angel spoke to him for the first time, saying he would live near a town called New Albany. Two years later, his family moved to Jeffersonville, Indiana, just a few kilometers from New Albany. A few years later, the Angel spoke again to the young prophet. On a quiet September day, the boy sat in the shade of a large poplar tree. Suddenly a Voice spoke: \"Don't drink, don't smoke, and don't defile your body in any way; you will have a work to do when you are older.\" Frightened, the seven-year-old dropped his buckets and ran to his mother.",
+    "es": "Era niño cuando el Ángel le habló por primera vez, diciéndole que viviría cerca de una ciudad llamada New Albany. Dos años después, su familia se instaló en Jeffersonville, Indiana, a pocos kilómetros de New Albany. Unos años más tarde, el Ángel habló de nuevo al joven profeta. Era un tranquilo día de septiembre: el niño se sentó a la sombra de un gran álamo. De repente una Voz habló: « No bebas, no fumes y no contaminés tu cuerpo de ninguna manera; tendrás una obra que hacer cuando seas mayor. » Asustado, el niño de siete años dejó caer sus cubos y corrió hacia su madre.",
+    "pt": "Era criança quando o Anjo lhe falou pela primeira vez, dizendo que viveria perto de uma cidade chamada New Albany. Dois anos depois, sua família mudou-se para Jeffersonville, Indiana, a poucos quilômetros de New Albany. Alguns anos depois, o Anjo falou novamente ao jovem profeta. Era um tranquilo dia de setembro: o menino sentou-se à sombra de um grande álamo. De repente uma Voz falou: « Não bebas, não fumes e não contaminarás o teu corpo de forma alguma; terás uma obra a realizar quando fores mais velho. » Assustado, o menino de sete anos deixou cair os baldes e correu para sua mãe.",
+    "zh": "他还是孩子时，天使第一次对他说话，告诉他将在名叫New Albany的城附近生活。两年后，全家搬到印第安纳州Jeffersonville，离New Albany仅数公里。几年后，天使再次对这位年轻先知说话。那是一个宁静的九月天，男孩坐在大杨树的荫下。忽然有声音说：「不要喝酒，不要吸烟，不要用任何方式污秽你的身体；你长大后要承担一项工作。」七岁的男孩吓坏了，扔下水桶跑向母亲。"
+  },
+  "branhamVisionsP2": {
+    "fr": "Le Seigneur lui donnait des visions du futur. Et comme pour les prophètes qui l'ont précédé, les visions n'ont jamais failli.",
+    "en": "The Lord gave him visions of the future. And as with the prophets before him, the visions never failed.",
+    "es": "El Señor le daba visiones del futuro. Y como con los profetas que le precedieron, las visiones nunca fallaron.",
+    "pt": "O Senhor lhe dava visões do futuro. E como com os profetas que o precederam, as visões nunca falharam.",
+    "zh": "主赐给他关乎未来的异象。正如在他以前的先知一样，这些异象从未落空。"
+  },
+  "branhamSectionYouth": {
+    "fr": "Les jeunes années",
+    "en": "The early years",
+    "es": "Los años jóvenes",
+    "pt": "Os anos jovens",
+    "zh": "青年时期"
+  },
+  "branhamYouthIntro": {
+    "fr": "Durant toute sa vie, Frère Branham aspira à être dans des endroits sauvages. À 18 ans, il quitta l'Indiana pour les montagnes accidentées de l'Ouest. Son séjour en Arizona fut cependant de courte durée, car il fut forcé de rentrer.",
+    "en": "Throughout his life, Brother Branham longed to be in wild places. At 18, he left Indiana for the rugged mountains of the West. His stay in Arizona was short, however, as he was forced to return.",
+    "es": "Durante toda su vida, el hermano Branham anheló estar en lugares salvajes. A los 18 años, dejó Indiana por las montañas accidentadas del Oeste. Su estancia en Arizona fue breve, sin embargo, pues se vio obligado a regresar.",
+    "pt": "Durante toda a sua vida, o irmão Branham aspirou a estar em lugares selvagens. Aos 18 anos, deixou Indiana pelas montanhas acidentadas do Oeste. Sua estadia no Arizona foi breve, porém, pois foi forçado a regressar.",
+    "zh": "Branham弟兄一生渴望身处旷野之地。18岁时，他离开印第安纳州前往西部崎岖的山地。然而他在亚利桑那的停留很短暂，被迫返回。"
+  },
+  "branhamYouthQuote": {
+    "fr": "« Un jour j'ai décidé que j'avais trouvé un moyen de me débarrasser de cet appel : j'irais dans l'Ouest travailler dans un ranch. Mon ami, Dieu est tout aussi grand là-bas que n'importe où. Puissiez-vous tirer profit de mon expérience. Quand Il vous appelle, répondez-Lui. » Il partit en Arizona fuir le Dieu d'Amour, mais la vie de ranch ne comblera pas son âme. Après la mort de son frère Édouard, Dieu traita de nouveau avec lui. Cher lecteur, quand Il appelle, répondez-Lui.",
+    "en": "\"One day I decided I had found a way to get rid of that call: I would go West to work on a ranch. My friend, God is just as great out there as anywhere. May you learn from my experience. When He calls you, answer Him.\" He went to Arizona fleeing the God of Love, but ranch life could not satisfy his soul. After his brother Edward's death, God dealt with him again. Dear reader, when He calls, answer Him.",
+    "es": "« Un día decidí que había encontrado una manera de librarme de ese llamado: iría al Oeste a trabajar en un rancho. Amigo mío, Dios es igual de grande allá que en cualquier lugar. Que aprendas de mi experiencia. Cuando Él te llame, respóndele. » Fue a Arizona huyendo del Dios de Amor, pero la vida del rancho no satisfizo su alma. Tras la muerte de su hermano Edward, Dios volvió a tratar con él. Querido lector, cuando Él llame, respóndele.",
+    "pt": "« Um dia decidi que tinha encontrado uma maneira de me livrar desse chamado: iria para o Oeste trabalhar num rancho. Meu amigo, Deus é tão grande lá como em qualquer lugar. Que aprendas com a minha experiência. Quando Ele te chamar, responde-Lhe. » Foi ao Arizona fugindo do Deus de Amor, mas a vida de rancho não satisfaria sua alma. Após a morte de seu irmão Edward, Deus tratou novamente com ele. Querido leitor, quando Ele chamar, responde-Lhe.",
+    "zh": "「有一天我决定找到了摆脱这呼召的办法：我要去西部牧场工作。朋友，神在那里也同样伟大。愿你能从我的经历中学习。当祂呼召你时，要回应祂。」他逃到亚利桑那躲避慈爱的神，但牧场生活无法满足他的灵魂。哥哥Edward去世后，神再次与他相遇。亲爱的读者，当祂呼召时，请回应祂。"
+  },
+  "branhamBaptistQuote": {
+    "fr": "« Comme Jean fut envoyé avec un Message pour la première venue, ceci est également le second Message pour la seconde venue. »",
+    "en": "\"As John was sent with a Message for the first coming, this is likewise the second Message for the second coming.\"",
+    "es": "« Como Juan fue enviado con un Mensaje para la primera venida, este es también el segundo Mensaje para la segunda venida. »",
+    "pt": "« Como João foi enviado com uma Mensagem para a primeira vinda, esta é também a segunda Mensagem para a segunda vinda. »",
+    "zh": "「正如约翰为第一次来临被差遣带着信息，这也是为第二次来临的第二个信息。」"
+  },
+  "branhamBaptistCaption": {
+    "fr": "Comme Jean-Baptiste, le prophète a été confirmé dans les eaux du baptême.",
+    "en": "Like John the Baptist, the prophet was confirmed in the waters of baptism.",
+    "es": "Como Juan el Bautista, el profeta fue confirmado en las aguas del bautismo.",
+    "pt": "Como João Batista, o profeta foi confirmado nas águas do batismo.",
+    "zh": "正如施洗约翰，这位先知也在洗礼的水中得了印证。"
+  },
+  "branhamSectionAngelVisit": {
+    "fr": "La Visitation d'un Ange",
+    "en": "The Angel's visitation",
+    "es": "La visita de un Ángel",
+    "pt": "A visita de um Anjo",
+    "zh": "天使的显现"
+  },
+  "branhamAngelVisitP1": {
+    "fr": "Les visions ont continué. Ses collègues dans le ministère lui ont dit que ses visions ne venaient pas de Dieu. Cela l'a troublé profondément. Le fardeau est devenu trop lourd à porter ; il est alors parti dans un lieu sauvage pour chercher la volonté de Dieu. C'est là, dans une vieille cabane de trappeur, que l'Ange du Seigneur lui a donné sa commission : « Si tu amènes les gens à te croire, et que tu es sincère quand tu pries, rien ne résistera à tes prières, pas même le cancer. »",
+    "en": "The visions continued. Fellow ministers told him his visions did not come from God. This troubled him deeply. The burden became too heavy; he went into the wilderness to seek God's will. There, in an old trapper's cabin, the Angel of the Lord gave him his commission: \"If you can get the people to believe you, and be sincere when you pray, nothing shall stand before your prayers, not even cancer.\"",
+    "es": "Las visiones continuaron. Sus colegas del ministerio le dijeron que sus visiones no venían de Dios. Esto lo perturbó profundamente. La carga se volvió demasiado pesada; fue entonces al desierto a buscar la voluntad de Dios. Allí, en una vieja cabaña de trampero, el Ángel del Señor le dio su comisión: « Si logras que la gente te crea, y eres sincero cuando oras, nada resistirá tus oraciones, ni siquiera el cáncer. »",
+    "pt": "As visões continuaram. Seus colegas de ministério disseram-lhe que suas visões não vinham de Deus. Isso perturbou-o profundamente. O fardo tornou-se pesado demais; foi então ao deserto buscar a vontade de Deus. Lá, numa velha cabana de caçador, o Anjo do Senhor deu-lhe sua comissão: « Se conseguires que o povo acredite em ti, e fores sincero quando orares, nada resistirá às tuas orações, nem mesmo o câncer. »",
+    "zh": "异象继续。同工告诉他异象不是来自神，这使他深受困扰。负担太重，他便到旷野寻求神的旨意。在一间旧猎人小屋里，主的使者赐给他使命：「若你能使人相信你，并且你祷告时真诚，没有什么能抵挡你的祷告，连癌症也不能。」"
+  },
+  "branhamAngelVisitP2": {
+    "fr": "Tous les doutes avaient disparu. Maintenant, il avait une commission, et il est allé de l'avant avec assurance.",
+    "en": "All doubts were gone. Now he had a commission, and he went forward with confidence.",
+    "es": "Todas las dudas habían desaparecido. Ahora tenía una comisión, y avanzó con confianza.",
+    "pt": "Todas as dúvidas haviam desaparecido. Agora tinha uma comissão, e avançou com confiança.",
+    "zh": "一切疑惑都消失了。如今他有了使命，便坦然前行。"
+  },
+  "branhamHealingRevivalP1": {
+    "fr": "Des centaines de milliers de personnes ont assisté aux campagnes Branham. Des milliers ont été guéris au Nom du Seigneur Jésus-Christ. D'autres évangélistes, comme Oral Roberts, T. L. Osborn et A. A. Allen, ont bientôt suivi Frère Branham et ont commencé leurs propres campagnes de réveil de guérison.",
+    "en": "Hundreds of thousands attended Branham campaigns. Thousands were healed in the Name of the Lord Jesus Christ. Other evangelists, such as Oral Roberts, T. L. Osborn, and A. A. Allen, soon followed Brother Branham and began their own healing revival campaigns.",
+    "es": "Cientos de miles asistieron a las campañas de Branham. Miles fueron sanados en el Nombre del Señor Jesucristo. Otros evangelistas, como Oral Roberts, T. L. Osborn y A. A. Allen, pronto siguieron al hermano Branham e iniciaron sus propias campañas de avivamiento de sanidad.",
+    "pt": "Centenas de milhares assistiram às campanhas de Branham. Milhares foram curados em Nome do Senhor Jesus Cristo. Outros evangelistas, como Oral Roberts, T. L. Osborn e A. A. Allen, logo seguiram o irmão Branham e iniciaram suas próprias campanhas de avivamento de cura.",
+    "zh": "数十万人参加Branham的聚会。数千人在主耶稣基督的名里得医治。Oral Roberts、T. L. Osborn、A. A. Allen等传道人也跟随Branham弟兄，开始各自的医治复兴聚会。"
+  },
+  "branhamSectionPillarOfFire": {
+    "fr": "La Colonne de Feu",
+    "en": "The Pillar of Fire",
+    "es": "La Columna de Fuego",
+    "pt": "A Coluna de Fogo",
+    "zh": "火柱"
+  },
+  "branhamPillarP1": {
+    "fr": "Frère Branham décrit souvent une Colonne de Feu qui a confirmé son ministère. Elle était présente à sa naissance, elle a été vue par des milliers de personnes sur la rive de la rivière Ohio, et elle semblait le suivre partout où il allait.",
+    "en": "Brother Branham often described a Pillar of Fire that confirmed his ministry. It was present at his birth, seen by thousands on the banks of the Ohio River, and seemed to follow him wherever he went.",
+    "es": "El hermano Branham describía a menudo una Columna de Fuego que confirmaba su ministerio. Estuvo presente en su nacimiento, fue vista por miles en la orilla del río Ohio, y parecía seguirlo dondequiera que fuera.",
+    "pt": "O irmão Branham descrevia frequentemente uma Coluna de Fogo que confirmava seu ministério. Estava presente em seu nascimento, foi vista por milhares na margem do rio Ohio, e parecia segui-lo aonde quer que fosse.",
+    "zh": "Branham弟兄常描述印证他事奉的火柱。它在他出生时同在，数千人在俄亥俄河岸看见它，似乎无论他到哪里都跟随他。"
+  },
+  "branhamPillarP2": {
+    "fr": "C'est en 1950 que le Seigneur a donné aux croyants, et aux incroyants, la preuve infaillible que cette Colonne de Feu accompagnait le prophète. La soirée au stade Sam Houston fut entourée de controverse : un débat sur la guérison Divine opposa le révérend F. F. Bosworth à un pasteur sceptique.",
+    "en": "In 1950, the Lord gave believers and unbelievers alike infallible proof that this Pillar of Fire accompanied the prophet. The evening at Sam Houston Coliseum was surrounded by controversy: a debate on Divine healing pitted Reverend F. F. Bosworth against a skeptical pastor.",
+    "es": "En 1950, el Señor dio a creyentes e incrédulos la prueba infalible de que esta Columna de Fuego acompañaba al profeta. La velada en el estadio Sam Houston estuvo rodeada de controversia: un debate sobre la sanidad Divina enfrentó al reverendo F. F. Bosworth con un pastor escéptico.",
+    "pt": "Em 1950, o Senhor deu a crentes e incrédulos a prova infalível de que esta Coluna de Fogo acompanhava o profeta. A noite no estádio Sam Houston foi cercada de controvérsia: um debate sobre a cura Divina opôs o reverendo F. F. Bosworth a um pastor cético.",
+    "zh": "1950年，主给信徒和非信徒无可辩驳的证据，证明这火柱与先知同在。Sam Houston体育馆那晚充满争议：一场关于神圣医治的辩论，使F. F. Bosworth牧师与一位怀疑的牧师对峙。"
+  },
+  "branhamPillarP3": {
+    "fr": "Frère Bosworth démontra l'authenticité de la guérison par des preuves bibliques, puis demanda à tous ceux qui avaient été guéris de se lever. Des milliers de personnes se levèrent. Le sceptique lança ce défi : « Que ce guérisseur Divin s'avance. Qu'il se produise. »",
+    "en": "Brother Bosworth demonstrated the authenticity of healing with biblical proof, then asked all who had been healed to stand. Thousands stood. The skeptic issued this challenge: \"Let this Divine healer come forward. Let him perform.\"",
+    "es": "El hermano Bosworth demostró la autenticidad de la sanidad con pruebas bíblicas, luego pidió a todos los sanados que se levantaran. Miles se levantaron. El escéptico lanzó este desafío: « Que este sanador Divino se adelante. Que actúe. »",
+    "pt": "O irmão Bosworth demonstrou a autenticidade da cura com provas bíblicas, depois pediu a todos os curados que se levantassem. Milhares se levantaram. O cético lançou este desafio: « Que este curador Divino se apresente. Que se manifeste. »",
+    "zh": "Bosworth弟兄用圣经证明医治的真实性，然后请所有得医治的人站起来。数千人起立。怀疑者发出挑战：「让这位神圣医治者上前来，让他行神迹。」"
+  },
+  "branhamPillarP4": {
+    "fr": "Frère Bosworth invita Frère Branham à venir sur l'estrade. Le prophète, rempli du Saint-Esprit, donna la réponse suivante :",
+    "en": "Brother Bosworth invited Brother Branham to the platform. Filled with the Holy Spirit, the prophet gave this response:",
+    "es": "El hermano Bosworth invitó al hermano Branham al escenario. Lleno del Espíritu Santo, el profeta dio esta respuesta:",
+    "pt": "O irmão Bosworth convidou o irmão Branham ao palco. Cheio do Espírito Santo, o profeta deu esta resposta:",
+    "zh": "Bosworth弟兄请Branham弟兄上台。先知被圣灵充满，给出如下回应："
+  },
+  "branhamHoustonQuote": {
+    "fr": "« Je ne peux guérir personne. Voici ce que je peux dire. Quand je suis né dans l'État du Kentucky, une Lumière est entrée dans la pièce de ce petit abri où je me trouvais. Depuis ce temps-là, Elle m'a accompagné. C'est un Ange de Dieu. Tout au long de ma vie, Il m'a dit des choses qui sont arrivées, et je les ai dites exactement comme Il me les a dites. Et je mets au défi n'importe qui de m'indiquer une seule déclaration faite au Nom du Seigneur qui ne se soit pas accomplie exactement comme annoncé. »",
+    "en": "\"I cannot heal anyone. Here is what I can say. When I was born in the state of Kentucky, a Light entered the room of that little shelter where I was. Since that time, It has been with me. It is an Angel of God. Throughout my life, He told me things that came to pass, and I spoke them exactly as He told me. And I challenge anyone anywhere to show me one statement made in the Name of the Lord that did not come to pass exactly as announced.\"",
+    "es": "« No puedo sanar a nadie. Esto es lo que puedo decir. Cuando nací en el estado de Kentucky, una Luz entró en la habitación de ese pequeño refugio donde estaba. Desde entonces, me ha acompañado. Es un Ángel de Dios. Toda mi vida, me dijo cosas que sucedieron, y las dije exactamente como me las dijo. Y desafío a cualquiera a mostrarme una sola declaración hecha en el Nombre del Señor que no se haya cumplido exactamente como fue anunciada. »",
+    "pt": "« Não posso curar ninguém. Eis o que posso dizer. Quando nasci no estado do Kentucky, uma Luz entrou na sala daquele pequeno abrigo onde eu estava. Desde então, tem-me acompanhado. É um Anjo de Deus. Toda a minha vida, disse-me coisas que aconteceram, e eu as disse exatamente como Ele me disse. E desafio qualquer um a indicar-me uma única declaração feita em Nome do Senhor que não se tenha cumprido exatamente como anunciada. »",
+    "zh": "「我不能医治任何人。我能说的是：当我在肯塔基州出生时，一道光进入那间小屋里我所在的地方。从那时起，它一直与我同在。它是神的使者。我一生所传的话都按祂所说的应验。我挑战任何人指出一句我奉主名所说而未完全应验的话。」"
+  },
+  "branhamPillarP5": {
+    "fr": "Après ces paroles, le Saint-Esprit est descendu sur l'estrade ; le photographe prit une photo. Sur cette dernière photographie se trouvait la Colonne de Feu sous une forme visible, suspendue au-dessus de la tête du prophète de Dieu, William Marrion Branham. Frère Branham déclara : « Dieu rendra témoignage. Je n'ajouterai rien. »",
+    "en": "After these words, the Holy Spirit came upon the platform; the photographer took a picture. On that final photograph was the Pillar of Fire in visible form, suspended above the head of God's prophet, William Marrion Branham. Brother Branham declared: \"God will bear witness. I will add nothing.\"",
+    "es": "Tras estas palabras, el Espíritu Santo descendió sobre el escenario; el fotógrafo tomó una foto. En esa última fotografía estaba la Columna de Fuego en forma visible, suspendida sobre la cabeza del profeta de Dios, William Marrion Branham. El hermano Branham declaró: « Dios dará testimonio. No añadiré nada. »",
+    "pt": "Após estas palavras, o Espírito Santo desceu sobre o palco; o fotógrafo tirou uma foto. Nessa última fotografia estava a Coluna de Fogo em forma visível, suspensa sobre a cabeça do profeta de Deus, William Marrion Branham. O irmão Branham declarou: « Deus dará testemunho. Não acrescentarei nada. »",
+    "zh": "这些话后，圣灵降在台上；摄影师拍了一张照片。在最后一张照片上，可见的火柱悬在神先知William Marrion Branham的头上。Branham弟兄说：「神必作见证，我不加添什么。」"
+  },
+  "branhamPillarWitnessQuote": {
+    "fr": "« Les enfants d'Israël furent témoins de la Colonne de Feu qui conduisait Moïse, et aujourd'hui, les gens ont été témoins de cette même Colonne de Feu qui a conduit un autre prophète. »",
+    "en": "\"The children of Israel witnessed the Pillar of Fire that led Moses, and today people have witnessed that same Pillar of Fire leading another prophet.\"",
+    "es": "« Los hijos de Israel fueron testigos de la Columna de Fuego que guiaba a Moisés, y hoy la gente ha sido testigo de esa misma Columna de Fuego que guió a otro profeta. »",
+    "pt": "« Os filhos de Israel foram testemunhas da Coluna de Fogo que conduzia Moisés, e hoje o povo foi testemunha dessa mesma Coluna de Fogo que conduziu outro profeta. »",
+    "zh": "「以色列人曾见证引导摩西的火柱，今天人们也见证了引导另一位先知的同一火柱。」"
+  },
+  "branhamPillarP6": {
+    "fr": "La photo fut transmise à George J. Lacy, examinateur professionnel en documents contestés pour le FBI américain, qui confirma l'authenticité de la photo en tant qu'expert.",
+    "en": "The photograph was submitted to George J. Lacy, professional document examiner for the FBI, who confirmed the photograph's authenticity as an expert.",
+    "es": "La fotografía fue enviada a George J. Lacy, perito en documentos para el FBI, quien confirmó la autenticidad de la foto como experto.",
+    "pt": "A fotografia foi enviada a George J. Lacy, perito em documentos do FBI, que confirmou a autenticidade da foto como especialista.",
+    "zh": "照片送交FBI文件鉴定专家George J. Lacy，他作为专家确认了照片的真实性。"
+  },
+  "branhamClosingQuote": {
+    "fr": "« Un grand prophète a paru parmi nous et Dieu a visité son peuple. »",
+    "en": "\"A great prophet has appeared among us, and God has visited His people.\"",
+    "es": "« Un gran profeta ha aparecido entre nosotros y Dios ha visitado a su pueblo. »",
+    "pt": "« Um grande profeta apareceu entre nós e Deus visitou o seu povo. »",
+    "zh": "「一个大先知在我们中间兴起，神眷顾了祂的百姓。」"
+  },
+  "branhamClosingRef": {
+    "fr": "Luc 7:16",
+    "en": "Luke 7:16",
+    "es": "Lucas 7:16",
+    "pt": "Lucas 7:16",
+    "zh": "路加福音 7:16"
+  },
+  "branhamFactBirth": {
+    "fr": "Né le 6 avril 1909 à Burkesville, Kentucky (États-Unis)",
+    "en": "Born April 6, 1909 in Burkesville, Kentucky (USA)",
+    "es": "Nacido el 6 de abril de 1909 en Burkesville, Kentucky (EE.UU.)",
+    "pt": "Nascido em 6 de abril de 1909 em Burkesville, Kentucky (EUA)",
+    "zh": "1909年4月6日生于美国肯塔基州Burkesville"
+  },
+  "branhamFactMalachi": {
+    "fr": "Prophète de Malachie 4:5-6 — préparer l'Épouse à l'Enlèvement",
+    "en": "Prophet of Malachi 4:5-6 — preparing the Bride for the Rapture",
+    "es": "Profeta de Malaquías 4:5-6 — preparar a la Esposa para el Arrebatamiento",
+    "pt": "Profeta de Malaquias 4:5-6 — preparar a Esposa para o Arrebatamento",
+    "zh": "玛拉基书4:5-6的先知——预备新妇被提"
+  },
+  "branhamFactMinistry": {
+    "fr": "Campagnes de guérison, visions et miracles confirmés par des milliers de témoins",
+    "en": "Healing campaigns, visions, and miracles confirmed by thousands of witnesses",
+    "es": "Campañas de sanidad, visiones y milagros confirmados por miles de testigos",
+    "pt": "Campanhas de cura, visões e milagres confirmados por milhares de testemunhas",
+    "zh": "医治聚会、异象与神迹，有数千人见证"
+  },
+  "branhamFactPhoto": {
+    "fr": "Photo de la Colonne de Feu authentifiée par George J. Lacy (expert FBI), 1950",
+    "en": "Pillar of Fire photograph authenticated by George J. Lacy (FBI expert), 1950",
+    "es": "Fotografía de la Columna de Fuego autenticada por George J. Lacy (experto del FBI), 1950",
+    "pt": "Fotografia da Coluna de Fogo autenticada por George J. Lacy (perito do FBI), 1950",
+    "zh": "1950年火柱照片经FBI专家George J. Lacy鉴定为真"
+  },
+  "downloadChooseQuality": {
+    "fr": "Choisissez une qualité vidéo",
+    "en": "Choose a video quality",
+    "es": "Elija una calidad de video",
+    "pt": "Escolha uma qualidade de vídeo",
+    "zh": "选择视频画质"
+  },
+  "downloadChooseFormat": {
+    "fr": "Choisir le format à télécharger",
+    "en": "Choose format to download",
+    "es": "Elija el formato a descargar",
+    "pt": "Escolha o formato para baixar",
+    "zh": "选择要下载的格式"
+  },
+  "downloadRetry": {
+    "fr": "Réessayer",
+    "en": "Retry",
+    "es": "Reintentar",
+    "pt": "Tentar novamente",
+    "zh": "重试"
+  },
+  "filterBy": {
+    "fr": "Filtrer par",
+    "en": "Filter by",
+    "es": "Filtrar por",
+    "pt": "Filtrar por",
+    "zh": "筛选"
+  },
+  "filterFormat": {
+    "fr": "Format",
+    "en": "Format",
+    "es": "Formato",
+    "pt": "Formato",
+    "zh": "格式"
+  },
+  "filterYear": {
+    "fr": "Année",
+    "en": "Year",
+    "es": "Año",
+    "pt": "Ano",
+    "zh": "年份"
+  },
+  "allItems": {
+    "fr": "Tous",
+    "en": "All",
+    "es": "Todos",
+    "pt": "Todos",
+    "zh": "全部"
+  },
+  "videoPlaybackHint": {
+    "fr": "La vidéo est lue dans le lecteur ci-dessus. Utilisez les contrôles pour mettre en pause ou passer en plein écran.",
+    "es": "El video se reproduce en el reproductor de arriba. Use los controles para pausar o pantalla completa.",
+    "en": "Video plays in the player above. Use the controls to pause or go full screen.",
+    "pt": "O vídeo é reproduzido no player acima. Use os controles para pausar ou tela cheia.",
+    "zh": "视频在上方播放器中播放。使用控件可暂停或全屏。"
+  },
+  "videoRelatedCantiques": {
+    "fr": "Cantiques à regarder",
+    "es": "Cánticos para ver",
+    "en": "More hymns to watch",
+    "pt": "Cânticos para assistir",
+    "zh": "更多赞美诗"
+  },
+  "videoRelatedPredications": {
+    "fr": "Prédications similaires ou récentes",
+    "es": "Predicaciones similares o recientes",
+    "en": "Similar or recent sermons",
+    "pt": "Pregações semelhantes ou recentes",
+    "zh": "类似或最近的讲道"
+  },
+  "audio": {
+    "fr": "Audio",
+    "en": "Audio",
+    "es": "Audio",
+    "pt": "Áudio",
+    "zh": "音频"
+  },
+  "pdf": {
+    "fr": "PDF",
+    "en": "PDF",
+    "es": "PDF",
+    "pt": "PDF",
+    "zh": "PDF"
+  },
+  "libraryCatalogLoadError": {
+    "fr": "Impossible de charger le catalogue.",
+    "en": "Unable to load the catalog.",
+    "es": "No se pudo cargar el catálogo.",
+    "pt": "Não foi possível carregar o catálogo.",
+    "zh": "无法加载目录。"
+  },
+  "libraryDownloadAll": {
+    "fr": "Tout télécharger",
+    "en": "Download all",
+    "es": "Descargar todo",
+    "pt": "Baixar tudo",
+    "zh": "全部下载"
+  },
+  "libraryDownloadAllConfirm": {
+    "fr": "Télécharger tous les éléments affichés ({count}) pour une lecture hors ligne ?",
+    "en": "Download all displayed items ({count}) for offline reading?",
+    "es": "¿Descargar todos los elementos mostrados ({count}) para lectura sin conexión?",
+    "pt": "Baixar todos os itens exibidos ({count}) para leitura offline?",
+    "zh": "下载所有显示的 {count} 项以供离线阅读？"
+  },
+  "libraryDownloadAllDone": {
+    "fr": "{downloaded} téléchargé(s), {skipped} déjà disponible(s).",
+    "en": "{downloaded} downloaded, {skipped} already available.",
+    "es": "{downloaded} descargado(s), {skipped} ya disponible(s).",
+    "pt": "{downloaded} baixado(s), {skipped} já disponível(is).",
+    "zh": "已下载 {downloaded} 项，{skipped} 项已可用。"
+  },
+  "libraryDownloadAllProgress": {
+    "fr": "Téléchargement {current}/{total}",
+    "en": "Downloading {current}/{total}",
+    "es": "Descargando {current}/{total}",
+    "pt": "Baixando {current}/{total}",
+    "zh": "正在下载 {current}/{total}"
+  },
+  "libraryHome": {
+    "fr": "Accueil",
+    "en": "Home",
+    "es": "Inicio",
+    "pt": "Início",
+    "zh": "首页"
+  },
+  "offlineCategoryCeremony": {
+    "fr": "Cérémonie",
+    "en": "Ceremony",
+    "es": "Ceremonia",
+    "pt": "Cerimônia",
+    "zh": "典礼"
+  },
+  "offlineCategoryLibraryPepite": {
+    "fr": "Pépite d'or",
+    "en": "Golden nugget",
+    "es": "Pepita de oro",
+    "pt": "Pérola de ouro",
+    "zh": "金句"
+  },
+  "offlineCategoryLibraryPublication": {
+    "fr": "Shekinah Publication",
+    "en": "Shekinah Publication",
+    "es": "Shekinah Publication",
+    "pt": "Shekinah Publication",
+    "zh": "Shekinah Publication"
+  },
+  "offlineCategoryPredication": {
+    "fr": "Prédication"
+  },
+  "offlineEmptyPredicationHint": {
+    "fr": "Depuis une fiche prédication, utilisez « Télécharger dans l'app » pour écouter sans connexion.",
+    "en": "From a sermon page, use \"Download in app\" to listen offline.",
+    "es": "Desde la ficha de predicación, use \"Descargar en la app\" para escuchar sin conexión.",
+    "pt": "Na página da pregação, use \"Baixar no app\" para ouvir offline.",
+    "zh": "在讲道页面使用「在应用中下载」即可离线收听。"
+  },
+  "offlineEmptyLibrary": {
+    "fr": "Aucun document bibliothèque",
+    "en": "No library documents",
+    "es": "Ningún documento de biblioteca",
+    "pt": "Nenhum documento da biblioteca",
+    "zh": "暂无图书馆文档"
+  },
+  "offlineEmptyLibraryHint": {
+    "fr": "Téléchargez des pépites d'or ou des messages depuis la bibliothèque pour les lire hors ligne.",
+    "en": "Download golden nuggets or messages from the library to read them offline.",
+    "es": "Descargue pepitas de oro o mensajes desde la biblioteca para leerlos sin conexión.",
+    "pt": "Baixe pérolas de ouro ou mensagens na biblioteca para ler offline.",
+    "zh": "从图书馆下载金句或消息，即可离线阅读。"
+  },
+  "offlineTabCeremonies": {
+    "fr": "Cérémonies",
+    "en": "Ceremonies",
+    "es": "Ceremonias",
+    "pt": "Cerimônias",
+    "zh": "典礼"
+  },
+  "offlineTabLibrary": {
+    "fr": "Bibliothèque",
+    "en": "Library",
+    "es": "Biblioteca",
+    "pt": "Biblioteca",
+    "zh": "图书馆"
+  },
+  "offlineTabPredications": {
+    "fr": "Prédications"
+  },
+  "libraryBackToYears": {
+    "fr": "Retour aux années",
+    "en": "Back to years",
+    "es": "Volver a los años",
+    "pt": "Voltar aos anos",
+    "zh": "返回年份"
+  },
+  "libraryMessageCount": {
+    "fr": "{count, plural, =1{1 message} other{{count} messages}}",
+    "en": "{count, plural, =1{1 message} other{{count} messages}}",
+    "es": "{count, plural, =1{1 mensaje} other{{count} mensajes}}",
+    "pt": "{count, plural, =1{1 mensagem} other{{count} mensagens}}",
+    "zh": "{count, plural, =1{1 篇消息} other{{count} 篇消息}}"
+  },
+  "libraryPublicationYearsHint": {
+    "fr": "Choisissez une année pour afficher les messages.",
+    "en": "Choose a year to view messages.",
+    "es": "Elija un año para ver los mensajes.",
+    "pt": "Escolha um ano para ver as mensagens.",
+    "zh": "选择年份查看消息。"
+  },
+  "libraryYearUnknown": {
+    "fr": "Date inconnue",
+    "en": "Unknown date",
+    "es": "Fecha desconocida",
+    "pt": "Data desconhecida",
+    "zh": "日期未知"
+  },
+  "offlineAvailableBannerAudio": {
+    "fr": "Disponible hors ligne · audio enregistré. Lecture possible sans connexion.",
+    "en": "Available offline · audio saved. Play without a connection.",
+    "es": "Disponible sin conexión · audio guardado. Reproducción sin conexión.",
+    "pt": "Disponível offline · áudio salvo. Reprodução sem conexão.",
+    "zh": "可离线使用 · 音频已保存。无需连接即可播放。"
+  },
+  "offlineAvailableBannerBoth": {
+    "fr": "Disponible hors ligne · audio et vidéo enregistrés. Lecture possible sans connexion.",
+    "en": "Available offline · audio and video saved. Play without a connection.",
+    "es": "Disponible sin conexión · audio y video guardados. Reproducción sin conexión.",
+    "pt": "Disponível offline · áudio e vídeo salvos. Reprodução sem conexão.",
+    "zh": "可离线使用 · 音频和视频已保存。无需连接即可播放。"
+  },
+  "offlineAvailableBannerVideo": {
+    "fr": "Disponible hors ligne · vidéo enregistrée. Lecture possible sans connexion.",
+    "en": "Available offline · video saved. Play without a connection.",
+    "es": "Disponible sin conexión · video guardado. Reproducción sin conexión.",
+    "pt": "Disponível offline · vídeo salvo. Reprodução sem conexão.",
+    "zh": "可离线使用 · 视频已保存。无需连接即可播放。"
+  },
+  "offlineAvailableInApp": {
+    "fr": "disponible dans l'app",
+    "en": "available in the app",
+    "es": "disponible en la app",
+    "pt": "disponível no app",
+    "zh": "可在应用中使用"
+  },
+  "offlineFileNotFound": {
+    "fr": "Fichier introuvable ou illisible.",
+    "en": "File not found or unreadable.",
+    "es": "Archivo no encontrado o ilegible.",
+    "pt": "Arquivo não encontrado ou ilegível.",
+    "zh": "找不到文件或无法读取。"
+  },
+  "offlineLoadError": {
+    "fr": "Impossible de charger les fichiers.",
+    "en": "Unable to load files.",
+    "es": "No se pudieron cargar los archivos.",
+    "pt": "Não foi possível carregar os arquivos.",
+    "zh": "无法加载文件。"
+  }
+}

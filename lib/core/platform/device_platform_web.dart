@@ -1,0 +1,1 @@
+int resolveDevicePlatformCode() => 3;

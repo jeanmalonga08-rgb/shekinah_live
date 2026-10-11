@@ -1,0 +1,61 @@
+name: Build Android AAB
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Check signing secrets and install keystore
+        env:
+          ANDROID_RELEASE_KEYSTORE_BASE64: ${{ secrets.ANDROID_RELEASE_KEYSTORE_BASE64 }}
+          ANDROID_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}
+          ANDROID_RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_RELEASE_KEY_ALIAS }}
+          ANDROID_RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          test -n "$ANDROID_RELEASE_KEYSTORE_BASE64" || { echo "Missing ANDROID_RELEASE_KEYSTORE_BASE64"; exit 1; }
+          test -n "$ANDROID_RELEASE_KEYSTORE_PASSWORD" || { echo "Missing ANDROID_RELEASE_KEYSTORE_PASSWORD"; exit 1; }
+          test -n "$ANDROID_RELEASE_KEY_ALIAS" || { echo "Missing ANDROID_RELEASE_KEY_ALIAS"; exit 1; }
+          test -n "$ANDROID_RELEASE_KEY_PASSWORD" || { echo "Missing ANDROID_RELEASE_KEY_PASSWORD"; exit 1; }
+          printf '%s' "$ANDROID_RELEASE_KEYSTORE_BASE64" | base64 --decode > android/app/release.keystore
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      - name: Build release bundle
+        env:
+          ANDROID_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEYSTORE_PASSWORD }}
+          ANDROID_RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_RELEASE_KEY_ALIAS }}
+          ANDROID_RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEY_PASSWORD }}
+        run: flutter build appbundle --release
+
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shekinah-live-android-aab
+          path: build/app/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+          retention-days: 14

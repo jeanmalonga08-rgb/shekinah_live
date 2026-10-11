@@ -1,0 +1,1197 @@
+{
+  "@@locale": "fr",
+  "aLaLuneBalconyAfter": "Balcon — après travaux",
+  "aLaLuneNoCommunique": "Aucun communiqué disponible pour le moment.",
+  "aLaLuneOfficialCommunique": "Communiqué officiel",
+  "aLaLuneRecentPredications": "Prédications du mois",
+  "aLaLuneSanctuaryAfter": "Sanctuaire — après travaux",
+  "aLaLuneSubtitle": "Annonces en vigueur et photos du Temple Moriah.",
+  "aLaLuneTitle": "A la lune",
+  "aboutAppPageTitle": "À propos de l'application",
+  "aboutChurchFocusedP1": "Les plateformes publiques, telles que YouTube et d'autres, constituent de précieux moyens de diffusion. Toutefois, leur environnement propose également de nombreux contenus qui ne sont pas liés à la vie ou à la mission de l'Église. Lorsqu'un fidèle recherche une prédication ou un cantique, il peut ainsi être rapidement exposé à d'autres vidéos, recommandations et contenus susceptibles de détourner son attention.",
+  "aboutChurchFocusedP2": "Cette application a donc été pensée pour offrir un espace numérique davantage centré sur les ressources de l'Église. Le membre y accède avec une intention précise et retrouve directement les contenus qui lui sont destinés, sans avoir à parcourir un environnement rempli de contenus externes.",
+  "aboutChurchFocusedP3": "Cette approche est particulièrement importante pour les jeunes et les enfants, mais elle bénéficie également à tout fidèle qui souhaite consacrer son temps numérique aux enseignements, aux cultes et aux ressources de l'Église.",
+  "aboutChurchFocusedTitle": "Un environnement centré sur la vie de l'Église",
+  "aboutContinuityP1": "Cette application ne remplace pas le site internet ni les autres plateformes de communication de l'Église. Elle vient compléter les moyens existants en proposant une expérience adaptée à l'usage quotidien du smartphone.",
+  "aboutContinuityP2": "Elle permet ainsi de rapprocher davantage les membres de la vie de l'Église, y compris ceux qui ne peuvent pas être présents physiquement à un culte en raison de leurs obligations professionnelles, de leur éloignement géographique ou de toute autre circonstance.",
+  "aboutContinuityP3": "À travers cette application, nous avons voulu mettre la technologie au service d'un objectif essentiel : faciliter l'accès à la Parole, aux enseignements et à la vie de l'Église, partout et à tout moment.",
+  "aboutContinuityTitle": "Une continuité entre l'Église et ses membres",
+  "aboutDeveloperServiceP1": "Cette application est le fruit d'une démarche de développement réalisée avec le souci de proposer un outil simple, accessible, moderne et utile aux membres.",
+  "aboutDeveloperServiceP2": "Notre volonté, en tant que développeur, n'est pas simplement de créer une application de plus, mais de mettre nos compétences techniques au service d'une vision : utiliser les outils numériques disponibles aujourd'hui pour faciliter la communication de l'Église et contribuer, à notre niveau, à la diffusion de la Parole de Dieu.",
+  "aboutDeveloperServiceP3": "Que cet outil puisse être utile aux frères et sœurs, faciliter leur accès aux ressources de l'Église et contribuer à maintenir le lien avec la communauté, où qu'ils se trouvent.",
+  "aboutDeveloperServiceTitle": "Une réalisation au service de l'Église",
+  "aboutLibraryP1": "Shekinah Tabernacle met depuis longtemps le Message à disposition des croyants grâce au programme Kosher sur ordinateur et aux clés USB distribuées dans l'Église. Ces outils, déjà bien connus des fidèles, ont permis à de nombreux croyants et prédicateurs d'étudier, de méditer et de prêcher la Parole dans des contextes variés.",
+  "aboutLibraryP2": "La Bibliothèque de l'application prolonge cette même démarche sur le smartphone. Elle ne se limite pas à offrir aux croyants un accès pratique aux Pépites d'or et aux publications : elle répond surtout aux besoins des prédicateurs, qui peuvent désormais emporter le Message avec eux partout — en déplacement, en visite, lors de réunions ou dans des lieux où un ordinateur ou une clé USB ne sont pas disponibles.",
+  "aboutLibraryP3": "Les messages peuvent être téléchargés pour une consultation hors connexion, avec un lecteur adapté à l'étude de la Parole. Ce que Kosher et les supports USB offrent déjà sur le bureau ou à la chaire, la Bibliothèque le met désormais à portée de main, au service de l'édification personnelle comme du ministère.",
+  "aboutLibraryTitle": "La Bibliothèque : porter le Message sur mobile",
+  "aboutWhyDeveloper": "Développée par le frère Jean Malonga, croyant et membre de Shekinah Tabernacle, cette application a été conçue pour répondre aux besoins concrets des fidèles de notre assemblée.",
+  "aboutWhyIntro": "Cette application a été conçue avec une conviction simple : la technologie peut être mise au service de la diffusion de la Parole de Dieu et de la communion entre les membres de l'Église.",
+  "aboutWhyP1": "Aujourd'hui, l'Église dispose déjà de plusieurs moyens de communication, notamment son site internet et les plateformes numériques, qui permettent de diffuser les prédications, les cultes, les cantiques, les annonces et les différentes activités de l'Église. Ces outils jouent un rôle important dans la communication et l'édification des fidèles.",
+  "aboutWhyP2": "Cependant, l'accès à ces contenus n'est pas toujours aussi simple qu'il pourrait l'être. Beaucoup de membres disposent d'un smartphone, mais ne sont pas nécessairement à l'aise avec la navigation sur Internet ou avec les différentes manipulations nécessaires pour retrouver une prédication, accéder au culte en direct ou revoir un enseignement.",
+  "aboutWhyP3": "C'est pour répondre à cette réalité que cette application mobile dédiée à l'Église a été développée : offrir aux membres un accès simple, direct et organisé aux contenus et aux activités de l'Église, depuis leur smartphone.",
+  "aboutWhyP4": "L'application permet notamment de retrouver facilement les cultes en direct, les prédications, les enseignements, les cantiques, les programmes, les annonces et les autres ressources spirituelles. Elle facilite également la réception d'informations importantes grâce aux notifications, notamment pour rappeler les horaires des cultes, signaler le début d'un direct ou informer de la disponibilité de nouveaux contenus.",
+  "aboutWhyTitle": "Pourquoi cette application ?",
+  "all": "Toutes",
+  "allItems": "Tous",
+  "appName": "Shekinah Tabernacle",
+  "appShortName": "Shekinah",
+  "archivesEmpty": "Aucune prédication trouvée.",
+  "archivesEmptyHint": "Essayez un autre mot-clé ou revenez plus tard.",
+  "archivesLoadError": "Impossible de charger les prédications.",
+  "archivesLoadMore": "Charger plus",
+  "archivesSearchHint": "Rechercher une prédication...",
+  "archivesTitle": "Prédications",
+  "assemblyAddress": "18 Boulevard Lumumba, Matete — Kinshasa, RDC",
+  "assemblyAddressLine1": "18 Boulevard Lumumba, Matete",
+  "assemblyAddressLine2": "B.P. 10.493 KINSHASA",
+  "assemblyAddressLine3": "RÉPUBLIQUE DÉMOCRATIQUE DU CONGO",
+  "audio": "Audio",
+  "audioPlaybackTitle": "Lecture audio",
+  "authAcceptTerms": "J'accepte les conditions d'utilisation et la politique de confidentialité de Shekinah Tabernacle.",
+  "authAcceptTermsRequired": "Veuillez accepter les conditions d'utilisation.",
+  "authAccountCreated": "Compte créé. Bienvenue dans l'espace fidèle.",
+  "authAlreadyHaveAccount": "Déjà un compte ? ",
+  "authConfirmPassword": "Confirmer le mot de passe",
+  "authConfirmPasswordRequired": "Confirmez le mot de passe",
+  "authContinueWithoutAccount": "Vous pouvez continuer à suivre les cultes sans compte.",
+  "authCreateAccount": "Créer un compte",
+  "authCreateAccountTitle": "Créer un compte",
+  "authCreateAccountUnavailableMessage": "La création de compte en ligne n'est pas encore disponible. Vous pouvez continuer à utiliser l'application sans compte.",
+  "authCreateAccountUnavailableTitle": "Inscription indisponible",
+  "authCreateMyAccount": "Créer mon compte",
+  "authCredentialsRequired": "Veuillez renseigner l'e-mail et le mot de passe.",
+  "authDefaultDisplayName": "Fidèle",
+  "authEmail": "E-mail",
+  "authEmailInvalid": "E-mail invalide",
+  "authEmailRequired": "E-mail requis",
+  "authFaithfulSpace": "Espace fidèle",
+  "authForgotPassword": "Mot de passe oublié ?",
+  "authForgotPasswordSoon": "La réinitialisation du mot de passe sera bientôt disponible.",
+  "authFullName": "Nom complet",
+  "authFullNameRequired": "Nom complet requis",
+  "authLogin": "Se connecter",
+  "authLoginSubtitle": "Connectez-vous pour accéder à votre profil et à vos préférences.",
+  "authLoginSuccess": "Connexion réussie. Bienvenue.",
+  "authNameMinLength": "Au moins 3 caractères",
+  "authPassword": "Mot de passe",
+  "authPasswordMinLength": "Au moins 6 caractères",
+  "authPasswordMismatch": "Les mots de passe ne correspondent pas",
+  "authPasswordRequired": "Mot de passe requis",
+  "authPhoneInvalid": "Numéro invalide",
+  "authPhoneOptional": "Téléphone (optionnel)",
+  "authRegisterSubtitle": "Rejoignez l'espace fidèle pour synchroniser vos préférences et votre activité.",
+  "branhamAngelVisitP1": "Les visions ont continué. Ses collègues dans le ministère lui ont dit que ses visions ne venaient pas de Dieu. Cela l'a troublé profondément. Le fardeau est devenu trop lourd à porter ; il est alors parti dans un lieu sauvage pour chercher la volonté de Dieu. C'est là, dans une vieille cabane de trappeur, que l'Ange du Seigneur lui a donné sa commission : « Si tu amènes les gens à te croire, et que tu es sincère quand tu pries, rien ne résistera à tes prières, pas même le cancer. »",
+  "branhamAngelVisitP2": "Tous les doutes avaient disparu. Maintenant, il avait une commission, et il est allé de l'avant avec assurance.",
+  "branhamBaptistCaption": "Comme Jean-Baptiste, le prophète a été confirmé dans les eaux du baptême.",
+  "branhamBaptistQuote": "« Comme Jean fut envoyé avec un Message pour la première venue, ceci est également le second Message pour la seconde venue. »",
+  "branhamBeginningP1": "L'aube venait tout juste de percer l'obscurité de ce ciel frais d'avril. L'unique fenêtre en bois s'ouvrit pour laisser entrer la lumière matinale dans la minuscule cabane d'une seule pièce. À l'intérieur, le jeune Charles Branham mit ses mains dans ses salopettes flambant neuves et regarda sa femme âgée de 15 ans. « Nous l'appellerons William », dit le père.",
+  "branhamBeginningP2": "Une Lumière surnaturelle entra par la fenêtre. La Lumière se déplaça dans la pièce et s'arrêta au-dessus du lit où se trouvait le nouveau-né. C'est cette même Lumière qui avait fait sortir les enfants hébreux d'Égypte. C'est cette même Lumière qui avait rencontré Paul sur le chemin de Damas. Et c'est Elle qui allait maintenant conduire cet enfant destiné à appeler l'Épouse de Christ à sortir du monde. Cette Lumière n'était nul autre que l'Ange du Seigneur, la Colonne de Feu : Elle était de nouveau apparue à l'homme.",
+  "branhamBeginningP3": "« Et là, dans cette petite cabane en rondins, ce matin du 6 avril, la sage-femme a ouvert la fenêtre pour laisser pénétrer la lumière, afin que maman et papa puissent voir comment j'étais. C'est alors qu'une Lumière de la grandeur d'un oreiller est entrée par la fenêtre en tourbillonnant. Elle a décrit un cercle autour de l'endroit où je me trouvais et Elle est descendue sur le lit. Plusieurs montagnards se tenaient là. Ils pleuraient. »",
+  "branhamBeginningP4": "La modeste demeure se trouvait dans les collines du sud du Kentucky, près de la petite ville de Burkesville. C'était le 6 avril 1909. Le bébé était le premier des dix enfants qu'ont eus Charles et Ella Branham.",
+  "branhamBeginningQuote": "« Quand je suis né dans une petite cabane là-bas au Kentucky, l'Ange du Seigneur est entré par la fenêtre et s'est tenu là. C'était une Colonne de Feu. »",
+  "branhamClosingQuote": "« Un grand prophète a paru parmi nous et Dieu a visité son peuple. »",
+  "branhamClosingRef": "Luc 7:16",
+  "branhamDoctrineP1": "Ses enseignements et doctrines strictement basés sur les Saintes Ecritures, la Bible, qu'il reconnaît comme la seule autorité en matière de foi, ont montré que c'est le Seigneur Jésus-Christ, la Divinité suprême, qui est le seul vrai Dieu fait chair, et que Son Nom, Jésus-Christ, est le seul Vrai Nom parmi les hommes pour le salut ; que seule la foi en Lui amène à la Vie Eternelle, et que le seul baptême biblique est celui par immersion dans le Nom du Seigneur Jésus-Christ.",
+  "branhamFactBirth": "Né le 6 avril 1909 à Burkesville, Kentucky (États-Unis)",
+  "branhamFactMalachi": "Prophète de Malachie 4:5-6 — préparer l'Épouse à l'Enlèvement",
+  "branhamFactMinistry": "Campagnes de guérison, visions et miracles confirmés par des milliers de témoins",
+  "branhamFactPhoto": "Photo de la Colonne de Feu authentifiée par George J. Lacy (expert FBI), 1950",
+  "branhamHeaderSummary": "Prophète confirmé par Dieu pour notre génération, porteur du Message du temps de la fin et des signes surnaturels.",
+  "branhamHealingRevivalP1": "Des centaines de milliers de personnes ont assisté aux campagnes Branham. Des milliers ont été guéris au Nom du Seigneur Jésus-Christ. D'autres évangélistes, comme Oral Roberts, T. L. Osborn et A. A. Allen, ont bientôt suivi Frère Branham et ont commencé leurs propres campagnes de réveil de guérison.",
+  "branhamHoustonQuote": "« Je ne peux guérir personne. Voici ce que je peux dire. Quand je suis né dans l'État du Kentucky, une Lumière est entrée dans la pièce de ce petit abri où je me trouvais. Depuis ce temps-là, Elle m'a accompagné. C'est un Ange de Dieu. Tout au long de ma vie, Il m'a dit des choses qui sont arrivées, et je les ai dites exactement comme Il me les a dites. Et je mets au défi n'importe qui de m'indiquer une seule déclaration faite au Nom du Seigneur qui ne se soit pas accomplie exactement comme annoncé. »",
+  "branhamIntroP1": "En ce temps de la fin, Dieu a visité cette dernière génération de manière extraordinaire par le ministère prophétique de son serviteur, William Marrion Branham. Né le 6 avril 1909 à Burkesville, Kentucky, USA, sa vie particulière a été marquée par des phénomènes surnaturels tels que : visions et prophéties (qui se sont toujours accomplies), apparition des anges, guérisons miracles, résurrection des morts, etc. William Marrion Branham est réellement un prophète envoyé par le Dieu tout puissant avec des signes et des prodiges pour préparer le peuple à l'Enlèvement avant la venue du grand et terrible jour du jugement de Dieu, comme annoncé et promis.",
+  "branhamPillarP1": "Frère Branham décrit souvent une Colonne de Feu qui a confirmé son ministère. Elle était présente à sa naissance, elle a été vue par des milliers de personnes sur la rive de la rivière Ohio, et elle semblait le suivre partout où il allait.",
+  "branhamPillarP2": "C'est en 1950 que le Seigneur a donné aux croyants, et aux incroyants, la preuve infaillible que cette Colonne de Feu accompagnait le prophète. La soirée au stade Sam Houston fut entourée de controverse : un débat sur la guérison Divine opposa le révérend F. F. Bosworth à un pasteur sceptique.",
+  "branhamPillarP3": "Frère Bosworth démontra l'authenticité de la guérison par des preuves bibliques, puis demanda à tous ceux qui avaient été guéris de se lever. Des milliers de personnes se levèrent. Le sceptique lança ce défi : « Que ce guérisseur Divin s'avance. Qu'il se produise. »",
+  "branhamPillarP4": "Frère Bosworth invita Frère Branham à venir sur l'estrade. Le prophète, rempli du Saint-Esprit, donna la réponse suivante :",
+  "branhamPillarP5": "Après ces paroles, le Saint-Esprit est descendu sur l'estrade ; le photographe prit une photo. Sur cette dernière photographie se trouvait la Colonne de Feu sous une forme visible, suspendue au-dessus de la tête du prophète de Dieu, William Marrion Branham. Frère Branham déclara : « Dieu rendra témoignage. Je n'ajouterai rien. »",
+  "branhamPillarP6": "La photo fut transmise à George J. Lacy, examinateur professionnel en documents contestés pour le FBI américain, qui confirma l'authenticité de la photo en tant qu'expert.",
+  "branhamPillarWitnessQuote": "« Les enfants d'Israël furent témoins de la Colonne de Feu qui conduisait Moïse, et aujourd'hui, les gens ont été témoins de cette même Colonne de Feu qui a conduit un autre prophète. »",
+  "branhamScriptureHoseaQuote": "« Par un prophète, l'Eternel fit monter Israël hors d'Egypte, et par un prophète Israël fut gardé »",
+  "branhamScriptureHoseaRef": "Osée 12:13",
+  "branhamScriptureMalachiQuote": "« Voici, je vous enverrai Elie, le prophète, avant que le jour de l'Eternel arrive, ce jour grand et redoutable. Il ramènera le cœur… des enfants à leurs pères. De peur que je ne vienne frapper le pays d'interdit. »",
+  "branhamScriptureMalachiRef": "Malachie 4:5-6",
+  "branhamSectionAngelVisit": "La Visitation d'un Ange",
+  "branhamSectionBeginning": "Le début",
+  "branhamSectionDoctrine": "Ses enseignements",
+  "branhamSectionIntro": "Sa vie et son ministère",
+  "branhamSectionPillarOfFire": "La Colonne de Feu",
+  "branhamSectionVisions": "Visites surnaturelles",
+  "branhamSectionYouth": "Les jeunes années",
+  "branhamSubtitle": "Le Prophète de Malachie 4:5-6",
+  "branhamTitle": "William Marrion Branham",
+  "branhamVisionsP1": "Il était enfant lorsque l'Ange lui parla pour la première fois, lui disant qu'il allait habiter et passer sa vie près d'une ville du nom de New Albany. Deux ans plus tard, sa famille alla s'installer à Jeffersonville, dans l'Indiana, à quelques kilomètres seulement de New Albany. Quelques années plus tard, l'Ange parla de nouveau au jeune prophète. C'était une journée tranquille de septembre : le garçon s'assit à l'ombre d'un grand peuplier. Tout à coup, une Voix parla : « Ne bois pas, ne fume pas et ne souille ton corps d'aucune façon, tu auras une œuvre à accomplir quand tu seras plus âgé. » Effrayé, le garçon de sept ans laissa tomber ses seaux et courut vers sa mère.",
+  "branhamVisionsP2": "Le Seigneur lui donnait des visions du futur. Et comme pour les prophètes qui l'ont précédé, les visions n'ont jamais failli.",
+  "branhamYouthIntro": "Durant toute sa vie, Frère Branham aspira à être dans des endroits sauvages. À 18 ans, il quitta l'Indiana pour les montagnes accidentées de l'Ouest. Son séjour en Arizona fut cependant de courte durée, car il fut forcé de rentrer.",
+  "branhamYouthQuote": "« Un jour j'ai décidé que j'avais trouvé un moyen de me débarrasser de cet appel : j'irais dans l'Ouest travailler dans un ranch. Mon ami, Dieu est tout aussi grand là-bas que n'importe où. Puissiez-vous tirer profit de mon expérience. Quand Il vous appelle, répondez-Lui. » Il partit en Arizona fuir le Dieu d'Amour, mais la vie de ranch ne comblera pas son âme. Après la mort de son frère Édouard, Dieu traita de nouveau avec lui. Cher lecteur, quand Il appelle, répondez-Lui.",
+  "cancel": "Annuler",
+  "cantiqueCategoryEnsemble": "Chants d'ensemble",
+  "cantiqueCategoryIndividual": "Chants individuels",
+  "cantiqueCategoryInstrumental": "Instrumentale",
+  "cantiqueCategoryShieldOfDavid": "Chants Bouclier De David",
+  "cantiqueCount": "{count, plural, =0{Aucun cantique} =1{1 cantique} other{{count} cantiques}}",
+  "@cantiqueCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cantiqueMediaAudio": "Audio",
+  "cantiqueMediaAudioVideo": "Audio · Vidéo",
+  "cantiqueMediaGeneric": "Média",
+  "cantiqueMediaVideo": "Vidéo",
+  "cantiqueUntitled": "Cantique",
+  "cantiquesEmpty": "Aucun cantique trouvé.",
+  "cantiquesEmptyHint": "Essayez un autre mot-clé ou revenez plus tard.",
+  "cantiquesLoadError": "Impossible de charger les cantiques.",
+  "cantiquesNumber": "N° {number}",
+  "@cantiquesNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "cantiquesSearchHint": "Rechercher un cantique...",
+  "cantiquesTitle": "Cantiques",
+  "ceremoniesBaptism": "Baptême",
+  "ceremoniesDedication": "Dédicace",
+  "ceremoniesTitle": "Cérémonies",
+  "ceremoniesWedding": "Mariage",
+  "ceremonyCount": "{count, plural, =0{Aucune cérémonie} =1{1 cérémonie} other{{count} cérémonies}}",
+  "@ceremonyCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "churchTagline": "Interdénominationnelle",
+  "communiqueFallbackMessage": "Consultez le site Shekinah Tabernacle pour les communiqués en vigueur.",
+  "communiqueFallbackReadMore": "Lire plus",
+  "communiqueFallbackTitle": "Communiqué Officiel",
+  "contactAboutApp": "Développée par le frère Jean Malonga pour offrir un accès simple aux sermons, cantiques et communiqués de l'assemblée.",
+  "contactAddress": "Adresse",
+  "contactAssembly": "Assemblée",
+  "contactCopyright": "© 2026 Shekinah Tabernacle · v{version}",
+  "@contactCopyright": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "contactEmail": "E-mail",
+  "contactMap": "Voir sur la carte",
+  "contactPhone": "Téléphone",
+  "contactSendEmail": "Envoyer un e-mail",
+  "contactTitle": "Contact",
+  "contactWhatsApp": "WhatsApp",
+  "countdownChronoWithDays": "{days}j {time}",
+  "@countdownChronoWithDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "countdownMinutesOnly": "{minutes}min {seconds}s",
+  "@countdownMinutesOnly": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      },
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "countdownNow": "Maintenant",
+  "countdownWithDays": "{days}j {hours}h {minutes}min",
+  "@countdownWithDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "hours": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "countdownWithHours": "{hours}h {minutes}min {seconds}s",
+  "@countdownWithHours": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      },
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "cultesJoinLive": "Rejoindre le live",
+  "cultesService": "Culte — {day}",
+  "@cultesService": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "cultesTitle": "Programme des cultes",
+  "delete": "Supprimer",
+  "deleteOfflineConfirm": "Retirer « {title} » de la mémoire de l'appareil ?",
+  "@deleteOfflineConfirm": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteQuestion": "Supprimer ?",
+  "downloadAlreadySaved": "Déjà téléchargé · disponible hors ligne dans l'onglet Hors ligne.",
+  "downloadAudioUnavailable": "Audio indisponible.",
+  "downloadAvailableOffline": "Disponible hors ligne",
+  "downloadChooseFormat": "Choisir le format à télécharger",
+  "downloadChooseQuality": "Choisissez une qualité vidéo",
+  "downloadConvertToAudio": "Convertir en audio",
+  "downloadConvertToAudioHint": "Convertit sur le serveur et enregistre l'audio hors-ligne",
+  "audioConversionChooseQuality": "Choisissez une qualité audio",
+  "audioConversionProfileEconomy": "Économique — Opus 48 kb/s",
+  "audioConversionProfileEconomyHint": "Fichier le plus léger, idéal en data mobile",
+  "audioConversionProfileStandard": "Standard — Opus 64 kb/s",
+  "audioConversionProfileStandardHint": "Bon équilibre qualité / taille (recommandé)",
+  "audioConversionProfileCompatible": "Compatible — AAC 96 kb/s",
+  "audioConversionProfileCompatibleHint": "Meilleure compatibilité lecteurs",
+  "audioConversionInProgress": "Conversion en cours…",
+  "audioConversionStarting": "Démarrage de la conversion…",
+  "audioConversionProgressPercent": "{percent} %",
+  "@audioConversionProgressPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "audioConversionFailed": "Échec de la conversion audio",
+  "audioConversionUnavailable": "Conversion audio serveur indisponible.",
+  "audioConversionSourceUnavailable": "La source vidéo n'est pas accessible.",
+  "audioConversionUnsupportedSource": "La source vidéo n'est pas compatible avec la conversion.",
+  "audioConversionTimeout": "La conversion a dépassé le délai imparti.",
+  "audioConversionAlreadyRunning": "Une conversion est déjà en cours pour ce média.",
+  "audioConversionReady": "Votre audio est prêt",
+  "audioConversionManagerTitle": "Conversions audio",
+  "audioConversionManagerEmpty": "Aucune conversion en cours.",
+  "audioConversionManagerSummary": "{active} en cours · {total} au total",
+  "@audioConversionManagerSummary": {
+    "placeholders": {
+      "active": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "audioConversionManagerErrors": "{count, plural, =1{1 échec} other{{count} échecs}}",
+  "@audioConversionManagerErrors": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "audioConversionAddedToQueue": "Conversion ajoutée — l'app reste utilisable.",
+  "downloadFailed": "Échec du téléchargement",
+  "downloadInApp": "Télécharger dans l'app",
+  "downloadInProgress": "Un téléchargement est déjà en cours.",
+  "downloadQueued": "En file d'attente",
+  "downloadAddedToQueue": "Ajouté à la file de téléchargement.",
+  "downloadAlreadyInQueue": "Ce téléchargement est déjà dans la file.",
+  "downloadResume": "Reprendre",
+  "downloadResumeAll": "Tout reprendre",
+  "downloadResumeStarted": "Reprise du téléchargement…",
+  "downloadPause": "Pause",
+  "downloadPaused": "En pause",
+  "downloadSpeedPerSec": "{size}/s",
+  "@downloadSpeedPerSec": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadManagerTitle": "Téléchargements",
+  "downloadManagerEmpty": "Aucun téléchargement en cours.",
+  "downloadManagerSummary": "{active} en cours · {total} au total",
+  "@downloadManagerSummary": {
+    "placeholders": {
+      "active": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadManagerErrors": "{count, plural, =1{1 échec — touchez pour reprendre} other{{count} échecs — touchez pour reprendre}}",
+  "@downloadManagerErrors": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryDownloadAllQueued": "{queued} ajouté(s) à la file · {skipped} déjà enregistré(s)",
+  "@libraryDownloadAllQueued": {
+    "placeholders": {
+      "queued": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "close": "Fermer",
+  "downloadOfflineSaved": "Déjà enregistré — disponible dans l'onglet Hors ligne.",
+  "downloadOfflineTabHint": "Enregistrez l'audio ou la vidéo pour l'écouter sans connexion.",
+  "downloadProgress": "Téléchargement… {percent} %",
+  "@downloadProgress": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadProgressActive": "Téléchargement en cours…",
+  "downloadQualitiesUnavailable": "Qualités indisponibles.",
+  "downloadRetry": "Réessayer",
+  "downloadVideoFailed": "Impossible de télécharger cette vidéo.",
+  "downloadVideoUnavailable": "Vidéo indisponible.",
+  "ecamoFactBiblePriority": "L'enseignement biblique est la priorité absolue",
+  "ecamoFactEnrolled": "Plus d'un millier d'enfants inscrits",
+  "ecamoFactNonProfit": "Initiative de la Fondation Shekinah, sans visée mercantile",
+  "ecamoFactSpiritualShelter": "Abri spirituel pour les enfants de Shekinah Tabernacle",
+  "ecamoFactVision": "Vision : une société modèle fondée sur la Parole de Dieu",
+  "ecamoHeaderSummary": "Une école biblique au sein de la Fondation Shekinah, bastion d'une éducation où les valeurs spirituelles, morales et sociales les plus fondamentales sont dispensées et préservées.",
+  "ecamoLabel": "ECAMO",
+  "ecamoScriptureQuote": "« Mon peuple, écoute mes instructions ! Prêtez l'oreille aux paroles de ma bouche !... »",
+  "ecamoScriptureRef": "Psaume 78:1-8",
+  "ecamoSectionInspiration": "Notre inspiration",
+  "ecamoSectionInspirationP1": "Dans l'Ancien Testament, Jokébed et Amram construisirent une « arche » pour protéger Moïse contre le massacre ordonné par Pharaon. Dans le Nouveau Testament, Joseph et Marie, divinement avertis, fuirent en Égypte pour protéger l'Enfant Jésus contre le génocide planifié par Hérode.",
+  "ecamoSectionInspirationP2": "Les pères fondateurs des États-Unis, conscients de l'impact de la Parole de Dieu dans le façonnement de l'être humain, accordèrent une très grande importance à l'enseignement de la Bible dans les écoles. C'est ce qui fit de l'Amérique une grande nation, productrice d'éminentes personnalités à l'instar d'Abraham Lincoln.",
+  "ecamoSectionSchool": "L'École Chrétienne Arche de Moïse",
+  "ecamoSectionSchoolP1": "Face à ce fléau qui tend à ravager la jeunesse de Shekinah Tabernacle, nous avons été conduits à fonder l'École Chrétienne Arche de Moïse (ECAMO) au sein de la Fondation Shekinah, pour servir d'abri à nos enfants. L'objectif premier de cette école biblique est de garder nos enfants loin de l'influence polluée du monde, l'apprentissage de la Bible devant primer.",
+  "ecamoSectionSchoolP2": "Nous avons compris que la Parole doit prendre l'enfant en charge alors que son cerveau est encore vierge. De la sorte, à la fin de ses études, il sera un homme tout fait. Magistrat ou avocat, il aura conscience que la corruption va à l'encontre de la Bible ; médecin, il aura conscience que l'avortement volontaire est un meurtre ; pour le gestionnaire public, le vol est un péché.",
+  "ecamoSectionSchoolP3": "Ce ne sont donc que de tels bons citoyens qui formeront une société où il fera bon vivre.",
+  "ecamoSectionYouthChallenge": "Le défi de notre jeunesse",
+  "ecamoSectionYouthChallengeP1": "Aujourd'hui, notre jeunesse est devenue une proie pour le diable qui la déprave et la manipule à son gré au travers de la musique, des films obscènes, de la télévision, de l'internet et surtout de la déconfiture du système scolaire due au rejet en bloc du véritable enseignement biblique.",
+  "ecamoSectionYouthChallengeP2": "La délinquance juvénile gagne du terrain, celle des parents s'y associe, les églises sont à la solde du diable avec des prédicateurs sans Saint-Esprit, et même sans morale. L'école ne produit plus rien : on y entre bon, on en sort deux fois enfant de l'enfer. Notre jeunesse n'a plus de modèle digne de ce nom.",
+  "ecamoSectionYouthChallengeP3": "Ce ravage est mondial. Un peu partout, on se plaint du comportement des jeunes, en accomplissement des prophéties de la Bible sur la rébellion des enfants. À quel avenir doit-on s'attendre pour notre société et pour la jeunesse de Shekinah Tabernacle en particulier ?",
+  "ecamoSubtitle": "École Chrétienne Arche de Moïse",
+  "ecamoTitle": "ECAMO",
+  "filterBy": "Filtrer par",
+  "filterFormat": "Format",
+  "filterYear": "Année",
+  "filterPreacher": "Prédicateur",
+  "filterMore": "Plus de filtres",
+  "filterMoreActive": "Plus de filtres ({count})",
+  "@filterMoreActive": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "filterType": "Type de culte",
+  "filterTime": "Moment",
+  "filterLocation": "Lieu",
+  "filterResetExtra": "Réinitialiser",
+  "filterApplyExtra": "Appliquer",
+  "fondationFactAssembly": "Shekinah Tabernacle — assemblée interdénominationnelle",
+  "fondationFactMissionWorks": "Œuvres missionnaires : Publications, ECAMO et plus",
+  "fondationLabel": "Fondation Shekinah",
+  "fondationMessageNations": "Le Message pour les nations",
+  "fondationMessageNationsP1": "Prophète majeur envoyé conformément aux promesses bibliques, frère Branham était conscient que son Message devait parcourir le monde et atteindre les coins les plus reculés de notre planète.",
+  "fondationMessageNationsP2": "Sur recommandation du Seigneur, il a manifesté un grand souci de voir le Message, évangile du temps de la fin, être diffusé sous forme de bandes, de brochures et de livres pour servir de témoignage à toutes les nations.",
+  "fondationScriptureQuote": "« Oh ! Je voudrais que mes paroles fussent écrites, qu'elles fussent écrites dans un livre. Je voudrais qu'avec un burin de fer et avec du plomb, elles fussent pour toujours gravées dans le roc… »",
+  "fondationScriptureRef": "Job 19:23-24",
+  "fondationTitle": "Fondation Shekinah",
+  "fondationWordForAll": "La Parole pour tous",
+  "fondationWordForAllP1": "La volonté de Dieu est que tous les hommes arrivent à la connaissance de la Vérité qui est Sa Parole. Car c'est celle-ci qui les affranchit et les sanctifie. N'a-t-Il pas dit que Mon peuple meurt à cause de l'ignorance ?",
+  "fondationWordForAllP2": "Quand Dieu a donné la loi à Moïse, Il l'a écrite Lui-même sur des tables qu'Il a alors confiées à Son prophète pour L'apporter au peuple.",
+  "fondationWrittenWord": "La Parole écrite à travers les âges",
+  "fondationWrittenWordP1": "Jérémie a reçu un message de la part de Dieu et Baruk, son secrétaire, l'a mis à l'écrit afin qu'il soit lu au peuple. En son temps, le Seigneur Jésus a choisi douze apôtres pour répandre le message et quelques-uns parmi eux et d'autres hommes appelés par Dieu ont mis à l'écrit Ses Paroles et Sa Vie pour qu'il soit porté à toutes les générations futures.",
+  "fondationWrittenWordP2": "Après sa conversion et son appel au ministère, Paul a écrit lui-même sous forme de lettres les commandements du Seigneur à l'intention de l'Église.",
+  "genericError": "Une erreur est survenue. Veuillez réessayer.",
+  "homeALaLune": "A la lune",
+  "homeAfterReconstruction": "Après reconstruction",
+  "homeChecking": "Vérification…",
+  "homeCommuniqueBadge": "Communiqué",
+  "homeCommuniqueBody": "Consultez les annonces officielles publiées pour l'assemblée.",
+  "homeCommuniquesInEffect": "Communiqués en vigueur",
+  "homeConsultALaLune": "Consulter A la lune",
+  "homeFeatured": "À la une",
+  "homeBranhamAudioTitle": "Sermons de William Branham",
+  "homeBranhamAudioBody": "Tous les sermons audio du prophète William Marrion Branham, disponibles en plusieurs langues.",
+  "homeBranhamAudioAction": "Explorer",
+  "homeImportantAnnouncements": "Annonces importantes",
+  "homeLive": "En direct",
+  "homeLiveSince": "EN DIRECT DEPUIS",
+  "homeLiveStreaming": "Live streaming",
+  "homeMenuSubtitle": "Mode, langue et profil",
+  "homeMenuTitle": "Menu",
+  "homeMyProfile": "Mon profil",
+  "homeNextService": "PROCHAIN CULTE",
+  "homeNextServiceLabel": "Prochain culte",
+  "homeOfficialAnnouncement": "Annonce officielle",
+  "homeOfficialCommunique": "Communiqué officiel",
+  "homeOffline": "Hors ligne",
+  "homePredicationBadge": "Prédication",
+  "homeRecentPredications": "Prédications récentes",
+  "homeRecentPredicationsBody": "Découvrez les dernières prédications du mois en cours.",
+  "homeScriptureBanner": "Malachie 4:4-6  ·  Luc 17:30  ·  Apocalypse 10:1-7",
+  "homeSearchHint": "Rechercher prédications, cantiques...",
+  "homeTempleMoriah": "Temple Moriah",
+  "homeTheLive": "Le Direct",
+  "homeThisMonth": "Ce mois-ci",
+  "homeTimeRemaining": "Temps restant",
+  "homeWeeklySchedule": "Horaires de la semaine",
+  "inBrief": "En bref",
+  "langChinese": "中文",
+  "langEnglish": "English",
+  "langFrench": "Français",
+  "langPortuguese": "Português",
+  "langSpanish": "Español",
+  "learnMore": "En savoir plus",
+  "libraryAllCategories": "Toutes",
+  "libraryBackToYears": "Retour aux années",
+  "libraryBooksAvailable": "{count} ouvrages disponibles",
+  "@libraryBooksAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryCatalogLoadError": "Impossible de charger le catalogue.",
+  "libraryCategoryDivers": "Divers",
+  "libraryCategoryFaithDoctrine": "Foi et Doctrine",
+  "libraryCategoryFamily": "La Famille",
+  "libraryCategoryMarriage": "Le Mariage",
+  "libraryCategorySpecial": "Spécial",
+  "libraryCategoryWoman": "La Femme",
+  "libraryDownloadAll": "Tout télécharger",
+  "libraryDownloadAllConfirm": "Télécharger tous les éléments affichés ({count}) pour une lecture hors ligne ?",
+  "@libraryDownloadAllConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryDownloadAllDone": "{downloaded} téléchargé(s), {skipped} déjà disponible(s).",
+  "@libraryDownloadAllDone": {
+    "placeholders": {
+      "downloaded": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryDownloadAllProgress": "Téléchargement {current}/{total}",
+  "@libraryDownloadAllProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryHome": "Accueil",
+  "libraryHomeDescription": "Pépite d'or : citations rassemblées sur différents sujets prêchés par le Pasteur Richard Diyoka, tirées du Message de William Marrion Branham et de la Bible. Shekinah Publication : sermons du prophète William Branham traduits et imprimés par Shekinah Publications.",
+  "libraryPepitesDescription": "Citations rassemblées sur différents sujets prêchés par le Pasteur Richard Diyoka, tirées du Message de William Marrion Branham et de la Bible.",
+  "libraryPublicationDescription": "Sermons du prophète William Branham traduits et imprimés par Shekinah Publications.",
+  "libraryBackToHome": "Retour à l'accueil",
+  "libraryLoadingPdf": "Chargement du PDF…",
+  "libraryMessageCount": "{count, plural, =1{1 message} other{{count} messages}}",
+  "@libraryMessageCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMessagesAvailable": "{count} messages disponibles",
+  "@libraryMessagesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryNoResults": "Aucun résultat",
+  "libraryOpenExternally": "Ouvrir dans une autre application",
+  "libraryOpenPdf": "Ouvrir le PDF",
+  "libraryReadOffline": "Lire hors ligne",
+  "libraryOfflineLink": "Bibliothèque hors ligne",
+  "libraryOfflineLinkSubtitle": "Documents déjà téléchargés",
+  "libraryPdfLoadError": "Impossible d'afficher ce PDF.",
+  "libraryPepites": "Pépites d'or",
+  "libraryPublication": "Shekinah Publication",
+  "libraryPublicationYearsHint": "Choisissez une année pour afficher les messages.",
+  "librarySortBy": "Trier par",
+  "librarySortByDateAsc": "Date (plus ancien)",
+  "librarySortByDateDesc": "Date (plus récent)",
+  "librarySortByTitle": "Titre (A-Z)",
+  "pdfReaderAnnotations": "Annotations",
+  "pdfReaderAnnotationsSaved": "Annotation enregistrée hors ligne.",
+  "pdfReaderBookmark": "Marquer la page",
+  "pdfReaderBookmarks": "Signets",
+  "pdfReaderClearAnnotations": "Tout effacer",
+  "pdfReaderGoToPage": "Aller à la page",
+  "pdfReaderHighlight": "Surligner",
+  "pdfReaderMatchCount": "{current} / {total}",
+  "@pdfReaderMatchCount": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pdfReaderNextMatch": "Occurrence suivante",
+  "pdfReaderNightMode": "Mode nuit",
+  "pdfReaderNoAnnotations": "Aucune annotation enregistrée.",
+  "pdfReaderNoBookmarks": "Aucun signet pour ce message.",
+  "pdfReaderNoMatches": "Aucune occurrence",
+  "pdfReaderPageLabel": "Page {page}",
+  "@pdfReaderPageLabel": {
+    "placeholders": {
+      "page": {
+        "type": "int"
+      }
+    }
+  },
+  "pdfReaderPageOf": "{current} / {total}",
+  "@pdfReaderPageOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "pdfReaderPreviousMatch": "Occurrence précédente",
+  "pdfReaderSearchCaseSensitive": "Sensible à la casse",
+  "pdfReaderSearchHint": "Rechercher dans le document…",
+  "pdfReaderSearchInDocument": "Rechercher dans le message",
+  "pdfReaderSearchWholeWord": "Mot entier",
+  "pdfReaderSelectTextFirst": "Sélectionnez du texte dans le document.",
+  "pdfReaderUnderline": "Souligner",
+  "pdfReaderSinglePageView": "Page par page",
+  "pdfReaderContinuousView": "Document entier",
+  "pdfReaderPreviousPage": "Page précédente",
+  "pdfReaderNextPage": "Page suivante",
+  "pdfReaderZoomIn": "Agrandir le texte",
+  "pdfReaderZoomOut": "Réduire le texte",
+  "pdfReaderZoomReset": "Taille normale",
+  "pdfReaderZoomLevel": "{percent} %",
+  "@pdfReaderZoomLevel": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "libraryMustDownloadToRead": "Ce document doit être téléchargé avant lecture pour permettre notes, surlignages et signets hors ligne.",
+  "libraryDownloadAndOpen": "Télécharger et ouvrir",
+  "librarySearchBooksHint": "Rechercher une pépite…",
+  "librarySearchMessagesHint": "Rechercher un message…",
+  "librarySubtitle": "Publications et ressources",
+  "libraryTitle": "Shekinah Library",
+  "libraryYearUnknown": "Date inconnue",
+  "liveAssembly": "Assemblée",
+  "liveAudioInProgress": "Audio en direct",
+  "liveConnectedMessage": "Vous êtes connecté au flux officiel Shekinah.",
+  "liveCountdown": "Compte à rebours",
+  "liveDirect": "Direct",
+  "liveFloatingAudio": "Audio en direct",
+  "liveFloatingVideo": "Vidéo en direct",
+  "liveFloatingWindow": "Fenêtre flottante",
+  "liveListenAudio": "Écoute audio",
+  "liveNextServiceLabel": "Prochain culte",
+  "liveNoStream": "Aucun live pour le moment",
+  "livePlayerMessage": "Le lecteur s'ouvre sur le stream officiel (Vimeo / audio), sans quitter l'application.",
+  "liveServiceInProgress": "Culte en direct",
+  "liveSinceLabel": "Direct en cours depuis",
+  "liveTapToJoin": "Appuyez pour rejoindre le stream",
+  "liveTitle": "Streaming en direct",
+  "liveWatchNow": "Regarder maintenant",
+  "liveWatchingSince": "Vous suivez depuis {elapsed}",
+  "@liveWatchingSince": {
+    "placeholders": {
+      "elapsed": {
+        "type": "String"
+      }
+    }
+  },
+  "loading": "Chargement…",
+  "mariageAnnounceBansBody": "Les bans des couples dont le mariage est programmé seront lus pendant les cultes du dimanche. L'assemblée est invitée à prier pour ces foyers à venir.",
+  "mariageAnnounceBansDateLabel": "En cours",
+  "mariageAnnounceBansTitle": "Bans de mariage",
+  "mariageAnnounceMoriahBody": "En raison des travaux liés au sinistre du Temple Moriah, les célébrations peuvent être adaptées selon les indications du comité pastoral. Merci de votre compréhension.",
+  "mariageAnnounceMoriahDateLabel": "Note",
+  "mariageAnnounceMoriahTitle": "Célébrations à Moriah",
+  "mariageAnnouncePrepBody": "Des rencontres de préparation au mariage sont organisées sous la direction pastorale. Les dates sont communiquées après validation du dossier auprès de l'église.",
+  "mariageAnnouncePrepDateLabel": "Permanent",
+  "mariageAnnouncePrepTitle": "Préparation des fiancés",
+  "mariageAnnounceProcedureBody": "Tout couple désirant célébrer son mariage à Shekinah Tabernacle est invité à se présenter au secrétariat pastoral pour le dossier, l'accompagnement et les annonces publiques à l'assemblée.",
+  "mariageAnnounceProcedureDateLabel": "Information",
+  "mariageAnnounceProcedureTitle": "Annonce de mariage — procédure",
+  "mariageFooter": "Ces informations sont diffusées par l'église. Pour un dossier personnel, adressez-vous au secrétariat sur place — aucun formulaire n'est à remplir ici.",
+  "mariageRequestInfo": "Pour toute demande de cérémonie de mariage, contactez l'assemblée.",
+  "mariageRequestTitle": "Demande de mariage",
+  "mariageSubtitle": "Cérémonies enregistrées de l'assemblée",
+  "mariageTitle": "Cérémonies de mariage",
+  "mediaListenWatch": "Écouter / regarder",
+  "mediaPlayAudio": "Écouter l'audio",
+  "mediaPlayVideo": "Lire la vidéo",
+  "mediaStreamingAudio": "Streaming audio",
+  "mediaStreamingOrOffline": "Streaming ou lecture hors ligne si déjà téléchargé.",
+  "mediaStreamingVideo": "Streaming vidéo",
+  "mediaInfoTitle": "Infos média",
+  "mediaInfoHint": "Type, durée et taille lorsque disponibles.",
+  "mediaUnavailable": "Pas disponible pour le moment.",
+  "navCantiques": "Cantiques",
+  "navHome": "Accueil",
+  "navLibrary": "Library",
+  "navOffline": "Hors ligne",
+  "navPlus": "Plus",
+  "navPredications": "Prédications",
+  "networkError": "Erreur de connexion. Vérifiez votre internet.",
+  "noLiveMessage": "Aucun live en cours pour le moment",
+  "notificationUnread": "{count, plural, =0{Aucune notification non lue} =1{1 notification non lue} other{{count} notifications non lues}}",
+  "@notificationUnread": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notificationsCommuniqueBody": "Nouveau communiqué disponible dans « A la lune ».",
+  "notificationsInEffect": "En vigueur",
+  "notificationsMarkAllRead": "Tout lire",
+  "notificationsNextServiceBody": "Dimanche {time} — rejoignez le live.",
+  "@notificationsNextServiceBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationsNoneUnread": "Aucune notification non lue",
+  "notificationsPermanent": "Permanent",
+  "notificationsReminder": "Rappel",
+  "notificationsTheWord": "La Parole",
+  "notificationsTitle": "Notifications",
+  "notificationsUnread": "Non lue",
+  "notreEgliseAbout": "À propos",
+  "notreEgliseHeaderSummary": "Assemblée interdénominationnelle à Kinshasa, porteuse du Message de l'Heure et engagée dans l'œuvre missionnaire à travers le monde.",
+  "notreEglisePastor": "Notre Pasteur",
+  "notreEglisePastorGreeting": "Chers frères et sœurs, que la grâce et la paix vous soient accordés avec abondance de la part de Dieu et Père, le Seigneur Jésus-Christ, notre Sauveur et Rédempteur. Nous vous saluons très cordialement en Son Nom par ces paroles :",
+  "notreEglisePastorMessage": "Mot du pasteur",
+  "notreEglisePastorP1": "Depuis quelques années, le nombre de ceux qui reçoivent les sermons du prophète William Marrion Branham traduits en français ainsi que dans d'autres langues et édités par Shekinah Publications, ont exprimé le désir d'en savoir un peu plus sur cette œuvre missionnaire, notamment sur son fondement, son fonctionnement, ses ressources et/ou ses moyens, etc.",
+  "notreEglisePastorP2": "En outre, après ces seize années dans l'œuvre du Seigneur, nous avons senti dans le cœur la nécessité de partager avec vous notre expérience dans ce domaine et d'apporter tant soit peu notre réconfort à tous les ouvriers de la onzième heure qui sont dans le champ, pour l'exécution de la grande et dernière commission du Seigneur à Son Église (Marc 16.15-16). Ainsi, aujourd'hui, le Seigneur notre Dieu a mis sur notre cœur de publier toutes ces œuvres, qui nous pensons seront une bénédiction pour l'épouse de Christ.",
+  "notreEglisePastorP3": "Or, le Seigneur, notre Dieu, a de nouveau manifesté Son amour envers Son peuple en accomplissant en ce temps de la fin de grandes œuvres que nul autre âge n'a connues. Les mystères restés cachés dans tous les âges ont été révélés aujourd'hui et doivent être portés à la connaissance du peuple de Dieu pour qu'il soit blanchi, purifié et préparé pour l'enlèvement (Daniel 12.4-12). Cette œuvre poursuit un double objectif : partager avec vous l'œuvre que le Seigneur accomplit parmi nous, une œuvre certes difficile, mais si merveilleuse, et amener le croyant à faire du salut des âmes perdues sa préoccupation majeure.",
+  "notreEglisePastorP4": "Nous croyons que le même Saint-Esprit vous révélera votre part de responsabilité dans ce grand et immense travail d'annoncer ce glorieux Évangile, le Message du temps de la fin, aux gens de notre temps, sachant que c'est un âge très court et que le Seigneur est en train d'accomplir une œuvre rapide.",
+  "notreEglisePastorP5": "Que le Seigneur vous accorde donc Sa parfaite grâce pour saisir cette vision afin que tous ensemble, convaincus que le Message est la vérité, c'est le salut de l'humanité et la Lumière dans ce temps des ténèbres, nous nous sentions concernés pour L'apporter à nos frères que l'ennemi tient encore captifs à travers le monde, dans la superstition, dans l'ignorance et dans les ténèbres. Puissions-nous sentir l'urgence d'unir nos efforts et nos talents pour apporter à ce monde mourant l'Évangile de notre Seigneur Jésus-Christ et achever rapidement cette grande mission qu'Il a confiée à Son Église. Puisse le Seigneur vous bénir richement.",
+  "notreEglisePastorSignature": "Votre serviteur,",
+  "notreEgliseSisterChurchPastor": "Pasteur / Contact",
+  "notreEgliseSisterChurches": "Nos Églises sœurs",
+  "notreEgliseSisterChurchesCount": "{count, plural, =1{1 église répertoriée} other{{count} églises répertoriées}}",
+  "@notreEgliseSisterChurchesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notreEgliseSisterChurchesSubtitle": "Nos églises sœurs à travers le monde",
+  "notreEgliseTitle": "Notre Église",
+  "offlineAvailableBannerAudio": "Audio disponible hors ligne",
+  "offlineAvailableBannerBoth": "Audio et vidéo disponibles hors ligne",
+  "offlineAvailableBannerVideo": "Vidéo disponible hors ligne",
+  "offlineAvailableInApp": "disponible dans l'app",
+  "offlineCategoryCantique": "Cantique",
+  "offlineCategoryCeremony": "Cérémonie",
+  "offlineCategoryLibraryPepite": "Pépites (Library)",
+  "offlineCategoryLibraryPublication": "Publication (Library)",
+  "offlineCategoryPredication": "Prédication",
+  "offlineEmptyCantique": "Aucun cantique enregistré",
+  "offlineEmptyCantiqueHint": "Depuis un cantique, enregistrez l'audio ou la vidéo pour y accéder ici.",
+  "offlineEmptyCeremony": "Aucune cérémonie enregistrée",
+  "offlineEmptyCeremonyHint": "Les cérémonies de mariage téléchargées apparaîtront ici.",
+  "offlineEmptyLibrary": "Aucun document bibliothèque",
+  "offlineEmptyLibraryHint": "Téléchargez des pépites d'or ou des messages depuis la bibliothèque pour les lire hors ligne.",
+  "offlineEmptyPredication": "Aucune prédication enregistrée",
+  "offlineEmptyPredicationHint": "Depuis une fiche prédication, utilisez « Télécharger dans l'app » pour écouter sans connexion.",
+  "offlineFileCount": "{count, plural, =0{Aucun fichier} =1{1 fichier} other{{count} fichiers}}",
+  "@offlineFileCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "offlineFileNotFound": "Fichier introuvable sur cet appareil.",
+  "offlinePlaybackFailed": "Impossible de lire ce fichier dans l'application. Vous pouvez l'ouvrir avec le lecteur système.",
+  "offlineOpenExternally": "Ouvrir avec le lecteur système",
+  "offlineFileActions": "Actions sur le fichier",
+  "offlineShareFile": "Partager le fichier",
+  "offlineShowInExplorer": "Afficher dans l'explorateur",
+  "offlineFileRevealed": "Emplacement du fichier ouvert.",
+  "offlineFileLocationUnavailable": "Impossible d'ouvrir l'emplacement de ce fichier.",
+  "offlineMobileFileHint": "Utilisez Partager pour enregistrer une copie ou l'ouvrir dans une autre application.",
+  "offlineFilterAll": "Tous",
+  "offlineLoadError": "Impossible de charger les fichiers.",
+  "offlineNextTrack": "Piste suivante",
+  "offlineNoResults": "Aucun résultat",
+  "offlineNoResultsHint": "Essayez un autre mot-clé ou changez le filtre Audio / Vidéo.",
+  "offlineUnknownPreacher": "Prédicateur inconnu",
+  "offlinePause": "Pause",
+  "offlinePlay": "Lecture",
+  "offlinePlayerTitle": "Lecteur hors ligne",
+  "offlinePreviousTrack": "Piste précédente",
+  "offlineRepeat": "Répéter",
+  "offlineSearchHint": "Rechercher un titre, prédicateur…",
+  "offlineShuffle": "Lecture aléatoire",
+  "offlineSkipBack": "Reculer de 10 s",
+  "offlineSkipForward": "Avancer de 10 s",
+  "offlineFullscreen": "Plein écran",
+  "offlineFullscreenExit": "Quitter le plein écran",
+  "offlineStop": "Arrêter",
+  "offlineStorageSummary": "{count, plural, =1{1 fichier} other{{count} fichiers}} · {sizeMb} Mo",
+  "@offlineStorageSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "sizeMb": {
+        "type": "String"
+      }
+    }
+  },
+  "offlineTabCantiques": "Cantiques",
+  "offlineTabCeremonies": "Cérémonies",
+  "offlineTabLibrary": "Bibliothèque",
+  "offlineTabPredications": "Prédications",
+  "offlineTitle": "Hors ligne",
+  "offlineChooseSection": "Choisissez une section pour parcourir vos fichiers enregistrés.",
+  "offlineSectionMedia": "Médias",
+  "offlineSectionMediaSubtitle": "Prédications, cantiques et cérémonies",
+  "offlineSectionLibrary": "Bibliothèque",
+  "offlineSectionLibrarySubtitle": "Pépites d'or et publications",
+  "ok": "OK",
+  "openPlayer": "Ouvrir le lecteur",
+  "pastorName": "Pasteur Richard Diyoka",
+  "pastorTitle": "Pasteur Richard Diyoka Nsanguluja",
+  "pdf": "PDF",
+  "playOfflineReady": "Hors ligne · prêt",
+  "plusAbout": "À propos",
+  "plusBranham": "WILLIAM MARRION BRANHAM",
+  "plusContact": "Contact",
+  "plusCultes": "Programme des cultes",
+  "plusDonations": "Offrandes / Dons",
+  "plusEcamo": "ECAMO",
+  "plusFondation": "Fondation Shekinah",
+  "plusNotifications": "Notifications",
+  "plusNotreEglise": "Notre Église",
+  "plusPrivacy": "Confidentialité",
+  "plusProfile": "Mon profil",
+  "plusPublication": "Shekinah Publication",
+  "plusSettings": "Paramètres",
+  "plusShareApp": "Partager l'application",
+  "plusTitle": "Plus",
+  "predicationCount": "{count, plural, =0{Aucune prédication} =1{1 prédication} other{{count} prédications}}",
+  "@predicationCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "predicationTimeEvening": "Soir",
+  "predicationTimeMorning": "Matin",
+  "predicationTimeVigil": "Veillée",
+  "predicationTypeParentMeeting": "Réunion de parents",
+  "predicationTypePrayerMeeting": "Réunion de prière",
+  "predicationTypeRegular": "Service régulier",
+  "predicationTypeSpecialMeeting": "Réunion spéciale",
+  "predicationTypeSundaySchool": "École du dimanche",
+  "predicationTypeYouthMeeting": "Réunion de jeunes",
+  "predicationUntitled": "Prédication",
+  "privacyAboutDescription": "Application de streaming pour les cultes Shekinah Gospel",
+  "privacyArchives": "• Archives : Navigation vers le site officiel",
+  "privacyCommitmentFooter": "Pour la gloire de Dieu et votre confidentialité",
+  "privacyCommitmentSubtitle": "Zéro collecte, transparence totale, protection absolue",
+  "privacyCommitmentTitle": "🙏 Notre engagement",
+  "privacyContact": "Contact : jeanmalonga08@gmail.com",
+  "privacyDeveloper": "Développeur : Jean Malonga",
+  "privacyDontAds": "• Aucune publicité : Pas de marketing ciblé",
+  "privacyDontDatabase": "• Aucune base de données : Rien stocké",
+  "privacyDontSignup": "• Aucune inscription : Pas de compte requis",
+  "privacyDontTrack": "• Aucun tracking : Pas de suivi comportemental",
+  "privacyHowItWorks": "🔍 Fonctionnement",
+  "privacyLocalStorage": "• Stockage local : Uniquement sur votre appareil",
+  "privacyNoDataCollection": "❌ AUCUNE COLLECTE DE DONNÉES",
+  "privacyNoDataItem1": "• Shekinah Tabernacle ne collecte AUCUNE donnée personnelle",
+  "privacyNoDataItem2": "• Pas de compte utilisateur ni de profil",
+  "privacyNoDataItem3": "• Aucun suivi ou analytics",
+  "privacyNoDataItem4": "• Aucune vente de données",
+  "privacyPermissionsItem1": "• Internet : Pour accéder aux contenus web",
+  "privacyPermissionsItem2": "• Stockage : Pour les préférences locales",
+  "privacyPermissionsItem3": "• Aucune autre : Pas de GPS, contacts, etc.",
+  "privacyPermissionsTitle": "📱 Permissions",
+  "privacyProtectionItem1": "• Aucune donnée à protéger : Puisque rien n'est collecté",
+  "privacyProtectionItem2": "• Connexion sécurisée : HTTPS pour le streaming",
+  "privacyProtectionItem3": "• Code transparent : Open source et vérifiable",
+  "privacyProtectionItem4": "• Contrôle total : Vous gérez vos propres données",
+  "privacyProtectionTitle": "🔒 Protection",
+  "privacyStreaming": "• Streaming direct : Via WebView vers shekinahgospel.org",
+  "privacySupport": "• Support : Contact direct hors de l'application",
+  "privacyTitle": "Politique de Confidentialité",
+  "privacyVersion": "Version 1.0.0 - 20 Avril 2026",
+  "privacyWhatWeDontDo": "✅ Ce que nous ne faisons PAS",
+  "privacyYourRightsItem1": "• Liberté totale : Aucune contrainte ou tracking",
+  "privacyYourRightsItem2": "• Contrôle local : Uniquement sur votre appareil",
+  "privacyYourRightsItem3": "• Suppression : Données effacées à la désinstallation",
+  "privacyYourRightsItem4": "• Support : jeanmalonga08@gmail.com",
+  "privacyYourRightsTitle": "👤 Vos droits",
+  "profileAccountInfo": "Informations du compte",
+  "profileAssembly": "Assemblée",
+  "profileAssemblyName": "Shekinah Tabernacle — Matete",
+  "profileFaithfulAccount": "Compte fidèle",
+  "profileLivesJoined": "Lives\nrejoints",
+  "profileLoggedOut": "Vous êtes déconnecté.",
+  "profileLoginPrompt": "Connectez-vous pour synchroniser vos préférences et retrouver votre activité sur tous vos appareils.",
+  "profileLogout": "Se déconnecter",
+  "profileNotConnected": "Non connecté",
+  "profileNotificationsSubtitle": "Live, communiqués, cultes",
+  "profilePhone": "Téléphone",
+  "profilePrayerTopics": "Sujets de prière",
+  "profilePrayerTopicsSubtitle": "Annonces d'intercession de l'église",
+  "profilePredicationsListened": "Prédications\nécoutées",
+  "profilePreferences": "Préférences",
+  "profilePreferencesSaved": "Préférences enregistrées localement.",
+  "profileRequestsSent": "Requêtes\nenvoyées",
+  "profileSupportMoriah": "Soutenir Moriah",
+  "profileSupportMoriahSubtitle": "Campagne de reconstruction",
+  "profileVisitor": "Visiteur",
+  "profileVisitorMode": "Mode visiteur",
+  "publicationBrochuresDistributed": "Plus de 33 millions de brochures distribuées gratuitement",
+  "publicationBrochuresProduced": "Plus de 40 millions de brochures produites",
+  "publicationBrowsePrinted": "Consulter tous les Messages imprimés",
+  "publicationFactCountries": "60 pays desservis à travers le monde",
+  "publicationFactPrinted": "808 messages imprimés en français",
+  "publicationFactTitles": "147 titres en langues nationales, 117 en langues étrangères",
+  "publicationFactTranslated": "1206 messages traduits en 17 ans de travail",
+  "publicationGoldenNuggets": "Citations/Pépites d'or rassemblées sur différents sujets",
+  "publicationInNumbers": "En chiffres",
+  "publicationJune2013": "03 juin 2013 : Fin de la traduction en français",
+  "publicationJune2013P1": "Le lundi 3 juin 2013, date du 23ème anniversaire de Shekinah Tabernacle, les traducteurs de Shekinah Publications ont remis solennellement le dernier sermon traduit — « Le Son confus », prêché à Jeffersonville le 18 décembre 1960 — entre les mains du Révérend Pasteur Richard Diyoka, au Village Béthanie.",
+  "publicationJune2013P2": "L'Épouse du monde francophone dispose ainsi de la totalité des sermons traduits en français prêchés par le prophète de Dieu William Marrion Branham. Ce jour marquait l'achèvement de 17 ans de travail de traduction.",
+  "publicationLabel": "Shekinah Publications",
+  "publicationMessageForAge": "Le Message pour cet âge",
+  "publicationMessageForAgeP1": "Le Révérend William Marrion Branham, que le Dieu Tout-Puissant a confirmé comme le prophète de Dieu pour notre génération, a reçu du Seigneur un Message pour cet âge, contenu dans plus ou moins 1200 sermons enregistrés sur des bandes magnétiques.",
+  "publicationMessageForAgeP2": "Ce Message devait être traduit, dans plusieurs langues, pour être diffusé à travers le monde entier, pour l'édification de l'Église et la préparation de l'Épouse du Seigneur Jésus-Christ. Shekinah Missions est convaincue que ce Message est l'Évangile du Seigneur Jésus-Christ pour ce temps de la fin.",
+  "publicationMissionSummary": "Traduction, impression et diffusion gratuite du Message du temps de la fin dans le monde entier, pour l'édification de l'Église.",
+  "publicationOurMission": "Notre mission",
+  "publicationOurMissionP1": "Shekinah Missions s'est donné la charge de diffuser cette Bonne Nouvelle du Royaume par la traduction du Message dans les langues nationales et internationales, ainsi que par la prédication et l'enseignement de la Parole de Dieu conformément au Message du temps de la fin et à la Bible (Éphésiens, chapitre 4).",
+  "publicationOurMissionP2": "Shekinah Missions reçoit les demandes des sermons du prophète de Dieu, William Marrion Branham, et y répond en envoyant gratuitement ces sermons. 60 pays à travers le monde sont servis.",
+  "publicationScriptureQuote": "« Louez l'Éternel, invoquez son nom ! Faites connaître parmi les peuples ses hauts faits ! »",
+  "publicationScriptureRef": "Psaume 105:1",
+  "publicationTagline": "Œuvre missionnaire pour l'Épouse de Christ",
+  "publicationTitle": "Shekinah Publication",
+  "refresh": "Actualiser",
+  "requetesFooter": "Ces sujets sont publiés par l'église pour l'union de prière. Ils ne constituent pas un formulaire à remplir.",
+  "requetesHeader": "Sujets de prière de l'assemblée",
+  "requetesMission": "Mission & ouvriers",
+  "requetesMissionBody": "Souvenons-nous des pasteurs, évangélistes et ouvriers envoyés dans les champs. Que la Parole accomplisse Malachie 4:5-6.",
+  "requetesMoriah": "Intercession pour le Temple Moriah",
+  "requetesMoriahBody": "L'assemblée est appelée à prier sans relâche pour la reconstruction du Temple Moriah après l'incendie du 17 mai 2026. Que le Seigneur relève Sa maison et fortifie Son peuple.",
+  "requetesSick": "Malades et hôpitaux",
+  "requetesSickBody": "Nous portons devant le Seigneur Jésus-Christ tous les frères et sœurs en souffrance, ainsi que les familles qui accompagnent leurs malades dans les hôpitaux de Kinshasa et ailleurs.",
+  "requetesSubtitle": "Annonces officielles portées à l'intercession par {appName}.",
+  "@requetesSubtitle": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "requetesTitle": "Requêtes",
+  "requetesYouth": "Jeunes & familles",
+  "requetesYouthBody": "Prière pour la jeunesse de Shekinah Tabernacle, les foyers chrétiens et la préparation de l'Épouse à la venue de notre Seigneur.",
+  "retry": "Réessayer",
+  "searchHint": "Rechercher prédications, cantiques...",
+  "searchNoResults": "Aucun résultat pour cette recherche.",
+  "searchSectionCantiques": "Cantiques",
+  "searchSectionPredications": "Prédications",
+  "searchTitle": "Recherche",
+  "searchTypeHint": "Tapez un titre, un prédicateur ou un cantique.",
+  "seeAll": "Voir tout",
+  "seeLess": "Voir moins",
+  "seeMore": "Voir plus...",
+  "seeMoreArrow": "Voir plus →",
+  "settingsAppearance": "Apparence",
+  "settingsApplication": "Application",
+  "settingsDeveloperContact": "Contact développeur",
+  "settingsInformation": "Informations",
+  "settingsLanguage": "Langue",
+  "settingsLanguageTitle": "Langue de l'application",
+  "settingsPrivacyPolicy": "Politique de confidentialité",
+  "settingsPrivacySubtitle": "Consulter les conditions d'utilisation",
+  "settingsTheme": "Thème",
+  "settingsThemeDark": "Sombre",
+  "settingsThemeLight": "Clair",
+  "settingsThemeSystem": "Système",
+  "settingsTitle": "Paramètres",
+  "settingsVersion": "Version",
+  "settingsWorshipSchedule": "Horaires de culte",
+  "share": "Partager",
+  "shareAppMessage": "Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\nApple Store : le lien Apple sera bientôt disponible\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !",
+  "@shareAppMessage": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      },
+      "playStoreUrl": {
+        "type": "String"
+      },
+      "websiteUrl": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCantiqueBody": "Cantique : {title}\n{subtitle}\n\nÉcoutez ce cantique dans l'application {appName} :\n{playStoreUrl}\n\nSite : {websiteUrl}",
+  "@shareCantiqueBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "subtitle": {
+        "type": "String"
+      },
+      "appName": {
+        "type": "String"
+      },
+      "playStoreUrl": {
+        "type": "String"
+      },
+      "websiteUrl": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCantiqueSubject": "Cantique : {title}",
+  "@shareCantiqueSubject": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "shareListenInApp": "Écoutez cette prédication dans l'application {appName} :",
+  "@shareListenInApp": {
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "shareOfflineBody": "{category} : {title}\n{subtitle}\n{format} · disponible dans l'app\n\nRetrouvez ce contenu dans l'application {appName} :\n{playStoreUrl}\n\nSite : {websiteUrl}",
+  "@shareOfflineBody": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      },
+      "subtitle": {
+        "type": "String"
+      },
+      "format": {
+        "type": "String"
+      },
+      "appName": {
+        "type": "String"
+      },
+      "playStoreUrl": {
+        "type": "String"
+      },
+      "websiteUrl": {
+        "type": "String"
+      }
+    }
+  },
+  "sharePredicationBody": "Prédication : {title}\n{preacher}\n{date}\n\nÉcoutez cette prédication dans l'application Shekinah Tabernacle :\n{playStoreUrl}\n\nSite : {archivesUrl}",
+  "@sharePredicationBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "preacher": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      },
+      "archivesUrl": {
+        "type": "String"
+      },
+      "playStoreUrl": {
+        "type": "String"
+      }
+    }
+  },
+  "sharePredicationSubject": "Prédication : {title}",
+  "@sharePredicationSubject": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "shareSite": "Site : {url}",
+  "@shareSite": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "sinistreAfterTitle": "APRÈS LE FEU :",
+  "sinistreBadge": "SINISTRE MAJEUR · 17 MAI 2026",
+  "sinistreBadgeAfterFire": "APRÈS L'INCENDIE",
+  "sinistreBadgeSplendid": "DÉDICACE SPLENDIDE",
+  "sinistreBalconyBody": "Le balcon endommagé après l'incendie du dimanche 17 mai 2026.",
+  "sinistreBeforeBody": "Le majestueux Temple Moriah étincelant de lumière lors de sa dédicace triomphale en Août 2018.",
+  "sinistreBeforeTitle": "AVANT L'ÉPREUVE :",
+  "sinistreEntranceBody": "L'entrée principale du Temple Moriah après l'incendie du dimanche 17 mai 2026.",
+  "sinistreFacadeBody": "La façade a subi d'importants dommages structurels après l'incendie.",
+  "sinistreFacadeTitle": "FAÇADE PRINCIPALE",
+  "sinistreNotificationBody": "Incendie du 17 mai 2026. Soutenez la reconstruction du temple.",
+  "sinistreNotificationTitle": "Sinistre Majeur — Temple Moriah",
+  "sinistreRoofBody": "La toiture touchée par l'incendie du dimanche 17 mai 2026.",
+  "sinistreSanctuaryBody": "Le sanctuaire dévasté après l'incendie du dimanche 17 mai 2026.",
+  "sinistreVideoBeforeBody": "Le temple en pleine vie, résonnant des chants de louange de milliers de fidèles.",
+  "sinistreVideoAfterBody": "Les images saisissantes de l'incendie dévastateur consumant le sanctuaire.",
+  "sinistreSupportReconstruction": "Soutenir la reconstruction",
+  "sizeKilobytes": "{size} Ko",
+  "@sizeKilobytes": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "sizeMegabytes": "{size} Mo",
+  "@sizeMegabytes": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "splashConnecting": "Connexion au réseau…",
+  "splashLoading": "Chargement…",
+  "themeModeDark": "Mode sombre",
+  "themeModeLight": "Mode clair",
+  "themeModeSystem": "Thème système",
+  "thisWeek": "Cette semaine",
+  "timeoutError": "La connexion a expiré. Veuillez réessayer.",
+  "today": "Aujourd'hui",
+  "unavailable": "Indisponible",
+  "video": "Vidéo",
+  "videoPlaybackHint": "La vidéo est lue dans le lecteur ci-dessus. Utilisez les contrôles pour mettre en pause ou passer en plein écran.",
+  "videoRelatedCantiques": "Cantiques à regarder",
+  "videoRelatedPredications": "Prédications similaires ou récentes",
+  "visionMessage": "Nous croyons au Message prêché par William Marrion Branham, accomplissant Malachie 4:5-6. À travers le Cri, ce Message appelle une Épouse à se préparer à la venue de notre Seigneur Jésus-Christ.",
+  "visionTitle": "La Parole pour l'Épouse",
+  "website": "Site web",
+  "welcomeBlessing": "Que la présence de Dieu vous accompagne",
+  "worshipAt": "À {time}",
+  "@worshipAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "worshipSunday": "Dimanche",
+  "worshipThursday": "Jeudi",
+  "worshipTimeEvening": "17h00",
+  "worshipTimeSunday": "09h30",
+  "worshipWednesday": "Mercredi",
+  "yesterday": "Hier",
+  "downloadDataSaver": "Économie de données (720p)",
+  "downloadDataSaverHint": "Qualité nette sur téléphone, moins de données",
+  "downloadAudioDataHint": "Beaucoup plus léger que la vidéo",
+  "plusUserManual": "Manuel d'utilisation",
+  "userManualTitle": "Manuel d'utilisation",
+  "userManualSubtitle": "Guide détaillé pour suivre les cultes, explorer les archives et maîtriser toutes les fonctions de l'application.",
+  "userManualIntroTitle": "Bienvenue",
+  "userManualIntroBody": "Shekinah Tabernacle est l'application officielle de l'Assemblée Shekinah Tabernacle. Elle regroupe le culte en direct, les archives de prédications, les cantiques, la bibliothèque numérique et vos médias téléchargés.\n\n• Six onglets en bas de l'écran organisent la navigation principale.\n• Cinq langues sont disponibles : français, anglais, espagnol, portugais et chinois.\n• Internet est nécessaire pour le streaming et les téléchargements ; seuls les fichiers déjà enregistrés se lisent hors connexion.\n• Ouvrez chaque section ci-dessous pour un mode d'emploi pas à pas.",
+  "userManualNavTitle": "Navigation",
+  "userManualNavBody": "La barre inférieure comporte six onglets permanents :\n\n• Accueil — tableau de bord, statut du direct, annonces et raccourcis.\n• Prédications — catalogue complet des sermons archivés.\n• Cantiques — hymnes en audio ou vidéo.\n• Hors ligne — fichiers enregistrés sur l'appareil.\n• Bibliothèque — livres, pépites d'or et publications PDF.\n• Plus — contenus complémentaires, contact, réglages et ce manuel.\n\nPendant un direct, une fenêtre flottante peut rester visible par-dessus les autres écrans pour continuer l'écoute en naviguant.",
+  "userManualHomeTitle": "Accueil",
+  "userManualHomeBody": "L'écran d'accueil centralise les informations utiles au quotidien :\n\n• En-tête — cloche (notifications), profil, menu (thème clair/sombre/système, langue, manuel).\n• Recherche — barre en haut ; ouvre la recherche globale prédications + cantiques.\n• Bannière Direct — rouge et animée si un culte est en cours ; sinon compte à rebours vers le prochain service.\n• À la une — carrousel de communiqués et prédications récentes ; « Tout voir » ouvre la page dédiée.\n• Temple Moriah — accès à la campagne de reconstruction.\n• Programme hebdomadaire — prochains cultes ; « Voir plus » ouvre l'horaire complet.\n• Annonces importantes — communiqués en vigueur de l'assemblée.\n\nTirez la page vers le bas pour actualiser le statut du direct.",
+  "userManualLiveTitle": "Culte en direct",
+  "userManualLiveBody": "Accédez au direct via la bannière rouge sur l'accueil.\n\nRejoindre le culte\n• Touchez le bouton de lecture central pour démarrer.\n• Choisissez Vidéo (Vimeo) ou Audio (flux radio Shekinah).\n• Sélectionnez la langue disponible : FR, EN ou PT selon le flux.\n\nPendant le direct\n• Le badge LIVE confirme la diffusion en cours.\n• Vidéo : plein écran via l'icône dédiée ; fenêtre flottante pour continuer ailleurs dans l'app.\n• Sous le lecteur vidéo : barre indiquant votre temps d'écoute et la durée totale du live.\n• Le statut se rafraîchit automatiquement ; tirez vers le bas pour forcer l'actualisation.\n• Ajustez le volume avec les boutons physiques du téléphone.\n\nEn cas de problème\n• Un message clair s'affiche (connexion ou flux indisponible).\n• Touchez Réessayer après avoir vérifié votre Internet.\n\nHors direct\n• L'écran affiche l'horaire et le compte à rebours du prochain culte.",
+  "userManualPredicationsTitle": "Prédications",
+  "userManualPredicationsBody": "L'onglet Prédications donne accès aux archives du site shekinahgospel.org.\n\nRecherche et filtres\n• Barre de recherche — titre, prédicateur ou lieu (texte libre).\n• Année et Prédicateur — deux filtres côte à côte sur la même ligne.\n• Plus de filtres — type de culte, moment (matin/soir/veillée) et lieu (lieux normalisés).\n• Un badge rouge indique le nombre de filtres actifs ; un résumé s'affiche sous le bouton.\n• Choisir un prédicateur efface l'année pour afficher tout son historique.\n\nConsultation\n• Touchez une prédication pour ouvrir la fiche détail.\n• Écoutez l'audio ou regardez la vidéo selon disponibilité.\n• Faites défiler pour charger plus de résultats ; tirez vers le bas pour actualiser.\n\nTéléchargement hors ligne\n• Sur la fiche : bouton Télécharger → audio (recommandé, plus léger) ou vidéo.\n• Vidéo : privilégiez « Économie de données (720p) » pour limiter la consommation mobile.\n• Partagez une prédication via le bouton Partager.",
+  "userManualCantiquesTitle": "Cantiques",
+  "userManualCantiquesBody": "L'onglet Cantiques réunit les hymnes de l'assemblée.\n\nRecherche et filtres\n• Barre de recherche — titre, catégorie, interprète ou numéro.\n• Format et Filtrer par — deux menus sur la même ligne (audio, vidéo ou catégorie).\n\nÉcoute\n• Ouvrez un cantique pour lancer la lecture audio ou vidéo.\n• Les vidéos YouTube utilisent une qualité adaptée au mobile (environ 720p).\n\nTéléchargement\n• Sur la fiche détail : enregistrez l'audio ou la vidéo pour une lecture hors ligne.\n• Les fichiers apparaissent dans l'onglet Hors ligne → Cantiques.\n\nTirez la liste vers le bas pour actualiser le catalogue.",
+  "userManualOfflineTitle": "Hors ligne",
+  "userManualOfflineBody": "L'onglet Hors ligne centralise tout ce que vous avez téléchargé.\n\nOrganisation\n• Deux sections : Prédications et Cantiques.\n• Chaque section affiche le nombre de fichiers et l'espace utilisé.\n\nDans une section\n• Barre de recherche pour retrouver un titre.\n• Filtres par type de média (audio, vidéo, PDF…).\n• Touchez un fichier pour le lire dans le lecteur intégré.\n\nGestion\n• Supprimez un fichier via le menu ou une action longue.\n• Les téléchargements en cours apparaissent dans une bannière en haut de l'app.\n• Partager l'app envoie une invitation ; Partager le fichier envoie le média téléchargé.\n• Ouvrir dans l'explorateur (Android) localise le fichier sur l'appareil.",
+  "userManualLibraryTitle": "Bibliothèque",
+  "userManualLibraryBody": "L'onglet Bibliothèque donne accès aux ressources écrites Shekinah Publications.\n\nTrois rubriques\n• Bibliothèque — messages et ouvrages généraux.\n• Pépites d'or — sélections courtes.\n• Publications — catalogue Shekinah Publications.\n\nLecture PDF\n• Touchez un ouvrage pour l'ouvrir dans le navigateur intégré.\n• Téléchargez le PDF pour une lecture hors connexion.\n• Le lecteur intégré permet zoom, défilement, recherche dans le document et signets.\n• Les PDF téléchargés sont accessibles depuis Hors ligne.",
+  "userManualSearchTitle": "Recherche",
+  "userManualSearchBody": "La recherche globale est accessible depuis la barre en haut de l'accueil.\n\nFonctionnement\n• Saisissez au moins un mot : la recherche démarre automatiquement après une courte pause.\n• Les résultats prédications et cantiques s'affichent dans des sections distinctes.\n• Touchez un résultat pour ouvrir directement la fiche correspondante.\n\nConseils\n• Utilisez le nom du prédicateur, un mot du titre ou une ville pour les prédications.\n• Pour les cantiques, le numéro ou la catégorie fonctionnent aussi.\n• Sans connexion Internet, la recherche n'est pas disponible.",
+  "userManualNotificationsTitle": "Notifications, profil et réglages",
+  "userManualNotificationsBody": "Notifications\n• Cloche sur l'accueil → liste des annonces (direct, communiqués, rappels).\n• Touchez une notification pour ouvrir le contenu concerné.\n• Marquez tout comme lu via le bouton en haut.\n\nProfil\n• Accessible depuis l'accueil ou le menu Plus.\n• Connexion optionnelle pour personnaliser votre compte.\n• Raccourcis vers la bibliothèque et les requêtes de mariage.\n\nParamètres (menu Plus)\n• Thème : clair, sombre ou automatique (système).\n• Langue : français, anglais, espagnol, portugais, chinois.\n• Contact WhatsApp, politique de confidentialité, version de l'app.",
+  "userManualPlusTitle": "Menu Plus",
+  "userManualPlusBody": "L'onglet Plus regroupe les contenus et services complémentaires :\n\n• Cultes — horaires réguliers et cultes spéciaux.\n• Notre Église — présentation, pasteur, églises sœurs.\n• Shekinah Publications — catalogue et liens éditoriaux.\n• Fondation Shekinah — œuvre missionnaire.\n• ECAMO — école et formation.\n• William Branham — ressources sur le prophète.\n• Documentaire / Scénette — vidéos thématiques.\n• Recueils de cantiques — partitions et recueils.\n• Dons — soutien financier en ligne.\n• Partager l'app — invitation à télécharger Shekinah Tabernacle.\n• Notifications, Contact, Profil, Manuel, À propos, Confidentialité, Paramètres.",
+  "userManualTipsTitle": "Astuces",
+  "userManualTipsBody": "Économie de données\n• Préférez l'audio des prédications : beaucoup plus léger que la vidéo.\n• En vidéo, choisissez « Économie de données (720p) ».\n• Téléchargez en Wi-Fi pour écouter ou lire plus tard sans consommer de forfait.\n\nDirect\n• Le mode audio consomme moins de données que la vidéo.\n• La fenêtre flottante permet de suivre le culte tout en consultant les archives.\n\nConfort\n• Mode sombre recommandé le soir ; mode clair en journée.\n• Changez la langue de l'interface sans redémarrer l'application.\n• En cas d'erreur réseau, vérifiez d'abord votre connexion avant de réessayer.",
+  "homeUpdateAvailable": "Mise à jour disponible",
+  "homeUpdateRequired": "Mise à jour requise",
+  "homeUpdateAvailableHint": "La version {version} est disponible sur le store.",
+  "@homeUpdateAvailableHint": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "homeUpdateNow": "Mettre à jour",
+  "homeUpdateLater": "Plus tard",
+  "audioStreamOutsideCultTitle": "Direct audio disponible",
+  "audioStreamOutsideCultHint": "Vous pouvez suivre le direct audio en dehors des heures de culte.",
+  "audioStreamOutsideCultAction": "Direct"
+}

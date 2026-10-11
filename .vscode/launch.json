@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Shekinah Live (Chrome)",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "chrome"
+    },
+    {
+      "name": "Shekinah Live (Edge)",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "edge"
+    },
+    {
+      "name": "Shekinah Live (Windows)",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "windows"
+    },
+    {
+      "name": "Shekinah Live (Android)",
+      "request": "launch",
+      "type": "dart",
+      "deviceId": "android"
+    }
+  ]
+}

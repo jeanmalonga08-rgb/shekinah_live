@@ -3,7 +3,7 @@ class AppConstants {
 
   static const String appName = 'Shekinah Tabernacle';
   static const String appShortName = 'Shekinah';
-  static const String appVersion = '5.0.0';
+  static const String appVersion = '5.1.0';
   static const String templeMoriahName = 'Temple Moriah';
   static const String churchTagline = 'Interdénominationnelle';
   static const String pastorName = 'Pasteur Richard Diyoka';

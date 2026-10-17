@@ -1,6 +1,9 @@
 name: Publish Android to Google Play
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       track:
@@ -13,18 +16,56 @@ on:
         default: alpha
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: google-play-${{ inputs.track }}
+  group: google-play-release
   cancel-in-progress: false
 
 jobs:
   publish:
+    outputs:
+      track: ${{ steps.release-track.outputs.track }}
+      version-ref: ${{ steps.commit-version.outputs.sha }}
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.event_name == 'push' && 'automatic-production' || inputs.track == 'production' && 'production-review' || 'alpha' }}
+      url: https://play.google.com/console/
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+
+      - name: Select release track
+        id: release-track
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_TRACK: ${{ inputs.track }}
+        run: |
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            echo "track=production" >> "$GITHUB_OUTPUT"
+          else
+            echo "track=$DISPATCH_TRACK" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Increment and commit Android version
+        id: commit-version
+        run: |
+          if [[ "$GITHUB_REF" != refs/heads/* ]]; then
+            echo "Publishing requires a branch ref." >&2
+            exit 1
+          fi
+          python scripts/bump_version_for_aab.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pubspec.yaml lib/core/constants/app_constants.dart
+          git commit -m "chore: bump Android build number [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -66,22 +107,32 @@ jobs:
           ANDROID_RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_RELEASE_KEY_PASSWORD }}
         run: flutter build appbundle --release
 
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shekinah-live-android-aab-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/app/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+          retention-days: 14
+
       - name: Publish bundle to Google Play
         uses: r0adkll/upload-google-play@v1.1.3
         with:
           serviceAccountJson: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}
           packageName: com.shekinah.tabernacle
           releaseFiles: build/app/outputs/bundle/release/app-release.aab
-          track: ${{ inputs.track }}
+          track: ${{ steps.release-track.outputs.track }}
           status: completed
 
   notify-alpha:
     needs: publish
-    if: ${{ inputs.track == 'alpha' }}
+    if: ${{ needs.publish.outputs.track == 'alpha' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish.outputs.version-ref }}
 
       - name: Notify users after alpha publication
         env:
@@ -90,16 +141,15 @@ jobs:
 
   notify-production:
     needs: publish
-    if: ${{ inputs.track == 'production' }}
+    if: ${{ needs.publish.outputs.track == 'production' }}
     runs-on: ubuntu-latest
-    environment:
-      name: production-review
-      url: https://play.google.com/console/
     steps:
       - name: Check out source
         uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish.outputs.version-ref }}
 
-      - name: Notify users after production approval
+      - name: Notify users after production publication
         env:
           OPS_API_KEY: ${{ secrets.OPS_API_KEY }}
         run: python scripts/bump_version_for_aab.py --sync-api-only --track production

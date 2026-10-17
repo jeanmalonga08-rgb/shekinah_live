@@ -2,8 +2,8 @@
 """Bump pubspec.yaml version before flutter build appbundle.
 
 Policy (Shekinah Live):
-- Normally: increment build number only (x.y.z+N -> x.y.z+(N+1)).
-- When build number is 9: rollover to (major+1).0.0+0 (e.g. 1.0.2+9 -> 2.0.0+0).
+- Increment the Android build number monotonically (x.y.z+N -> x.y.z+(N+1)).
+- Never reset the build number: Google Play requires versionCode to increase.
 
 Also syncs:
 - lib/core/constants/app_constants.dart (appVersion)
@@ -41,8 +41,6 @@ APP_VERSION = re.compile(
 
 
 def next_version(major: int, minor: int, patch: int, build: int) -> tuple[int, int, int, int]:
-    if build >= 9:
-        return major + 1, 0, 0, 0
     return major, minor, patch, build + 1
 
 
@@ -169,15 +167,6 @@ def main() -> int:
         return 0
 
     print(f"{old_label} -> {new_label}")
-
-    if build >= 9:
-        print(
-            "Rollover: build was 9 — major +1, version reset to x.0.0, build reset to 0."
-        )
-        print(
-            "Play Store: versionCode (+N) must always increase. "
-            "If +9 was already uploaded, set build to at least 10 manually."
-        )
 
     if args.dry_run:
         return 0

@@ -19,6 +19,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get aLaLuneOfficialCommunique => 'Comunicado oficial';
 
   @override
+  String get aLaLunePastorAnniversaryFooter =>
+      '¡Mientras tanto, feliz Acción de Gracias!';
+
+  @override
+  String get aLaLunePastorAnniversaryTitle => '70 años de ministerio';
+
+  @override
   String get aLaLuneRecentPredications => 'Predicaciones del mes';
 
   @override
@@ -26,6 +33,9 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get aLaLuneSubtitle => 'Anuncios en vigor y fotos del Temple Moriah.';
+
+  @override
+  String get aLaLuneThanksgivingBadge => 'Thanksgiving';
 
   @override
   String get aLaLuneTitle => 'A la lune';
@@ -2370,7 +2380,7 @@ class AppLocalizationsEs extends AppLocalizations {
     String playStoreUrl,
     String websiteUrl,
   ) {
-    return 'Descubra la aplicación $appName: cultos en directo, predicaciones, cánticos y mucho más.\n\nPlay Store: $playStoreUrl\nApple Store: el enlace de Apple estará disponible pronto\nSitio web: $websiteUrl\n\n¡Comparta e invite a sus seres queridos a unirse a la comunidad!';
+    return 'Descubra la aplicación $appName: cultos en directo, predicaciones, cánticos y mucho más.\n\nPlay Store: $playStoreUrl\n\nApple Store: el enlace de Apple estará disponible pronto\n\nSitio web: $websiteUrl\n\n¡Comparta e invite a sus seres queridos a unirse a la comunidad!';
   }
 
   @override
@@ -2703,4 +2713,389 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get audioStreamOutsideCultAction => 'Directo';
+
+  @override
+  String get adminLoginAppBarTitle => 'Área de administración';
+
+  @override
+  String get adminLoginPanelSubtitle => 'Gestión de comunicados';
+
+  @override
+  String get adminLoginTitle => 'Acceso de administrador';
+
+  @override
+  String get adminLoginSubtitle => 'Inicie sesión para continuar.';
+
+  @override
+  String get adminUsernameLabel => 'Nombre de usuario';
+
+  @override
+  String get adminUsernameRequired => 'Introduzca su nombre de usuario.';
+
+  @override
+  String get adminPasswordLabel => 'Contraseña';
+
+  @override
+  String get adminShowPassword => 'Mostrar contraseña';
+
+  @override
+  String get adminHidePassword => 'Ocultar contraseña';
+
+  @override
+  String get adminRememberMe => 'Mantener la sesión en este dispositivo';
+
+  @override
+  String get adminSigningIn => 'Iniciando sesión…';
+
+  @override
+  String get adminSignIn => 'Iniciar sesión';
+
+  @override
+  String get adminAccess => 'Acceder a administración';
+
+  @override
+  String get adminLoginFailed =>
+      'No se pudo iniciar sesión. Compruebe las credenciales y la conexión de red.';
+
+  @override
+  String get adminCommuniques => 'Comunicados';
+
+  @override
+  String get adminRefresh => 'Actualizar';
+
+  @override
+  String get adminAccountSettings => 'Ajustes de la cuenta de administrador';
+
+  @override
+  String get adminCreateNew => 'Nuevo';
+
+  @override
+  String adminGreeting(String name) {
+    return 'Hola, $name';
+  }
+
+  @override
+  String get adminOverview => 'Resumen';
+
+  @override
+  String get adminTotal => 'Total';
+
+  @override
+  String get adminDrafts => 'Borradores';
+
+  @override
+  String get adminPublished => 'Publicados';
+
+  @override
+  String get adminArchived => 'Archivados';
+
+  @override
+  String get adminRecent => 'Recientes';
+
+  @override
+  String get adminRecentCount => 'Últimos 3';
+
+  @override
+  String get adminNoRecent => 'No hay comunicados recientes.';
+
+  @override
+  String get adminAllCommuniques => 'Todos los comunicados';
+
+  @override
+  String get adminFilterAll => 'Todos';
+
+  @override
+  String get adminNoCommuniques =>
+      'No hay comunicados. Cree su primer borrador.';
+
+  @override
+  String get adminNoMatchingCommuniques =>
+      'No hay comunicados en esta categoría.';
+
+  @override
+  String get adminLoadCommuniquesFailed =>
+      'No se pudieron cargar los comunicados.';
+
+  @override
+  String get adminRetry => 'Reintentar';
+
+  @override
+  String get adminPublishConfirmTitle => '¿Publicar este comunicado?';
+
+  @override
+  String get adminPublishConfirmMessage =>
+      'Se enviará una notificación a los dispositivos registrados.';
+
+  @override
+  String get adminPublishAction => 'Publicar';
+
+  @override
+  String get adminPublishSuccess => 'Comunicado publicado.';
+
+  @override
+  String get adminPublishFailure => 'No se pudo publicar el comunicado.';
+
+  @override
+  String get adminArchiveConfirmTitle => '¿Archivar este comunicado?';
+
+  @override
+  String get adminArchiveConfirmMessage =>
+      'Ya no aparecerá en la lista pública.';
+
+  @override
+  String get adminArchiveAction => 'Archivar';
+
+  @override
+  String get adminArchiveSuccess => 'Comunicado archivado.';
+
+  @override
+  String get adminArchiveFailure => 'No se pudo archivar el comunicado.';
+
+  @override
+  String get adminDeleteConfirmTitle => '¿Eliminar este comunicado?';
+
+  @override
+  String get adminDeleteConfirmMessage =>
+      'La notificación asociada se eliminará antes que el comunicado. Esta acción es definitiva.';
+
+  @override
+  String get adminDeleteAction => 'Eliminar';
+
+  @override
+  String get adminDeleteSuccess => 'Comunicado eliminado.';
+
+  @override
+  String get adminDeleteFailure => 'No se pudo eliminar el comunicado.';
+
+  @override
+  String get adminCancel => 'Cancelar';
+
+  @override
+  String get adminAdminCreated => 'Cuenta de administrador creada.';
+
+  @override
+  String get adminSessionExpired =>
+      'La sesión ha caducado. Inicie sesión de nuevo.';
+
+  @override
+  String get adminChangePasswordTitle => 'Cambiar contraseña';
+
+  @override
+  String get adminCurrentPassword => 'Contraseña actual';
+
+  @override
+  String get adminNewPassword => 'Nueva contraseña';
+
+  @override
+  String get adminPasswordMinHint => '12 caracteres como mínimo';
+
+  @override
+  String get adminRequired => 'Campo obligatorio';
+
+  @override
+  String get adminSave => 'Guardar';
+
+  @override
+  String get adminPasswordChanged =>
+      'Contraseña cambiada. Inicie sesión de nuevo.';
+
+  @override
+  String get adminPasswordChangeFailure => 'No se pudo cambiar la contraseña.';
+
+  @override
+  String get adminEditDraft => 'Editar borrador';
+
+  @override
+  String get adminNewCommunique => 'Nuevo comunicado';
+
+  @override
+  String get adminSaveDraft => 'Guardar borrador';
+
+  @override
+  String get adminTitle => 'Título';
+
+  @override
+  String get adminTitleRequired => 'El título es obligatorio.';
+
+  @override
+  String get adminCommuniqueType => 'Tipo de comunicado';
+
+  @override
+  String get adminTypeInformation => 'Información';
+
+  @override
+  String get adminTypeEvent => 'Evento';
+
+  @override
+  String get adminTypeUrgent => 'Urgente';
+
+  @override
+  String get adminTypeWorship => 'Culto';
+
+  @override
+  String get adminTypeOther => 'Otro';
+
+  @override
+  String get adminBody => 'Texto del comunicado';
+
+  @override
+  String get adminBodyRequired => 'El texto es obligatorio.';
+
+  @override
+  String get adminMediaUrl => 'URL de medio existente (opcional)';
+
+  @override
+  String get adminInvalidUrl => 'Introduzca una URL HTTP o HTTPS válida.';
+
+  @override
+  String get adminChooseAttachment => 'Elegir imagen, texto o vídeo';
+
+  @override
+  String get adminReplaceAttachment => 'Reemplazar archivo adjunto';
+
+  @override
+  String get adminExpiryNone => 'Sin fecha de caducidad';
+
+  @override
+  String adminExpiresOn(String date) {
+    return 'Caduca el $date';
+  }
+
+  @override
+  String get adminChooseExpiry => 'Elegir fecha';
+
+  @override
+  String get adminClearExpiry => 'Borrar fecha';
+
+  @override
+  String get adminDatePickerHelp => 'Fecha de caducidad';
+
+  @override
+  String get adminSaving => 'Guardando…';
+
+  @override
+  String get adminSaveFailure => 'No se pudo guardar el comunicado.';
+
+  @override
+  String get adminUnsupportedFile =>
+      'Este formato de archivo no está permitido.';
+
+  @override
+  String adminFileTooLarge(String size) {
+    return 'El archivo supera el límite de $size MB.';
+  }
+
+  @override
+  String get adminTextMustBeUtf8 =>
+      'El archivo de texto debe estar codificado en UTF-8.';
+
+  @override
+  String get adminFileOpenFailure => 'No se pudo abrir este archivo.';
+
+  @override
+  String get adminDocumentAfterPublish =>
+      'El documento estará disponible después de publicar.';
+
+  @override
+  String get adminRemoveAttachment => 'Quitar archivo adjunto';
+
+  @override
+  String get adminPickerImages => 'Imágenes';
+
+  @override
+  String get adminPickerDocuments => 'Texto y PDF';
+
+  @override
+  String get adminPickerVideos => 'Vídeos';
+
+  @override
+  String get adminStatusDraft => 'Borrador';
+
+  @override
+  String get adminStatusPublished => 'Publicado';
+
+  @override
+  String get adminStatusArchived => 'Archivado';
+
+  @override
+  String get adminEditDraftTooltip => 'Editar borrador';
+
+  @override
+  String get adminPublishTooltip => 'Publicar';
+
+  @override
+  String get adminArchiveTooltip => 'Archivar';
+
+  @override
+  String get adminDeleteTooltip => 'Eliminar comunicado';
+
+  @override
+  String get adminSettingsTitle => 'Ajustes de administrador';
+
+  @override
+  String get adminAdministrators => 'Administradores';
+
+  @override
+  String get adminLoadAdminsFailure => 'No se pudo cargar la lista.';
+
+  @override
+  String get adminNoOtherAdmins => 'No hay otros administradores.';
+
+  @override
+  String get adminCreateAdministrator => 'Crear administrador';
+
+  @override
+  String get adminLogout => 'Cerrar sesión';
+
+  @override
+  String get adminNewAdministrator => 'Nuevo administrador';
+
+  @override
+  String get adminCreateAccountTooltip => 'Crear cuenta';
+
+  @override
+  String get adminFullName => 'Nombre completo';
+
+  @override
+  String get adminFullNameRequired => 'El nombre completo es obligatorio.';
+
+  @override
+  String get adminUsernameMinLength => 'Use al menos 3 caracteres.';
+
+  @override
+  String get adminUsernameNoSpaces =>
+      'El nombre de usuario no puede contener espacios.';
+
+  @override
+  String get adminConfirmPassword => 'Confirmar contraseña';
+
+  @override
+  String get adminPasswordTooShort =>
+      'La contraseña debe tener al menos 12 caracteres.';
+
+  @override
+  String get adminPasswordsMismatch => 'Las contraseñas no coinciden.';
+
+  @override
+  String get adminCreateAdministratorAction => 'Crear administrador';
+
+  @override
+  String get adminCreateAdministratorFailure =>
+      'No se pudo crear esta cuenta de administrador.';
+
+  @override
+  String get adminBack => 'Volver';
+
+  @override
+  String get adminPasswordRequired => 'Introduzca su contraseña.';
+
+  @override
+  String adminSizeKilobytes(String size) {
+    return '$size KB';
+  }
+
+  @override
+  String adminSizeMegabytes(String size) {
+    return '$size MB';
+  }
 }

@@ -286,6 +286,22 @@ class CantiqueRemoteDataSourceImpl implements CantiqueRemoteDataSource {
 
   Future<String> _resolvePlaylistScript() async {
     final home = await _getPlain('${AppConstants.websiteUrl}/multimedia');
+
+    // Build Vite/React : bundle /assets/index-*.js + chunks lazy
+    // (la playlist des cantiques est dans le chunk MultimediaPage-*.js).
+    final indexName = RegExp(r'/?(assets/index-[A-Za-z0-9_-]+\.js)')
+        .firstMatch(home)
+        ?.group(1);
+    if (indexName != null) {
+      final indexJs = await _getPlain('${AppConstants.websiteUrl}/$indexName');
+      final chunks = RegExp(r'assets/[A-Za-z0-9_-]+\.js')
+          .allMatches(indexJs)
+          .map((m) => m.group(0)!)
+          .toSet();
+      return _firstAudioPlaylistChunk(chunks);
+    }
+
+    // Ancien build Angular : main-*.js.
     final mainName = RegExp(r'main-[A-Z0-9]+\.js').firstMatch(home)?.group(0);
     if (mainName == null) {
       throw Exception('Script principal introuvable');

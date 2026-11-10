@@ -5,6 +5,7 @@ import '../../core/constants/app_constants.dart';
 import '../../core/l10n/l10n_extensions.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/theme/theme_sync.dart';
+import '../../data/services/admin_session_storage.dart';
 import '../providers/auth_provider.dart';
 import '../providers/admin_communique_provider.dart';
 import '../widgets/sht_widgets.dart';
@@ -24,6 +25,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _obscurePassword = true;
+  bool _rememberAdmin = false;
   bool _adminSubmitting = false;
   String? _adminError;
 
@@ -82,7 +84,24 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         final session = await api.login(
           _emailController.text.trim(),
           _passwordController.text,
+          rememberMe: _rememberAdmin,
         );
+        if (!mounted) return;
+        try {
+          if (_rememberAdmin) {
+            await AdminSessionStorage.save(session);
+          } else {
+            await AdminSessionStorage.clear();
+          }
+        } catch (_) {
+          if (_rememberAdmin && mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('La session ne pourra pas être restaurée sur cet appareil.'),
+              ),
+            );
+          }
+        }
         if (!mounted) return;
         ref.read(adminSessionProvider.notifier).state = session;
         await Navigator.of(context).pushReplacement(
@@ -126,7 +145,205 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     if (response is Map && response['error'] != null) {
       return response['error'].toString();
     }
-    return 'Connexion administrateur impossible. Vérifiez les identifiants et la connexion réseau.';
+    return context.l10n.adminLoginFailed;
+  }
+
+  Widget _buildAdminLogin(BuildContext context, bool isLoading) {
+    final l10n = context.l10n;
+    final onSurface = AppTheme.headerOnSurface;
+    final onSurfaceMuted = AppTheme.headerOnSurfaceMuted;
+    return Scaffold(
+      backgroundColor: AppTheme.background,
+      appBar: AppBar(
+        title: Text(l10n.adminLoginAppBarTitle),
+        leading: IconButton(
+          tooltip: l10n.adminBack,
+          onPressed: () => Navigator.of(context).maybePop(),
+          icon: const Icon(Icons.arrow_back_rounded),
+        ),
+      ),
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final wide = constraints.maxWidth >= 760;
+            final brand = Container(
+              width: wide ? 320 : double.infinity,
+              padding: const EdgeInsets.all(28),
+              decoration: BoxDecoration(
+                gradient: AppTheme.headerGradient,
+                borderRadius: BorderRadius.circular(wide ? 8 : 0),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.admin_panel_settings_outlined,
+                    size: 34,
+                    color: AppTheme.goldLight,
+                  ),
+                  const SizedBox(height: 28),
+                  Text(
+                    AppConstants.appName,
+                    style: TextStyle(
+                      color: onSurface,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    l10n.adminLoginPanelSubtitle,
+                    style: TextStyle(color: onSurfaceMuted, height: 1.4),
+                  ),
+                ],
+              ),
+            );
+
+            final form = Padding(
+              padding: const EdgeInsets.all(28),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      l10n.adminLoginTitle,
+                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                            color: AppTheme.white,
+                            fontWeight: FontWeight.w800,
+                          ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      l10n.adminLoginSubtitle,
+                      style: TextStyle(color: AppTheme.grey),
+                    ),
+                    const SizedBox(height: 24),
+                    TextFormField(
+                      controller: _emailController,
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                      autofillHints: const [AutofillHints.username],
+                      style: TextStyle(color: AppTheme.white),
+                      decoration: _fieldDecoration(
+                        label: l10n.adminUsernameLabel,
+                        icon: Icons.person_outline_rounded,
+                      ),
+                      validator: (value) => value == null || value.trim().isEmpty
+                          ? l10n.adminUsernameRequired
+                          : null,
+                    ),
+                    const SizedBox(height: 14),
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: _obscurePassword,
+                      textInputAction: TextInputAction.done,
+                      onFieldSubmitted: (_) {
+                        if (!isLoading) _submit();
+                      },
+                      autofillHints: const [AutofillHints.password],
+                      style: TextStyle(color: AppTheme.white),
+                      decoration: _fieldDecoration(
+                        label: l10n.adminPasswordLabel,
+                        icon: Icons.lock_outline_rounded,
+                        suffix: IconButton(
+                            tooltip: _obscurePassword
+                              ? l10n.adminShowPassword
+                              : l10n.adminHidePassword,
+                          onPressed: () => setState(
+                            () => _obscurePassword = !_obscurePassword,
+                          ),
+                          icon: Icon(
+                            _obscurePassword
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: AppTheme.grey,
+                          ),
+                        ),
+                      ),
+                      validator: (value) => value == null || value.isEmpty
+                          ? l10n.adminPasswordRequired
+                          : null,
+                    ),
+                    CheckboxListTile(
+                      value: _rememberAdmin,
+                      onChanged: isLoading
+                          ? null
+                          : (value) => setState(
+                                () => _rememberAdmin = value ?? false,
+                              ),
+                      contentPadding: EdgeInsets.zero,
+                      controlAffinity: ListTileControlAffinity.leading,
+                      title: Text(l10n.adminRememberMe),
+                      dense: true,
+                      activeColor: AppTheme.accentOnSurface,
+                    ),
+                    if (_adminError != null) ...[
+                      const SizedBox(height: 16),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppTheme.errorRed.withValues(alpha: 0.12),
+                          border: Border.all(
+                            color: AppTheme.errorRed.withValues(alpha: 0.4),
+                          ),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Text(
+                          _adminError!,
+                          style: TextStyle(color: AppTheme.errorRed),
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 22),
+                    SizedBox(
+                      height: 50,
+                      child: FilledButton.icon(
+                        onPressed: isLoading ? null : _submit,
+                        icon: isLoading
+                            ? const SizedBox.square(
+                                dimension: 18,
+                                child: CircularProgressIndicator(strokeWidth: 2),
+                              )
+                            : const Icon(Icons.login_rounded),
+                        label: Text(
+                          isLoading ? l10n.adminSigningIn : l10n.adminSignIn,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+
+            return SingleChildScrollView(
+              padding: EdgeInsets.all(wide ? 28 : 0),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 900),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppTheme.surface,
+                      border: Border.all(color: AppTheme.borderSubtle),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    clipBehavior: Clip.antiAlias,
+                    child: wide
+                        ? Row(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [brand, Expanded(child: form)],
+                          )
+                        : Column(children: [brand, form]),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -138,6 +355,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
     final onSurface = AppTheme.headerOnSurface;
     final onSurfaceMuted = AppTheme.headerOnSurfaceMuted;
+
+    if (widget.adminMode) return _buildAdminLogin(context, isLoading);
 
     return Scaffold(
       backgroundColor: AppTheme.background,
@@ -206,7 +425,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                 const SizedBox(height: 6),
                                 Text(
                                   widget.adminMode
-                                      ? 'Administration'
+                                      ? l10n.adminLoginAppBarTitle
                                       : l10n.authFaithfulSpace,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -218,7 +437,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                 const SizedBox(height: 8),
                                 Text(
                                   widget.adminMode
-                                      ? 'Connectez-vous pour gérer les communiqués.'
+                                      ? l10n.adminLoginPanelSubtitle
                                       : l10n.authLoginSubtitle,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
@@ -246,7 +465,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                     final v = value?.trim() ?? '';
                                     if (v.isEmpty) {
                                       return widget.adminMode
-                                          ? 'Saisissez votre nom d’utilisateur.'
+                                          ? l10n.adminUsernameRequired
                                           : l10n.authEmailRequired;
                                     }
                                     if (!widget.adminMode &&
@@ -259,7 +478,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                   },
                                   decoration: _fieldDecoration(
                                     label: widget.adminMode
-                                        ? 'Nom d’utilisateur'
+                                      ? l10n.adminUsernameLabel
                                         : l10n.authEmail,
                                     icon: widget.adminMode
                                         ? Icons.person_outline
@@ -391,7 +610,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                                           )
                                         : Text(
                                             widget.adminMode
-                                                ? 'Accéder à l’administration'
+                                              ? l10n.adminAccess
                                                 : l10n.authLogin,
                                             style: const TextStyle(
                                               fontWeight: FontWeight.w800,

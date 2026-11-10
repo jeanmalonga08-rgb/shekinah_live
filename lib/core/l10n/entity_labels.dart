@@ -158,6 +158,21 @@ String offlineMediaDetailsLine(
   return parts.where((e) => e.isNotEmpty).join(' · ');
 }
 
+/// Libellé localisé du moment de la journée d'un culte
+/// (`AM` → matin, `PM` → soir, `PMAM` → veillée).
+String? worshipPeriodLabel(AppLocalizations l10n, String? period) {
+  switch (period?.toUpperCase()) {
+    case 'AM':
+      return l10n.predicationTimeMorning;
+    case 'PM':
+      return l10n.predicationTimeEvening;
+    case 'PMAM':
+      return l10n.predicationTimeVigil;
+    default:
+      return null;
+  }
+}
+
 List<({String day, String time})> worshipScheduleEntries(
   AppLocalizations l10n,
 ) {

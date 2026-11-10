@@ -3,10 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/l10n/entity_labels.dart';
+import '../../core/l10n/locale_format.dart';
 import '../../core/l10n/l10n_extensions.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/theme/theme_sync.dart';
 import '../../core/utils/contact_launcher.dart';
+import '../../l10n/app_localizations.dart';
+import '../providers/church_program_provider.dart';
 import '../providers/locale_provider.dart';
 import '../providers/theme_mode_provider.dart';
 import '../widgets/whatsapp_icon.dart';
@@ -170,15 +173,7 @@ class SettingsPage extends ConsumerWidget {
           const SizedBox(height: 22),
           _SectionHeader(title: l10n.settingsWorshipSchedule),
           _SettingsCard(
-            children: [
-              ...worshipScheduleEntries(l10n).map(
-                (entry) => _SettingsTile(
-                  icon: Icons.schedule,
-                  title: entry.day,
-                  subtitle: entry.time,
-                ),
-              ),
-            ],
+            children: _worshipScheduleTiles(ref, l10n, locale),
           ),
           const SizedBox(height: 22),
           _SectionHeader(title: l10n.settingsInformation),
@@ -226,6 +221,47 @@ class SettingsPage extends ConsumerWidget {
         ],
       ),
     );
+  }
+
+  List<Widget> _worshipScheduleTiles(
+    WidgetRef ref,
+    AppLocalizations l10n,
+    Locale? locale,
+  ) {
+    final program = ref.watch(churchProgramProvider).valueOrNull;
+    final upcoming = program == null
+        ? const <UpcomingChurchService>[]
+        : upcomingChurchServices(program);
+
+    if (upcoming.isEmpty) {
+      return [
+        for (final entry in worshipScheduleEntries(l10n))
+          _SettingsTile(
+            icon: Icons.schedule,
+            title: entry.day,
+            subtitle: entry.time,
+          ),
+      ];
+    }
+
+    final effectiveLocale = locale ?? const Locale('fr', 'FR');
+    return [
+      for (final service in upcoming)
+        _SettingsTile(
+          icon: Icons.schedule,
+          title: formatLongDate(service.dateTime, effectiveLocale),
+          subtitle: _serviceSubtitle(l10n, service),
+        ),
+    ];
+  }
+
+  String _serviceSubtitle(AppLocalizations l10n, UpcomingChurchService service) {
+    final parts = <String>[service.entry.time];
+    final period = worshipPeriodLabel(l10n, service.entry.period);
+    if (period != null) parts.add(period);
+    final label = service.entry.label;
+    if (label != null && label.isNotEmpty) parts.add(label);
+    return parts.join(' · ');
   }
 
   Future<void> _openUrl(String url) async {

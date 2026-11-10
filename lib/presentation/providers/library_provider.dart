@@ -51,6 +51,10 @@ class LibraryPublicationFilter {
   static const sortDateAsc = 'date_asc';
   static const sortTitle = 'title';
 
+  /// Publications Shekinah : sermons prononcés de 1947 à 1965.
+  static const int firstPublicationYear = 1947;
+  static const int lastPublicationYear = 1965;
+
   final String yearKey;
   final String sortKey;
 
@@ -79,14 +83,13 @@ final libraryPublicationFilterProvider = StateProvider<LibraryPublicationFilter>
 );
 
 final libraryPublicationYearsProvider = Provider<AsyncValue<List<int>>>((ref) {
-  return ref.watch(libraryMessagesProvider).whenData((messages) {
-    final years = messages
-        .map((message) => message.date?.year)
-        .whereType<int>()
-        .toSet()
-        .toList()
-      ..sort((a, b) => b.compareTo(a));
-    return years;
+  return ref.watch(libraryMessagesProvider).whenData((_) {
+    return [
+      for (var year = LibraryPublicationFilter.firstPublicationYear;
+          year <= LibraryPublicationFilter.lastPublicationYear;
+          year++)
+        year,
+    ]..sort((a, b) => b.compareTo(a));
   });
 });
 

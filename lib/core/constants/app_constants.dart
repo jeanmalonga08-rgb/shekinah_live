@@ -52,6 +52,15 @@ class AppConstants {
 
   static const String liveStreamUrl = 'https://shekinahgospel.org/live';
   static const String websiteUrl = 'https://shekinahgospel.org';
+
+  /// Programme des cultes — même source que shekinahgospel.org
+  /// (table Supabase `services-live`, clé anon publique du site).
+  static const String churchProgramSupabaseUrl =
+      'https://lfyeqcvhspiivukacgzw.supabase.co';
+  static const String churchProgramSupabaseKey =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmeWVxY3Zoc3BpaXZ1a2FjZ3p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5ODIwMjksImV4cCI6MjA2MTU1ODAyOX0.aSasZEOkzSls-u4qvAPR597avCMDot_cPs0QIDzhQPM';
+  static const String churchProgramDataUrl =
+      '$churchProgramSupabaseUrl/rest/v1/services-live?select=*';
   static const String androidPackageId = 'com.shekinah.tabernacle';
   static const String playStoreUrl =
       'https://play.google.com/store/apps/details?id=$androidPackageId';
@@ -75,8 +84,12 @@ class AppConstants {
   static const String libraryUrl = 'https://library.shekinahgospel.org';
   static const String libraryBookDataUrl =
       'https://shekinahlibrary.blob.core.windows.net/librarydata/rawdata/book-data.json';
+  /// Catalogue sermons Shekinah Publications (blob statique, même source que
+  /// library.shekinahgospel.org). L'ancienne API Azure
+  /// documentmanagerfunc.azurewebsites.net/api/documentReader/groupByYear
+  /// renvoie 503 (function app arrêtée).
   static const String libraryMessageDataUrl =
-      'https://documentmanagerfunc.azurewebsites.net/api/documentReader/groupByYear';
+      'https://shekinahlibrary.blob.core.windows.net/shekinahpublications/data/message-data.json';
   static const String libraryMessageByYearUrl =
       'https://documentmanagerfunc.azurewebsites.net/api/messageDocument/getByYear';
   static const String libraryAssetsBaseUrl =

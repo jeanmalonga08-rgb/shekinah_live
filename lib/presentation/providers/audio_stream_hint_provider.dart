@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/utils/next_worship_service.dart';
+import '../providers/church_program_provider.dart';
 import '../providers/live_stream_provider.dart';
 
 /// Masqué pour la session en cours (réapparaît au prochain lancement).
@@ -11,7 +12,10 @@ final audioStreamHintVisibleProvider = Provider<bool>((ref) {
   final liveState = ref.watch(liveStreamProvider);
   if (liveState.isLoading) return false;
   if (liveState.isLive) return false;
-  if (NextWorshipService.isDuringWorshipService()) return false;
+  final program = ref.watch(churchProgramProvider).valueOrNull;
+  if (NextWorshipService.isDuringWorshipService(program: program)) {
+    return false;
+  }
   final entity = liveState.liveStream;
   if (entity == null || !entity.hasAnyAudio) return false;
   return true;

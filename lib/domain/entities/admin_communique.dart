@@ -69,3 +69,27 @@ class AdminSession {
         role: json['role']?.toString() ?? '',
       );
 }
+
+class AdminAccount {
+  const AdminAccount({
+    required this.id,
+    required this.fullName,
+    required this.username,
+    required this.role,
+    this.createdAt,
+  });
+
+  final String id;
+  final String fullName;
+  final String username;
+  final String role;
+  final DateTime? createdAt;
+
+  factory AdminAccount.fromJson(Map<String, dynamic> json) => AdminAccount(
+        id: json['id']?.toString() ?? '',
+        fullName: json['fullName']?.toString() ?? '',
+        username: json['username']?.toString() ?? '',
+        role: json['role']?.toString() ?? '',
+        createdAt: DateTime.tryParse(json['createdAt']?.toString() ?? ''),
+      );
+}

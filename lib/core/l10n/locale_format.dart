@@ -34,3 +34,17 @@ String formatLongDate(DateTime date, Locale locale) {
 String formatCeremonyDate(DateTime date, Locale locale) {
   return DateFormat('d MMMM yyyy', _intlLocale(locale)).format(date);
 }
+
+/// Nom du jour de la semaine localisé (ex. « dimanche », « Monday »).
+String formatWeekdayName(DateTime date, String localeName) {
+  final language = localeName.split(RegExp('[-_]')).first;
+  final intlLocale = switch (language) {
+    'fr' => 'fr_FR',
+    'en' => 'en_US',
+    'pt' => 'pt_BR',
+    'es' => 'es_ES',
+    'zh' => 'zh_CN',
+    _ => 'fr_FR',
+  };
+  return DateFormat('EEEE', intlLocale).format(date);
+}

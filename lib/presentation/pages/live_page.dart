@@ -10,7 +10,9 @@ import '../../core/l10n/l10n_extensions.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/utils/live_duration_utils.dart';
 import '../../core/utils/next_worship_service.dart';
+import '../../domain/entities/church_program.dart';
 import '../../domain/entities/live_status.dart';
+import '../providers/church_program_provider.dart';
 import '../providers/live_playback_provider.dart';
 import '../providers/live_stream_provider.dart';
 import '../widgets/live_player_overlays.dart';
@@ -39,6 +41,7 @@ class _LivePageState extends ConsumerState<LivePage>
 
   late final AnimationController _pulse;
   late NextWorshipService _next;
+  ChurchProgram? _program;
   Timer? _chrono;
 
   bool _audioLaunchHandled = false;
@@ -53,14 +56,15 @@ class _LivePageState extends ConsumerState<LivePage>
       _mode = _LiveMode.audio;
       _playerReady = true;
     }
-    _next = NextWorshipService.compute();
+    _program = ref.read(churchProgramProvider).valueOrNull;
+    _next = NextWorshipService.compute(program: _program);
     _pulse = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1200),
     )..repeat(reverse: true);
     _chrono = Timer.periodic(const Duration(seconds: 1), (_) {
       if (!mounted) return;
-      setState(() => _next = NextWorshipService.compute());
+      setState(() => _next = NextWorshipService.compute(program: _program));
     });
   }
 
@@ -213,6 +217,7 @@ class _LivePageState extends ConsumerState<LivePage>
   Widget build(BuildContext context) {
     final liveState = ref.watch(liveStreamProvider);
     final entity = liveState.liveStream;
+    _program = ref.watch(churchProgramProvider).valueOrNull;
 
     ref.listen<LiveStreamState>(liveStreamProvider, (prev, next) {
       final nextEntity = next.liveStream;

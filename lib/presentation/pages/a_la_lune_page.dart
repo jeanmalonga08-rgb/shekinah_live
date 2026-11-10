@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -172,36 +173,60 @@ class _SectionTitle extends StatelessWidget {
 
 class _TemplePhotoItem {
   const _TemplePhotoItem({
-    required this.asset,
+    this.asset,
+    this.imageUrl,
     required this.titleKey,
   });
 
-  final String asset;
+  final String? asset;
+  final String? imageUrl;
   final _TemplePhotoTitleKey titleKey;
+
+  bool get isPastorAnniversary =>
+      titleKey == _TemplePhotoTitleKey.pastorAnniversary;
 }
 
-enum _TemplePhotoTitleKey { sanctuary, balcony }
+enum _TemplePhotoTitleKey { sanctuary, balcony, pastorAnniversary }
 
 String _templePhotoTitle(AppLocalizations l10n, _TemplePhotoTitleKey key) {
   return switch (key) {
     _TemplePhotoTitleKey.sanctuary => l10n.aLaLuneSanctuaryAfter,
     _TemplePhotoTitleKey.balcony => l10n.aLaLuneBalconyAfter,
+    _TemplePhotoTitleKey.pastorAnniversary =>
+      l10n.aLaLunePastorAnniversaryTitle,
   };
 }
 
 class _TemplePhotosSlider extends StatefulWidget {
   const _TemplePhotosSlider();
 
-  static const items = [
-    _TemplePhotoItem(
-      asset: 'assets/images/sanctuary-after.jpeg',
-      titleKey: _TemplePhotoTitleKey.sanctuary,
-    ),
-    _TemplePhotoItem(
-      asset: 'assets/images/balcony-after.jpeg',
-      titleKey: _TemplePhotoTitleKey.balcony,
-    ),
-  ];
+  /// Photo « 70 ans du Pasteur » affichée pendant Thanksgiving,
+  /// jusqu'à la fin du mois de novembre 2026.
+  static const _pastorAnniversaryImageUrl =
+      'https://shekinahgospel.org/images/pastor-70-anniversary.png';
+  static final _pastorAnniversaryStart = DateTime(2026, 11, 10);
+  static final _pastorAnniversaryEnd = DateTime(2026, 12, 1);
+
+  static List<_TemplePhotoItem> items() {
+    final now = DateTime.now();
+    final showAnniversary = !now.isBefore(_pastorAnniversaryStart) &&
+        now.isBefore(_pastorAnniversaryEnd);
+    return [
+      if (showAnniversary)
+        const _TemplePhotoItem(
+          imageUrl: _pastorAnniversaryImageUrl,
+          titleKey: _TemplePhotoTitleKey.pastorAnniversary,
+        ),
+      const _TemplePhotoItem(
+        asset: 'assets/images/sanctuary-after.jpeg',
+        titleKey: _TemplePhotoTitleKey.sanctuary,
+      ),
+      const _TemplePhotoItem(
+        asset: 'assets/images/balcony-after.jpeg',
+        titleKey: _TemplePhotoTitleKey.balcony,
+      ),
+    ];
+  }
 
   @override
   State<_TemplePhotosSlider> createState() => _TemplePhotosSliderState();
@@ -226,7 +251,7 @@ class _TemplePhotosSliderState extends State<_TemplePhotosSlider> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    const items = _TemplePhotosSlider.items;
+    final items = _TemplePhotosSlider.items();
 
     return Column(
       children: [
@@ -284,6 +309,16 @@ class _TemplePhotoCard extends StatelessWidget {
   final String indexLabel;
   final AppLocalizations l10n;
 
+  Widget _imageFallback() {
+    return Container(
+      color: AppTheme.royalBlue.withValues(alpha: 0.25),
+      child: Icon(
+        Icons.photo,
+        color: AppTheme.accentGold,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ShtCard(
@@ -298,17 +333,18 @@ class _TemplePhotoCard extends StatelessWidget {
               ),
               child: SizedBox(
                 width: 108,
-                child: Image.asset(
-                  item.asset,
-                  fit: BoxFit.cover,
-                  errorBuilder: (_, _, _) => Container(
-                    color: AppTheme.royalBlue.withValues(alpha: 0.25),
-                    child: Icon(
-                      Icons.photo,
-                      color: AppTheme.accentGold,
-                    ),
-                  ),
-                ),
+                child: item.imageUrl != null
+                    ? CachedNetworkImage(
+                        imageUrl: item.imageUrl!,
+                        fit: BoxFit.cover,
+                        placeholder: (_, _) => _imageFallback(),
+                        errorWidget: (_, _, _) => _imageFallback(),
+                      )
+                    : Image.asset(
+                        item.asset!,
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, _, _) => _imageFallback(),
+                      ),
               ),
             ),
             Expanded(
@@ -329,7 +365,9 @@ class _TemplePhotoCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
-                            l10n.homeTempleMoriah,
+                            item.isPastorAnniversary
+                                ? l10n.aLaLuneThanksgivingBadge
+                                : l10n.homeTempleMoriah,
                             style: TextStyle(
                               color: AppTheme.goldLight,
                               fontSize: 10.5,
@@ -357,7 +395,9 @@ class _TemplePhotoCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      l10n.homeTempleMoriah,
+                      item.isPastorAnniversary
+                          ? l10n.pastorTitle
+                          : l10n.homeTempleMoriah,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -368,7 +408,9 @@ class _TemplePhotoCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      l10n.homeAfterReconstruction,
+                      item.isPastorAnniversary
+                          ? l10n.aLaLunePastorAnniversaryFooter
+                          : l10n.homeAfterReconstruction,
                       style: TextStyle(
                         color: AppTheme.grey,
                         fontSize: 12,
@@ -417,7 +459,7 @@ class _RecentPredicationsSliderState extends State<_RecentPredicationsSlider> {
     return Column(
       children: [
         SizedBox(
-          height: 156,
+          height: 168,
           child: PageView.builder(
             controller: _controller,
             itemCount: items.length,
@@ -708,14 +750,34 @@ class _CommuniqueCard extends StatelessWidget {
   }
 }
 
-class _CommuniqueMessage extends StatelessWidget {
+class _CommuniqueMessage extends StatefulWidget {
   final String message;
 
   const _CommuniqueMessage({required this.message});
 
   @override
+  State<_CommuniqueMessage> createState() => _CommuniqueMessageState();
+}
+
+class _CommuniqueMessageState extends State<_CommuniqueMessage> {
+  final List<TapGestureRecognizer> _linkRecognizers = [];
+
+  @override
+  void dispose() {
+    for (final recognizer in _linkRecognizers) {
+      recognizer.dispose();
+    }
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final plainText = message
+    for (final recognizer in _linkRecognizers) {
+      recognizer.dispose();
+    }
+    _linkRecognizers.clear();
+
+    final plainText = widget.message
         .replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), '\n')
         .replaceAll(RegExp(r'<[^>]+>'), '')
         .trim();
@@ -727,9 +789,10 @@ class _CommuniqueMessage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (bodyText.isNotEmpty)
-          Text(
+          _linkifiedText(
             bodyText,
-            style: TextStyle(color: AppTheme.softWhite,
+            TextStyle(
+              color: AppTheme.softWhite,
               height: 1.55,
               fontSize: 15,
             ),
@@ -744,9 +807,9 @@ class _CommuniqueMessage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: AppTheme.accentGold.withValues(alpha: 0.2)),
             ),
-            child: Text(
+            child: _linkifiedText(
               '"${quoteMatch.group(1)}"',
-              style: TextStyle(
+              TextStyle(
                 color: AppTheme.goldLight,
                 fontStyle: FontStyle.italic,
                 height: 1.5,
@@ -756,6 +819,54 @@ class _CommuniqueMessage extends StatelessWidget {
         ],
       ],
     );
+  }
+
+  Widget _linkifiedText(String text, TextStyle style) {
+    final spans = <TextSpan>[];
+    final urlPattern = RegExp(r'https?://[^\s<>()]+', caseSensitive: false);
+    var currentIndex = 0;
+
+    for (final match in urlPattern.allMatches(text)) {
+      final rawUrl = match.group(0)!;
+      final url = rawUrl.replaceFirst(RegExp(r'[.,!?;:]+$'), '');
+      if (url.isEmpty) continue;
+
+      if (match.start > currentIndex) {
+        spans.add(TextSpan(text: text.substring(currentIndex, match.start)));
+      }
+
+      final recognizer = TapGestureRecognizer()
+        ..onTap = () => _openUrl(url);
+      _linkRecognizers.add(recognizer);
+      spans.add(
+        TextSpan(
+          text: url,
+          style: style.copyWith(
+            color: AppTheme.accentOnSurface,
+            decoration: TextDecoration.underline,
+          ),
+          recognizer: recognizer,
+        ),
+      );
+      final trailingText = rawUrl.substring(url.length);
+      if (trailingText.isNotEmpty) {
+        spans.add(TextSpan(text: trailingText));
+      }
+      currentIndex = match.end;
+    }
+
+    if (currentIndex < text.length) {
+      spans.add(TextSpan(text: text.substring(currentIndex)));
+    }
+
+    return Text.rich(TextSpan(children: spans), style: style);
+  }
+
+  Future<void> _openUrl(String url) async {
+    final uri = Uri.tryParse(url);
+    if (uri != null && await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    }
   }
 }
 

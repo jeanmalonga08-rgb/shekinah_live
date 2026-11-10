@@ -12,8 +12,12 @@ import '../../core/theme/app_theme.dart';
 import '../../core/theme/theme_sync.dart';
 import '../../core/utils/live_duration_utils.dart';
 import '../../core/utils/next_worship_service.dart';
+import '../../domain/entities/church_program.dart';
 import '../../domain/entities/communique.dart';
 import '../../domain/entities/predication.dart';
+import '../../data/services/admin_session_storage.dart';
+import '../providers/admin_communique_provider.dart';
+import '../providers/church_program_provider.dart';
 import '../providers/communique_provider.dart';
 import '../providers/locale_provider.dart';
 import '../providers/live_stream_provider.dart';
@@ -25,6 +29,7 @@ import '../widgets/home_header_toolbar.dart';
 import '../widgets/sht_widgets.dart';
 import '../widgets/sinistre_majeur_card.dart';
 import 'a_la_lune_page.dart';
+import 'admin_communique_dashboard_page.dart';
 import 'branham_predications_page.dart';
 import 'cultes_page.dart';
 import 'live_page.dart';
@@ -69,6 +74,7 @@ class HomePage extends ConsumerWidget {
           SliverToBoxAdapter(
             child: _HomeHeader(
               onNotifications: () => _push(context, const NotificationsPage()),
+              onAdmin: () => _openAdminDashboard(context, ref),
             ),
           ),
           SliverToBoxAdapter(
@@ -383,12 +389,40 @@ class HomePage extends ConsumerWidget {
   }
 }
 
+Future<void> _openAdminDashboard(BuildContext context, WidgetRef ref) async {
+  var session = ref.read(adminSessionProvider);
+  if (session == null || session.isExpired) {
+    try {
+      session = await AdminSessionStorage.read();
+    } catch (_) {
+      session = null;
+    }
+  }
+  if (!context.mounted) return;
+
+  if (session != null && !session.isExpired) {
+    ref.read(adminSessionProvider.notifier).state = session;
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => const AdminCommuniqueDashboardPage(),
+      ),
+    );
+    return;
+  }
+
+  Navigator.of(context).push(
+    MaterialPageRoute<void>(builder: (_) => const LoginPage(adminMode: true)),
+  );
+}
+
 class _HomeHeader extends StatelessWidget {
   const _HomeHeader({
     required this.onNotifications,
+    required this.onAdmin,
   });
 
   final VoidCallback onNotifications;
+  final VoidCallback onAdmin;
 
   @override
   Widget build(BuildContext context) {
@@ -419,11 +453,7 @@ class _HomeHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               GestureDetector(
-                onDoubleTap: () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (_) => const LoginPage(adminMode: true),
-                  ),
-                ),
+                onDoubleTap: onAdmin,
                 child: const AppLogo(size: 48, showShadow: false),
               ),
               const SizedBox(width: 10),
@@ -517,7 +547,7 @@ class _HomeSearchBar extends StatelessWidget {
   }
 }
 
-class _LiveBanner extends StatefulWidget {
+class _LiveBanner extends ConsumerStatefulWidget {
   const _LiveBanner({
     required this.onTap,
     required this.isLive,
@@ -531,26 +561,28 @@ class _LiveBanner extends StatefulWidget {
   final DateTime? liveStartedAt;
 
   @override
-  State<_LiveBanner> createState() => _LiveBannerState();
+  ConsumerState<_LiveBanner> createState() => _LiveBannerState();
 }
 
-class _LiveBannerState extends State<_LiveBanner>
+class _LiveBannerState extends ConsumerState<_LiveBanner>
     with SingleTickerProviderStateMixin {
   late final AnimationController _pulse;
   late NextWorshipService _next;
+  ChurchProgram? _program;
   Timer? _chrono;
 
   @override
   void initState() {
     super.initState();
-    _next = NextWorshipService.compute();
+    _program = ref.read(churchProgramProvider).valueOrNull;
+    _next = NextWorshipService.compute(program: _program);
     _pulse = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 900),
     )..repeat(reverse: true);
     _chrono = Timer.periodic(const Duration(seconds: 1), (_) {
       if (!mounted) return;
-      setState(() => _next = NextWorshipService.compute());
+      setState(() => _next = NextWorshipService.compute(program: _program));
     });
   }
 
@@ -565,6 +597,7 @@ class _LiveBannerState extends State<_LiveBanner>
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final isLive = widget.isLive;
+    _program = ref.watch(churchProgramProvider).valueOrNull;
 
     return Material(
       color: Colors.transparent,
@@ -1499,22 +1532,24 @@ class _ALaUnePhotoCard extends StatelessWidget {
   }
 }
 
-class _NextWorshipCard extends StatefulWidget {
+class _NextWorshipCard extends ConsumerStatefulWidget {
   const _NextWorshipCard({required this.onSeeMore});
 
   final VoidCallback onSeeMore;
 
   @override
-  State<_NextWorshipCard> createState() => _NextWorshipCardState();
+  ConsumerState<_NextWorshipCard> createState() => _NextWorshipCardState();
 }
 
-class _NextWorshipCardState extends State<_NextWorshipCard> {
+class _NextWorshipCardState extends ConsumerState<_NextWorshipCard> {
   late NextWorshipService _next;
+  ChurchProgram? _program;
 
   @override
   void initState() {
     super.initState();
-    _next = NextWorshipService.compute();
+    _program = ref.read(churchProgramProvider).valueOrNull;
+    _next = NextWorshipService.compute(program: _program);
     _tick();
   }
 
@@ -1522,13 +1557,14 @@ class _NextWorshipCardState extends State<_NextWorshipCard> {
     while (mounted) {
       await Future.delayed(const Duration(seconds: 1));
       if (!mounted) return;
-      setState(() => _next = NextWorshipService.compute());
+      setState(() => _next = NextWorshipService.compute(program: _program));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    _program = ref.watch(churchProgramProvider).valueOrNull;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: ShtCard(

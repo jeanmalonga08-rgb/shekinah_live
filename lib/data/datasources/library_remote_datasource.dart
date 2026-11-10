@@ -82,7 +82,9 @@ class LibraryRemoteDataSourceImpl implements LibraryRemoteDataSource {
     }
 
     // Same catalog as library.shekinahgospel.org/shekinah-publication
-    // (1947–1965). API often omits Content-Type → Dio returns a raw String.
+    // (1947–1965). JSON statique : liste plate {id,title,date,url}
+    // (ancien format API : groupes {year, items[]}).
+    // L'API peut omettre Content-Type → Dio returns a raw String.
     final response = await dio.get<dynamic>(
       AppConstants.libraryMessageDataUrl,
       options: Options(
@@ -94,20 +96,26 @@ class LibraryRemoteDataSourceImpl implements LibraryRemoteDataSource {
       ),
     );
 
-    final groups = _asJsonList(response.data);
+    final rows = _asJsonList(response.data);
     final messages = <LibraryMessage>[];
-    for (final group in groups) {
-      if (group is! Map) continue;
-      final map = Map<String, dynamic>.from(group);
-      final year = _asInt(map['year']);
+    for (final row in rows) {
+      if (row is! Map) continue;
+      final map = Map<String, dynamic>.from(row);
       final items = map['items'];
-      if (items is! List) continue;
-      for (final item in items) {
-        if (item is! Map) continue;
-        final message = _mapMessage(
-          Map<String, dynamic>.from(item),
-          fallbackYear: year == 0 ? null : year,
-        );
+      if (items is List) {
+        // Format groupe par année (legacy groupByYear API).
+        final year = _asInt(map['year']);
+        for (final item in items) {
+          if (item is! Map) continue;
+          final message = _mapMessage(
+            Map<String, dynamic>.from(item),
+            fallbackYear: year == 0 ? null : year,
+          );
+          if (message.title.isEmpty || message.pdfUrl.isEmpty) continue;
+          messages.add(message);
+        }
+      } else {
+        final message = _mapMessage(map);
         if (message.title.isEmpty || message.pdfUrl.isEmpty) continue;
         messages.add(message);
       }

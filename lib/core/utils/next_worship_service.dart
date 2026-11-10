@@ -1,17 +1,39 @@
+import '../../domain/entities/church_program.dart';
 import '../../l10n/app_localizations.dart';
+import '../l10n/entity_labels.dart';
+import '../l10n/locale_format.dart';
+import 'church_program_schedule.dart';
 
 class NextWorshipService {
   const NextWorshipService({
     required this.weekday,
     required this.dateTime,
     required this.remaining,
+    this.eventLabel,
+    this.timeText,
+    this.period,
   });
 
   final int weekday;
   final DateTime dateTime;
   final Duration remaining;
 
+  /// Libellé d'un événement ponctuel (ex. « Réunion de Thanksgiving »).
+  final String? eventLabel;
+
+  /// Heure « HH:MM » venant du programme en ligne.
+  final String? timeText;
+
+  /// Moment de la journée : `AM`, `PM` ou `PMAM` (veillée).
+  final String? period;
+
   String dayLabel(AppLocalizations l10n) {
+    if (eventLabel != null && eventLabel!.isNotEmpty) {
+      return eventLabel!;
+    }
+    if (timeText != null && timeText!.isNotEmpty) {
+      return formatWeekdayName(dateTime, l10n.localeName);
+    }
     switch (weekday) {
       case DateTime.sunday:
         return l10n.worshipSunday;
@@ -25,6 +47,10 @@ class NextWorshipService {
   }
 
   String timeLabel(AppLocalizations l10n) {
+    if (timeText != null && timeText!.isNotEmpty) {
+      final periodLabel = worshipPeriodLabel(l10n, period);
+      return periodLabel == null ? timeText! : '$timeText · $periodLabel';
+    }
     switch (weekday) {
       case DateTime.sunday:
         return l10n.worshipTimeSunday;
@@ -69,6 +95,8 @@ class NextWorshipService {
     return clock;
   }
 
+  /// Programme statique de secours (utilisé hors ligne ou si [program]
+  /// est null).
   static const _schedule = [
     (weekday: DateTime.sunday, hour: 9, minute: 30),
     (weekday: DateTime.wednesday, hour: 17, minute: 0),
@@ -78,9 +106,26 @@ class NextWorshipService {
   /// Durée estimée d'un culte (fenêtre « heures de culte »).
   static const Duration worshipServiceDuration = Duration(hours: 3);
 
-  /// `true` si [now] tombe dans une plage horaire de culte régulier.
-  static bool isDuringWorshipService([DateTime? now]) {
+  /// `true` si [now] tombe dans une plage horaire de culte.
+  /// Avec [program], utilise le programme publié sur shekinahgospel.org ;
+  /// sinon replie sur l'horaire statique.
+  static bool isDuringWorshipService({
+    DateTime? now,
+    ChurchProgram? program,
+  }) {
     final reference = now ?? DateTime.now();
+
+    if (program != null) {
+      for (final window
+          in worshipServiceWindows(program, now: reference)) {
+        if (!reference.isBefore(window.$1) &&
+            reference.isBefore(window.$2)) {
+          return true;
+        }
+      }
+      return false;
+    }
+
     for (final slot in _schedule) {
       if (reference.weekday != slot.weekday) continue;
       final start = DateTime(
@@ -98,8 +143,25 @@ class NextWorshipService {
     return false;
   }
 
-  static NextWorshipService compute([DateTime? now]) {
+  /// Prochain culte. Avec [program], reflète le programme en ligne
+  /// (événements spéciaux prioritaires) ; sinon horaire statique.
+  static NextWorshipService compute({ChurchProgram? program, DateTime? now}) {
     final reference = now ?? DateTime.now();
+
+    if (program != null) {
+      final services = upcomingChurchServices(program, now: reference);
+      if (services.isNotEmpty) {
+        final first = services.first;
+        return NextWorshipService(
+          weekday: first.dateTime.weekday,
+          dateTime: first.dateTime,
+          remaining: first.dateTime.difference(reference),
+          eventLabel: first.isSpecial ? first.entry.label : null,
+          timeText: first.entry.time,
+          period: first.entry.period,
+        );
+      }
+    }
 
     DateTime? nearest;
     var weekday = DateTime.sunday;

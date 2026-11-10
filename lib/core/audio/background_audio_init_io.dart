@@ -11,7 +11,7 @@ Future<void> initBackgroundAudio() async {
     androidNotificationChannelId: 'com.shekinah.tabernacle.audio',
     androidNotificationChannelName: 'Lecture audio',
     androidNotificationIcon: 'mipmap/launcher_icon',
-    androidNotificationOngoing: true,
+    androidNotificationOngoing: false,
     androidShowNotificationBadge: true,
     androidStopForegroundOnPause: true,
     fastForwardInterval: const Duration(seconds: 15),

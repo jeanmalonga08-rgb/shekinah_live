@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:file_selector/file_selector.dart';
 
 import '../../domain/entities/admin_communique.dart';
 
@@ -7,10 +8,18 @@ class AdminCommuniqueRemoteDataSource {
 
   final Dio _dio;
 
-  Future<AdminSession> login(String username, String password) async {
+  Future<AdminSession> login(
+    String username,
+    String password, {
+    bool rememberMe = false,
+  }) async {
     final response = await _dio.post<Map<String, dynamic>>(
       '/api/v1/admin/auth/login',
-      data: {'username': username, 'password': password},
+      data: {
+        'username': username,
+        'password': password,
+        'rememberMe': rememberMe,
+      },
     );
     return AdminSession.fromJson(response.data ?? const {});
   }
@@ -86,6 +95,33 @@ class AdminCommuniqueRemoteDataSource {
     );
   }
 
+  Future<void> deleteCommunique(String token, String id) async {
+    await _dio.delete<void>(
+      '/api/v1/admin/communiques/$id',
+      options: _authorized(token),
+    );
+  }
+
+  Future<String> uploadAttachment(String token, XFile file) async {
+    final size = await file.length();
+    final response = await _dio.post<Map<String, dynamic>>(
+      '/api/v1/admin/communiques/attachment',
+      data: FormData.fromMap({
+        'file': MultipartFile.fromStream(
+          () => file.openRead(),
+          size,
+          filename: file.name,
+        ),
+      }),
+      options: _authorized(token),
+    );
+    final url = response.data?['url']?.toString();
+    if (url == null || url.isEmpty) {
+      throw const FormatException('L’API n’a pas retourné l’URL du fichier.');
+    }
+    return url;
+  }
+
   Future<void> changePassword(
     String token, {
     required String currentPassword,
@@ -116,6 +152,18 @@ class AdminCommuniqueRemoteDataSource {
       },
       options: _authorized(token),
     );
+  }
+
+  Future<List<AdminAccount>> fetchOtherAdmins(String token) async {
+    final response = await _dio.get<List<dynamic>>(
+      '/api/v1/admin/users',
+      options: _authorized(token),
+    );
+    return (response.data ?? const [])
+        .whereType<Map>()
+        .map((row) => AdminAccount.fromJson(Map<String, dynamic>.from(row)))
+        .where((admin) => admin.id.isNotEmpty)
+        .toList();
   }
 
   Options _authorized(String token) => Options(

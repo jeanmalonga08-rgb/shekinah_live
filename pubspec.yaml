@@ -79,6 +79,7 @@ dependencies:
   # Offline storage & playback
   path_provider: ^2.1.5
   shared_preferences: ^2.5.3
+  flutter_secure_storage: ^11.2.0
   video_player: ^2.10.0
   # Windows/Linux implementation for video_player (official package has none)
   fvp: ^0.38.1
@@ -93,6 +94,7 @@ dependencies:
   firebase_messaging: ^15.1.6
   uuid: ^4.5.1
   just_audio_background: ^0.0.1-beta.17
+  file_selector: ^1.1.0
 
 dev_dependencies:
   flutter_test:

@@ -18,6 +18,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aLaLuneOfficialCommunique => '官方公告';
 
   @override
+  String get aLaLunePastorAnniversaryFooter => '在此期间，感恩节快乐！';
+
+  @override
+  String get aLaLunePastorAnniversaryTitle => '70年牧职';
+
+  @override
   String get aLaLuneRecentPredications => '本月讲道';
 
   @override
@@ -25,6 +31,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aLaLuneSubtitle => '现行公告及 Moriah 圣殿照片。';
+
+  @override
+  String get aLaLuneThanksgivingBadge => '感恩节';
 
   @override
   String get aLaLuneTitle => 'A la lune';
@@ -2251,7 +2260,7 @@ class AppLocalizationsZh extends AppLocalizations {
     String playStoreUrl,
     String websiteUrl,
   ) {
-    return '了解 $appName 应用：礼拜直播、讲道、诗歌等丰富内容。\n\nPlay Store：$playStoreUrl\nApple Store：苹果商店链接即将推出\n官方网站：$websiteUrl\n\n欢迎分享并邀请亲友加入我们的团契！';
+    return '了解 $appName 应用：礼拜直播、讲道、诗歌等丰富内容。\n\nPlay Store：$playStoreUrl\n\nApple Store：苹果商店链接即将推出\n\n官方网站：$websiteUrl\n\n欢迎分享并邀请亲友加入我们的团契！';
   }
 
   @override
@@ -2572,4 +2581,374 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get audioStreamOutsideCultAction => '直播';
+
+  @override
+  String get adminLoginAppBarTitle => '管理后台';
+
+  @override
+  String get adminLoginPanelSubtitle => '公告管理';
+
+  @override
+  String get adminLoginTitle => '管理员登录';
+
+  @override
+  String get adminLoginSubtitle => '登录以继续。';
+
+  @override
+  String get adminUsernameLabel => '用户名';
+
+  @override
+  String get adminUsernameRequired => '请输入用户名。';
+
+  @override
+  String get adminPasswordLabel => '密码';
+
+  @override
+  String get adminShowPassword => '显示密码';
+
+  @override
+  String get adminHidePassword => '隐藏密码';
+
+  @override
+  String get adminRememberMe => '在此设备上保持登录状态';
+
+  @override
+  String get adminSigningIn => '正在登录…';
+
+  @override
+  String get adminSignIn => '登录';
+
+  @override
+  String get adminAccess => '进入管理后台';
+
+  @override
+  String get adminLoginFailed => '管理员登录失败。请检查凭据和网络连接。';
+
+  @override
+  String get adminCommuniques => '公告';
+
+  @override
+  String get adminRefresh => '刷新';
+
+  @override
+  String get adminAccountSettings => '管理员账户设置';
+
+  @override
+  String get adminCreateNew => '新建';
+
+  @override
+  String adminGreeting(String name) {
+    return '您好，$name';
+  }
+
+  @override
+  String get adminOverview => '概览';
+
+  @override
+  String get adminTotal => '总数';
+
+  @override
+  String get adminDrafts => '草稿';
+
+  @override
+  String get adminPublished => '已发布';
+
+  @override
+  String get adminArchived => '已归档';
+
+  @override
+  String get adminRecent => '最近';
+
+  @override
+  String get adminRecentCount => '最近 3 条';
+
+  @override
+  String get adminNoRecent => '没有最近的公告。';
+
+  @override
+  String get adminAllCommuniques => '所有公告';
+
+  @override
+  String get adminFilterAll => '全部';
+
+  @override
+  String get adminNoCommuniques => '暂无公告。请创建第一份草稿。';
+
+  @override
+  String get adminNoMatchingCommuniques => '此类别中没有公告。';
+
+  @override
+  String get adminLoadCommuniquesFailed => '无法加载公告。';
+
+  @override
+  String get adminRetry => '重试';
+
+  @override
+  String get adminPublishConfirmTitle => '发布此公告？';
+
+  @override
+  String get adminPublishConfirmMessage => '将向已注册的设备发送通知。';
+
+  @override
+  String get adminPublishAction => '发布';
+
+  @override
+  String get adminPublishSuccess => '公告已发布。';
+
+  @override
+  String get adminPublishFailure => '无法发布公告。';
+
+  @override
+  String get adminArchiveConfirmTitle => '归档此公告？';
+
+  @override
+  String get adminArchiveConfirmMessage => '归档后将不再显示在公开列表中。';
+
+  @override
+  String get adminArchiveAction => '归档';
+
+  @override
+  String get adminArchiveSuccess => '公告已归档。';
+
+  @override
+  String get adminArchiveFailure => '无法归档公告。';
+
+  @override
+  String get adminDeleteConfirmTitle => '删除此公告？';
+
+  @override
+  String get adminDeleteConfirmMessage => '将先删除关联通知，再删除公告。此操作无法撤销。';
+
+  @override
+  String get adminDeleteAction => '删除';
+
+  @override
+  String get adminDeleteSuccess => '公告已删除。';
+
+  @override
+  String get adminDeleteFailure => '无法删除公告。';
+
+  @override
+  String get adminCancel => '取消';
+
+  @override
+  String get adminAdminCreated => '管理员账户已创建。';
+
+  @override
+  String get adminSessionExpired => '登录已过期，请重新登录。';
+
+  @override
+  String get adminChangePasswordTitle => '更改密码';
+
+  @override
+  String get adminCurrentPassword => '当前密码';
+
+  @override
+  String get adminNewPassword => '新密码';
+
+  @override
+  String get adminPasswordMinHint => '至少 12 个字符';
+
+  @override
+  String get adminRequired => '必填项';
+
+  @override
+  String get adminSave => '保存';
+
+  @override
+  String get adminPasswordChanged => '密码已更改，请重新登录。';
+
+  @override
+  String get adminPasswordChangeFailure => '无法更改密码。';
+
+  @override
+  String get adminEditDraft => '编辑草稿';
+
+  @override
+  String get adminNewCommunique => '新建公告';
+
+  @override
+  String get adminSaveDraft => '保存草稿';
+
+  @override
+  String get adminTitle => '标题';
+
+  @override
+  String get adminTitleRequired => '标题为必填项。';
+
+  @override
+  String get adminCommuniqueType => '公告类型';
+
+  @override
+  String get adminTypeInformation => '信息';
+
+  @override
+  String get adminTypeEvent => '活动';
+
+  @override
+  String get adminTypeUrgent => '紧急';
+
+  @override
+  String get adminTypeWorship => '礼拜';
+
+  @override
+  String get adminTypeOther => '其他';
+
+  @override
+  String get adminBody => '公告正文';
+
+  @override
+  String get adminBodyRequired => '正文为必填项。';
+
+  @override
+  String get adminMediaUrl => '已有媒体网址（可选）';
+
+  @override
+  String get adminInvalidUrl => '请输入有效的 HTTP 或 HTTPS 网址。';
+
+  @override
+  String get adminChooseAttachment => '选择图片、文本或视频';
+
+  @override
+  String get adminReplaceAttachment => '替换附件';
+
+  @override
+  String get adminExpiryNone => '不设置到期日期';
+
+  @override
+  String adminExpiresOn(String date) {
+    return '到期日期：$date';
+  }
+
+  @override
+  String get adminChooseExpiry => '选择日期';
+
+  @override
+  String get adminClearExpiry => '清除日期';
+
+  @override
+  String get adminDatePickerHelp => '到期日期';
+
+  @override
+  String get adminSaving => '正在保存…';
+
+  @override
+  String get adminSaveFailure => '无法保存公告。';
+
+  @override
+  String get adminUnsupportedFile => '不支持此文件格式。';
+
+  @override
+  String adminFileTooLarge(String size) {
+    return '文件超过 $size MB 的限制。';
+  }
+
+  @override
+  String get adminTextMustBeUtf8 => '文本文件必须使用 UTF-8 编码。';
+
+  @override
+  String get adminFileOpenFailure => '无法打开此文件。';
+
+  @override
+  String get adminDocumentAfterPublish => '文档将在发布后提供。';
+
+  @override
+  String get adminRemoveAttachment => '移除附件';
+
+  @override
+  String get adminPickerImages => '图片';
+
+  @override
+  String get adminPickerDocuments => '文本和 PDF';
+
+  @override
+  String get adminPickerVideos => '视频';
+
+  @override
+  String get adminStatusDraft => '草稿';
+
+  @override
+  String get adminStatusPublished => '已发布';
+
+  @override
+  String get adminStatusArchived => '已归档';
+
+  @override
+  String get adminEditDraftTooltip => '编辑草稿';
+
+  @override
+  String get adminPublishTooltip => '发布';
+
+  @override
+  String get adminArchiveTooltip => '归档';
+
+  @override
+  String get adminDeleteTooltip => '删除公告';
+
+  @override
+  String get adminSettingsTitle => '管理员设置';
+
+  @override
+  String get adminAdministrators => '管理员';
+
+  @override
+  String get adminLoadAdminsFailure => '无法加载列表。';
+
+  @override
+  String get adminNoOtherAdmins => '没有其他管理员。';
+
+  @override
+  String get adminCreateAdministrator => '创建管理员';
+
+  @override
+  String get adminLogout => '退出登录';
+
+  @override
+  String get adminNewAdministrator => '新建管理员';
+
+  @override
+  String get adminCreateAccountTooltip => '创建账户';
+
+  @override
+  String get adminFullName => '姓名';
+
+  @override
+  String get adminFullNameRequired => '姓名为必填项。';
+
+  @override
+  String get adminUsernameMinLength => '至少输入 3 个字符。';
+
+  @override
+  String get adminUsernameNoSpaces => '用户名不能包含空格。';
+
+  @override
+  String get adminConfirmPassword => '确认密码';
+
+  @override
+  String get adminPasswordTooShort => '密码至少需要 12 个字符。';
+
+  @override
+  String get adminPasswordsMismatch => '两次输入的密码不一致。';
+
+  @override
+  String get adminCreateAdministratorAction => '创建管理员';
+
+  @override
+  String get adminCreateAdministratorFailure => '无法创建此管理员账户。';
+
+  @override
+  String get adminBack => '返回';
+
+  @override
+  String get adminPasswordRequired => '请输入密码。';
+
+  @override
+  String adminSizeKilobytes(String size) {
+    return '$size KB';
+  }
+
+  @override
+  String adminSizeMegabytes(String size) {
+    return '$size MB';
+  }
 }

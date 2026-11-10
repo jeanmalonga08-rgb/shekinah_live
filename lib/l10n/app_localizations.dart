@@ -122,6 +122,18 @@ abstract class AppLocalizations {
   /// **'Communiqué officiel'**
   String get aLaLuneOfficialCommunique;
 
+  /// No description provided for @aLaLunePastorAnniversaryFooter.
+  ///
+  /// In fr, this message translates to:
+  /// **'En attendant, bonne fête de Thanksgiving !'**
+  String get aLaLunePastorAnniversaryFooter;
+
+  /// No description provided for @aLaLunePastorAnniversaryTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'70 ans de ministère'**
+  String get aLaLunePastorAnniversaryTitle;
+
   /// No description provided for @aLaLuneRecentPredications.
   ///
   /// In fr, this message translates to:
@@ -139,6 +151,12 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Annonces en vigueur et photos du Temple Moriah.'**
   String get aLaLuneSubtitle;
+
+  /// No description provided for @aLaLuneThanksgivingBadge.
+  ///
+  /// In fr, this message translates to:
+  /// **'Thanksgiving'**
+  String get aLaLuneThanksgivingBadge;
 
   /// No description provided for @aLaLuneTitle.
   ///
@@ -4175,7 +4193,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareAppMessage.
   ///
   /// In fr, this message translates to:
-  /// **'Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\nApple Store : le lien Apple sera bientôt disponible\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !'**
+  /// **'Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\n\nApple Store : le lien Apple sera bientôt disponible\n\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !'**
   String shareAppMessage(
     String appName,
     String playStoreUrl,
@@ -4729,6 +4747,726 @@ abstract class AppLocalizations {
   /// In fr, this message translates to:
   /// **'Direct'**
   String get audioStreamOutsideCultAction;
+
+  /// No description provided for @adminLoginAppBarTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Espace d’administration'**
+  String get adminLoginAppBarTitle;
+
+  /// No description provided for @adminLoginPanelSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Gestion des communiqués'**
+  String get adminLoginPanelSubtitle;
+
+  /// No description provided for @adminLoginTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connexion administrateur'**
+  String get adminLoginTitle;
+
+  /// No description provided for @adminLoginSubtitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connectez-vous pour continuer.'**
+  String get adminLoginSubtitle;
+
+  /// No description provided for @adminUsernameLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom d’utilisateur'**
+  String get adminUsernameLabel;
+
+  /// No description provided for @adminUsernameRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Saisissez votre nom d’utilisateur.'**
+  String get adminUsernameRequired;
+
+  /// No description provided for @adminPasswordLabel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mot de passe'**
+  String get adminPasswordLabel;
+
+  /// No description provided for @adminShowPassword.
+  ///
+  /// In fr, this message translates to:
+  /// **'Afficher le mot de passe'**
+  String get adminShowPassword;
+
+  /// No description provided for @adminHidePassword.
+  ///
+  /// In fr, this message translates to:
+  /// **'Masquer le mot de passe'**
+  String get adminHidePassword;
+
+  /// No description provided for @adminRememberMe.
+  ///
+  /// In fr, this message translates to:
+  /// **'Rester connecté sur cet appareil'**
+  String get adminRememberMe;
+
+  /// No description provided for @adminSigningIn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connexion…'**
+  String get adminSigningIn;
+
+  /// No description provided for @adminSignIn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Se connecter'**
+  String get adminSignIn;
+
+  /// No description provided for @adminAccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Accéder à l’administration'**
+  String get adminAccess;
+
+  /// No description provided for @adminLoginFailed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Connexion administrateur impossible. Vérifiez les identifiants et la connexion réseau.'**
+  String get adminLoginFailed;
+
+  /// No description provided for @adminCommuniques.
+  ///
+  /// In fr, this message translates to:
+  /// **'Communiqués'**
+  String get adminCommuniques;
+
+  /// No description provided for @adminRefresh.
+  ///
+  /// In fr, this message translates to:
+  /// **'Actualiser'**
+  String get adminRefresh;
+
+  /// No description provided for @adminAccountSettings.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réglages du compte administrateur'**
+  String get adminAccountSettings;
+
+  /// No description provided for @adminCreateNew.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouveau'**
+  String get adminCreateNew;
+
+  /// No description provided for @adminGreeting.
+  ///
+  /// In fr, this message translates to:
+  /// **'Bonjour, {name}'**
+  String adminGreeting(String name);
+
+  /// No description provided for @adminOverview.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vue d’ensemble'**
+  String get adminOverview;
+
+  /// No description provided for @adminTotal.
+  ///
+  /// In fr, this message translates to:
+  /// **'Total'**
+  String get adminTotal;
+
+  /// No description provided for @adminDrafts.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brouillons'**
+  String get adminDrafts;
+
+  /// No description provided for @adminPublished.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publiés'**
+  String get adminPublished;
+
+  /// No description provided for @adminArchived.
+  ///
+  /// In fr, this message translates to:
+  /// **'Archivés'**
+  String get adminArchived;
+
+  /// No description provided for @adminRecent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Récents'**
+  String get adminRecent;
+
+  /// No description provided for @adminRecentCount.
+  ///
+  /// In fr, this message translates to:
+  /// **'3 derniers'**
+  String get adminRecentCount;
+
+  /// No description provided for @adminNoRecent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun communiqué récent.'**
+  String get adminNoRecent;
+
+  /// No description provided for @adminAllCommuniques.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tous les communiqués'**
+  String get adminAllCommuniques;
+
+  /// No description provided for @adminFilterAll.
+  ///
+  /// In fr, this message translates to:
+  /// **'Tous'**
+  String get adminFilterAll;
+
+  /// No description provided for @adminNoCommuniques.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun communiqué. Créez un premier brouillon.'**
+  String get adminNoCommuniques;
+
+  /// No description provided for @adminNoMatchingCommuniques.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun communiqué dans cette catégorie.'**
+  String get adminNoMatchingCommuniques;
+
+  /// No description provided for @adminLoadCommuniquesFailed.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible de charger les communiqués.'**
+  String get adminLoadCommuniquesFailed;
+
+  /// No description provided for @adminRetry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réessayer'**
+  String get adminRetry;
+
+  /// No description provided for @adminPublishConfirmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publier ce communiqué ?'**
+  String get adminPublishConfirmTitle;
+
+  /// No description provided for @adminPublishConfirmMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Une notification sera envoyée aux appareils enregistrés.'**
+  String get adminPublishConfirmMessage;
+
+  /// No description provided for @adminPublishAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publier'**
+  String get adminPublishAction;
+
+  /// No description provided for @adminPublishSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Communiqué publié.'**
+  String get adminPublishSuccess;
+
+  /// No description provided for @adminPublishFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publication impossible.'**
+  String get adminPublishFailure;
+
+  /// No description provided for @adminArchiveConfirmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Archiver ce communiqué ?'**
+  String get adminArchiveConfirmTitle;
+
+  /// No description provided for @adminArchiveConfirmMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'Il ne sera plus visible dans la liste publique.'**
+  String get adminArchiveConfirmMessage;
+
+  /// No description provided for @adminArchiveAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Archiver'**
+  String get adminArchiveAction;
+
+  /// No description provided for @adminArchiveSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Communiqué archivé.'**
+  String get adminArchiveSuccess;
+
+  /// No description provided for @adminArchiveFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Archivage impossible.'**
+  String get adminArchiveFailure;
+
+  /// No description provided for @adminDeleteConfirmTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer ce communiqué ?'**
+  String get adminDeleteConfirmTitle;
+
+  /// No description provided for @adminDeleteConfirmMessage.
+  ///
+  /// In fr, this message translates to:
+  /// **'La notification associée sera supprimée avant le communiqué. Cette action est définitive.'**
+  String get adminDeleteConfirmMessage;
+
+  /// No description provided for @adminDeleteAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer'**
+  String get adminDeleteAction;
+
+  /// No description provided for @adminDeleteSuccess.
+  ///
+  /// In fr, this message translates to:
+  /// **'Communiqué supprimé.'**
+  String get adminDeleteSuccess;
+
+  /// No description provided for @adminDeleteFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Suppression impossible.'**
+  String get adminDeleteFailure;
+
+  /// No description provided for @adminCancel.
+  ///
+  /// In fr, this message translates to:
+  /// **'Annuler'**
+  String get adminCancel;
+
+  /// No description provided for @adminAdminCreated.
+  ///
+  /// In fr, this message translates to:
+  /// **'Compte administrateur créé.'**
+  String get adminAdminCreated;
+
+  /// No description provided for @adminSessionExpired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Session expirée. Connectez-vous à nouveau.'**
+  String get adminSessionExpired;
+
+  /// No description provided for @adminChangePasswordTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Changer le mot de passe'**
+  String get adminChangePasswordTitle;
+
+  /// No description provided for @adminCurrentPassword.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mot de passe actuel'**
+  String get adminCurrentPassword;
+
+  /// No description provided for @adminNewPassword.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouveau mot de passe'**
+  String get adminNewPassword;
+
+  /// No description provided for @adminPasswordMinHint.
+  ///
+  /// In fr, this message translates to:
+  /// **'12 caractères minimum'**
+  String get adminPasswordMinHint;
+
+  /// No description provided for @adminRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Champ obligatoire'**
+  String get adminRequired;
+
+  /// No description provided for @adminSave.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer'**
+  String get adminSave;
+
+  /// No description provided for @adminPasswordChanged.
+  ///
+  /// In fr, this message translates to:
+  /// **'Mot de passe modifié. Reconnectez-vous.'**
+  String get adminPasswordChanged;
+
+  /// No description provided for @adminPasswordChangeFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modification impossible.'**
+  String get adminPasswordChangeFailure;
+
+  /// No description provided for @adminEditDraft.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier le brouillon'**
+  String get adminEditDraft;
+
+  /// No description provided for @adminNewCommunique.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouveau communiqué'**
+  String get adminNewCommunique;
+
+  /// No description provided for @adminSaveDraft.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrer le brouillon'**
+  String get adminSaveDraft;
+
+  /// No description provided for @adminTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Titre'**
+  String get adminTitle;
+
+  /// No description provided for @adminTitleRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le titre est obligatoire.'**
+  String get adminTitleRequired;
+
+  /// No description provided for @adminCommuniqueType.
+  ///
+  /// In fr, this message translates to:
+  /// **'Type de communiqué'**
+  String get adminCommuniqueType;
+
+  /// No description provided for @adminTypeInformation.
+  ///
+  /// In fr, this message translates to:
+  /// **'Information'**
+  String get adminTypeInformation;
+
+  /// No description provided for @adminTypeEvent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Événement'**
+  String get adminTypeEvent;
+
+  /// No description provided for @adminTypeUrgent.
+  ///
+  /// In fr, this message translates to:
+  /// **'Urgent'**
+  String get adminTypeUrgent;
+
+  /// No description provided for @adminTypeWorship.
+  ///
+  /// In fr, this message translates to:
+  /// **'Culte'**
+  String get adminTypeWorship;
+
+  /// No description provided for @adminTypeOther.
+  ///
+  /// In fr, this message translates to:
+  /// **'Autre'**
+  String get adminTypeOther;
+
+  /// No description provided for @adminBody.
+  ///
+  /// In fr, this message translates to:
+  /// **'Texte du communiqué'**
+  String get adminBody;
+
+  /// No description provided for @adminBodyRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le texte est obligatoire.'**
+  String get adminBodyRequired;
+
+  /// No description provided for @adminMediaUrl.
+  ///
+  /// In fr, this message translates to:
+  /// **'URL média existante (facultatif)'**
+  String get adminMediaUrl;
+
+  /// No description provided for @adminInvalidUrl.
+  ///
+  /// In fr, this message translates to:
+  /// **'Saisissez une URL HTTP ou HTTPS valide.'**
+  String get adminInvalidUrl;
+
+  /// No description provided for @adminChooseAttachment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisir une image, un texte ou une vidéo'**
+  String get adminChooseAttachment;
+
+  /// No description provided for @adminReplaceAttachment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Remplacer la pièce jointe'**
+  String get adminReplaceAttachment;
+
+  /// No description provided for @adminExpiryNone.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucune date d’expiration'**
+  String get adminExpiryNone;
+
+  /// No description provided for @adminExpiresOn.
+  ///
+  /// In fr, this message translates to:
+  /// **'Expire le {date}'**
+  String adminExpiresOn(String date);
+
+  /// No description provided for @adminChooseExpiry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Choisir une date'**
+  String get adminChooseExpiry;
+
+  /// No description provided for @adminClearExpiry.
+  ///
+  /// In fr, this message translates to:
+  /// **'Effacer la date'**
+  String get adminClearExpiry;
+
+  /// No description provided for @adminDatePickerHelp.
+  ///
+  /// In fr, this message translates to:
+  /// **'Date d’expiration'**
+  String get adminDatePickerHelp;
+
+  /// No description provided for @adminSaving.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrement…'**
+  String get adminSaving;
+
+  /// No description provided for @adminSaveFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Enregistrement impossible.'**
+  String get adminSaveFailure;
+
+  /// No description provided for @adminUnsupportedFile.
+  ///
+  /// In fr, this message translates to:
+  /// **'Ce format de fichier n’est pas accepté.'**
+  String get adminUnsupportedFile;
+
+  /// No description provided for @adminFileTooLarge.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le fichier dépasse la limite de {size} Mo.'**
+  String adminFileTooLarge(String size);
+
+  /// No description provided for @adminTextMustBeUtf8.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le fichier texte doit être encodé en UTF-8.'**
+  String get adminTextMustBeUtf8;
+
+  /// No description provided for @adminFileOpenFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible d’ouvrir ce fichier.'**
+  String get adminFileOpenFailure;
+
+  /// No description provided for @adminDocumentAfterPublish.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le document sera disponible après la publication.'**
+  String get adminDocumentAfterPublish;
+
+  /// No description provided for @adminRemoveAttachment.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retirer la pièce jointe'**
+  String get adminRemoveAttachment;
+
+  /// No description provided for @adminPickerImages.
+  ///
+  /// In fr, this message translates to:
+  /// **'Images'**
+  String get adminPickerImages;
+
+  /// No description provided for @adminPickerDocuments.
+  ///
+  /// In fr, this message translates to:
+  /// **'Texte et PDF'**
+  String get adminPickerDocuments;
+
+  /// No description provided for @adminPickerVideos.
+  ///
+  /// In fr, this message translates to:
+  /// **'Vidéos'**
+  String get adminPickerVideos;
+
+  /// No description provided for @adminStatusDraft.
+  ///
+  /// In fr, this message translates to:
+  /// **'Brouillon'**
+  String get adminStatusDraft;
+
+  /// No description provided for @adminStatusPublished.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publié'**
+  String get adminStatusPublished;
+
+  /// No description provided for @adminStatusArchived.
+  ///
+  /// In fr, this message translates to:
+  /// **'Archivé'**
+  String get adminStatusArchived;
+
+  /// No description provided for @adminEditDraftTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Modifier le brouillon'**
+  String get adminEditDraftTooltip;
+
+  /// No description provided for @adminPublishTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Publier'**
+  String get adminPublishTooltip;
+
+  /// No description provided for @adminArchiveTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Archiver'**
+  String get adminArchiveTooltip;
+
+  /// No description provided for @adminDeleteTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Supprimer le communiqué'**
+  String get adminDeleteTooltip;
+
+  /// No description provided for @adminSettingsTitle.
+  ///
+  /// In fr, this message translates to:
+  /// **'Réglages administrateur'**
+  String get adminSettingsTitle;
+
+  /// No description provided for @adminAdministrators.
+  ///
+  /// In fr, this message translates to:
+  /// **'Administrateurs'**
+  String get adminAdministrators;
+
+  /// No description provided for @adminLoadAdminsFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible de charger la liste.'**
+  String get adminLoadAdminsFailure;
+
+  /// No description provided for @adminNoOtherAdmins.
+  ///
+  /// In fr, this message translates to:
+  /// **'Aucun autre administrateur.'**
+  String get adminNoOtherAdmins;
+
+  /// No description provided for @adminCreateAdministrator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer un administrateur'**
+  String get adminCreateAdministrator;
+
+  /// No description provided for @adminLogout.
+  ///
+  /// In fr, this message translates to:
+  /// **'Déconnexion'**
+  String get adminLogout;
+
+  /// No description provided for @adminNewAdministrator.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nouvel administrateur'**
+  String get adminNewAdministrator;
+
+  /// No description provided for @adminCreateAccountTooltip.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer le compte'**
+  String get adminCreateAccountTooltip;
+
+  /// No description provided for @adminFullName.
+  ///
+  /// In fr, this message translates to:
+  /// **'Nom complet'**
+  String get adminFullName;
+
+  /// No description provided for @adminFullNameRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le nom complet est obligatoire.'**
+  String get adminFullNameRequired;
+
+  /// No description provided for @adminUsernameMinLength.
+  ///
+  /// In fr, this message translates to:
+  /// **'Utilisez au moins 3 caractères.'**
+  String get adminUsernameMinLength;
+
+  /// No description provided for @adminUsernameNoSpaces.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le nom d’utilisateur ne peut contenir d’espace.'**
+  String get adminUsernameNoSpaces;
+
+  /// No description provided for @adminConfirmPassword.
+  ///
+  /// In fr, this message translates to:
+  /// **'Confirmer le mot de passe'**
+  String get adminConfirmPassword;
+
+  /// No description provided for @adminPasswordTooShort.
+  ///
+  /// In fr, this message translates to:
+  /// **'Le mot de passe doit contenir au moins 12 caractères.'**
+  String get adminPasswordTooShort;
+
+  /// No description provided for @adminPasswordsMismatch.
+  ///
+  /// In fr, this message translates to:
+  /// **'Les mots de passe ne correspondent pas.'**
+  String get adminPasswordsMismatch;
+
+  /// No description provided for @adminCreateAdministratorAction.
+  ///
+  /// In fr, this message translates to:
+  /// **'Créer l’administrateur'**
+  String get adminCreateAdministratorAction;
+
+  /// No description provided for @adminCreateAdministratorFailure.
+  ///
+  /// In fr, this message translates to:
+  /// **'Impossible de créer ce compte administrateur.'**
+  String get adminCreateAdministratorFailure;
+
+  /// No description provided for @adminBack.
+  ///
+  /// In fr, this message translates to:
+  /// **'Retour'**
+  String get adminBack;
+
+  /// No description provided for @adminPasswordRequired.
+  ///
+  /// In fr, this message translates to:
+  /// **'Saisissez votre mot de passe.'**
+  String get adminPasswordRequired;
+
+  /// No description provided for @adminSizeKilobytes.
+  ///
+  /// In fr, this message translates to:
+  /// **'{size} Ko'**
+  String adminSizeKilobytes(String size);
+
+  /// No description provided for @adminSizeMegabytes.
+  ///
+  /// In fr, this message translates to:
+  /// **'{size} Mo'**
+  String adminSizeMegabytes(String size);
 }
 
 class _AppLocalizationsDelegate

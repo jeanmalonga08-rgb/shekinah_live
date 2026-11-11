@@ -149,7 +149,23 @@ class NextWorshipService {
     final reference = now ?? DateTime.now();
 
     if (program != null) {
-      final services = upcomingChurchServices(program, now: reference);
+      // Ne cibler que les services strictement à venir : un événement
+      // spécial plus tôt aujourd'hui resterait sinon collé à 00:00:00.
+      var services = upcomingChurchServices(program, now: reference)
+          .where((service) => service.dateTime.isAfter(reference))
+          .toList();
+      if (services.isEmpty) {
+        // Tous les événements spéciaux sont passés : revenir au récurrent.
+        services = upcomingChurchServices(
+          ChurchProgram(
+            defaults: program.defaults,
+            specials: const [],
+          ),
+          now: reference,
+        )
+            .where((service) => service.dateTime.isAfter(reference))
+            .toList();
+      }
       if (services.isNotEmpty) {
         final first = services.first;
         return NextWorshipService(

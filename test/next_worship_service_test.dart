@@ -91,5 +91,43 @@ void main() {
       expect(next.dateTime, DateTime(2026, 11, 12, 17));
       expect(next.timeText, '17:00');
     });
+
+    test('compute skips a special event already past today', () {
+      // Événement ponctuel aujourd'hui 09h00, maintenant 18h → le
+      // compte à rebours doit viser le prochain culte, pas 00:00:00.
+      final withTodayEvent = ChurchProgram(
+        defaults: const [
+          ChurchProgramEntry(
+            dayName: 'Dimanche',
+            weekday: DateTime.sunday,
+            time: '09:30',
+            period: 'AM',
+          ),
+        ],
+        specials: const [
+          ChurchProgramEntry(
+            dayName: 'Mardi',
+            date: null,
+            time: '09:00',
+            period: 'AM',
+            label: 'Réunion du matin',
+          ),
+        ].map((e) => ChurchProgramEntry(
+              dayName: e.dayName,
+              weekday: e.weekday,
+              date: DateTime(2026, 11, 10),
+              time: e.time,
+              period: e.period,
+              label: e.label,
+            )).toList(),
+      );
+
+      final next = NextWorshipService.compute(
+        program: withTodayEvent,
+        now: DateTime(2026, 11, 10, 18),
+      );
+      expect(next.dateTime.isAfter(DateTime(2026, 11, 10, 18)), isTrue);
+      expect(next.dateTime, DateTime(2026, 11, 15, 9, 30));
+    });
   });
 }

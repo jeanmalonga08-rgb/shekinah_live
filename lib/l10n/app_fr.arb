@@ -976,10 +976,13 @@
   "settingsVersion": "Version",
   "settingsWorshipSchedule": "Horaires de culte",
   "share": "Partager",
-  "shareAppMessage": "Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\n\nApple Store : le lien Apple sera bientôt disponible\n\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !",
+  "shareAppMessage": "Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\n\nApple Store : {appStoreUrl}\n\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !",
   "@shareAppMessage": {
     "placeholders": {
       "appName": {
+        "type": "String"
+      },
+      "appStoreUrl": {
         "type": "String"
       },
       "playStoreUrl": {
@@ -990,7 +993,7 @@
       }
     }
   },
-  "shareCantiqueBody": "Cantique : {title}\n{subtitle}\n\nÉcoutez ce cantique dans l'application {appName} :\n{playStoreUrl}\n\nSite : {websiteUrl}",
+  "shareCantiqueBody": "Cantique : {title}\n{subtitle}\n\nÉcoutez ce cantique dans l'application {appName}.\n\nSite : {websiteUrl}",
   "@shareCantiqueBody": {
     "placeholders": {
       "title": {
@@ -1000,9 +1003,6 @@
         "type": "String"
       },
       "appName": {
-        "type": "String"
-      },
-      "playStoreUrl": {
         "type": "String"
       },
       "websiteUrl": {
@@ -1026,7 +1026,7 @@
       }
     }
   },
-  "shareOfflineBody": "{category} : {title}\n{subtitle}\n{format} · disponible dans l'app\n\nRetrouvez ce contenu dans l'application {appName} :\n{playStoreUrl}\n\nSite : {websiteUrl}",
+  "shareOfflineBody": "{category} : {title}\n{subtitle}\n{format} · disponible dans l'app\n\nRetrouvez ce contenu dans l'application {appName}.",
   "@shareOfflineBody": {
     "placeholders": {
       "category": {
@@ -1043,16 +1043,10 @@
       },
       "appName": {
         "type": "String"
-      },
-      "playStoreUrl": {
-        "type": "String"
-      },
-      "websiteUrl": {
-        "type": "String"
       }
     }
   },
-  "sharePredicationBody": "Prédication : {title}\n{preacher}\n{date}\n\nÉcoutez cette prédication dans l'application Shekinah Tabernacle :\n{playStoreUrl}\n\nSite : {archivesUrl}",
+  "sharePredicationBody": "Prédication : {title}\n{preacher}\n{date}\n\nÉcoutez cette prédication dans l'application Shekinah Tabernacle.\n\nArchives : {archivesUrl}",
   "@sharePredicationBody": {
     "placeholders": {
       "title": {
@@ -1065,9 +1059,6 @@
         "type": "String"
       },
       "archivesUrl": {
-        "type": "String"
-      },
-      "playStoreUrl": {
         "type": "String"
       }
     }

@@ -678,6 +678,7 @@ class _BranhamPredicationsPageState
     final l10n = context.l10n;
     final appInvitation = l10n.shareAppMessage(
       AppConstants.appName,
+      AppConstants.appStoreUrl,
       AppConstants.playStoreUrl,
       AppConstants.websiteUrl,
     );

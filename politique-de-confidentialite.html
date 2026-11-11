@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité — Shekinah Tabernacle</title>
+<style>
+  :root {
+    --gold: #c9a227;
+    --gold-light: #e6c860;
+    --royal: #1b2a4a;
+    --royal-light: #24365e;
+    --bg: #0f172a;
+    --card: #16213b;
+    --card-border: #2a3a5f;
+    --text: #e8ecf4;
+    --muted: #9aa7c0;
+    --accent-red: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--royal) 0%, var(--royal-light) 60%, #1a2745 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  .hero .icon {
+    width: 72px; height: 72px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    background: rgba(201, 162, 39, 0.15);
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 34px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--gold-light);
+  }
+  .hero .app-name {
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .hero .updated {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(201, 162, 39, 0.12);
+    border: 1px solid rgba(201, 162, 39, 0.4);
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  section {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--card-border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: var(--gold);
+    color: var(--royal);
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 18px 0 8px;
+    font-weight: 700;
+  }
+  p { margin-bottom: 12px; color: var(--text); }
+  ul { list-style: none; margin: 8px 0 12px; }
+  ul li {
+    padding: 6px 0 6px 26px;
+    position: relative;
+    color: var(--text);
+  }
+  ul li::before {
+    content: "•";
+    position: absolute; left: 8px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .info-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .info-item .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .info-item .value { font-weight: 600; color: var(--text); word-break: break-all; }
+  .no-collect {
+    background: rgba(192, 57, 43, 0.08);
+    border: 1px solid rgba(192, 57, 43, 0.3);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 16px 0;
+  }
+  .no-collect .title {
+    color: var(--accent-red);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .no-collect ul li::before { color: var(--accent-red); }
+  .rights-list { counter-reset: item; }
+  .rights-list li {
+    counter-increment: item;
+    padding-left: 40px;
+  }
+  .rights-list li::before {
+    content: counter(item);
+    position: absolute; left: 0; top: 6px;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: rgba(201,162,39,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-box {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    margin-top: 8px;
+  }
+  .contact-card {
+    flex: 1; min-width: 220px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .contact-card .icon { font-size: 26px; margin-bottom: 8px; }
+  .contact-card .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
+  .contact-card .value { font-weight: 700; color: var(--gold-light); margin-top: 4px; word-break: break-all; }
+  .commitment {
+    text-align: center;
+    padding: 36px 30px;
+    background: linear-gradient(135deg, rgba(201,162,39,0.1), rgba(27,42,74,0.6));
+    border: 1px solid rgba(201,162,39,0.35);
+  }
+  .commitment h2 { border: none; justify-content: center; }
+  .commitment .subtitle { color: var(--muted); margin-bottom: 10px; }
+  .commitment .footer {
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1.05rem;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 24px;
+  }
+  @media print {
+    body { background: #fff; color: #111; }
+    .hero { background: #1b2a4a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section, .contact-card, .info-item { background: #fff; border-color: #ddd; }
+    p, li, .info-item .value { color: #222; }
+    .no-collect { background: #fdf0ee; border-color: #e5b3ad; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="icon">🔒</div>
+  <h1>Politique de Confidentialité</h1>
+  <div class="app-name">Shekinah Tabernacle</div>
+  <span class="updated">Dernière mise à jour : 11 Novembre 2026</span>
+</header>
+
+<main class="container">
+
+  <!-- 1. Introduction -->
+  <section>
+    <h2><span class="num">1</span>Introduction</h2>
+    <p>Shekinah Tabernacle s'engage à protéger la confidentialité de vos données personnelles. Cette politique explique quelles informations sont utilisées, comment elles sont protégées, et quels sont vos droits.</p>
+  </section>
+
+  <!-- 2. Application -->
+  <section>
+    <h2><span class="num">2</span>Application</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="label">Nom de l'application</div>
+        <div class="value">Shekinah Tabernacle</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Développeur</div>
+        <div class="value">Jean Malonga Kisangi</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Package</div>
+        <div class="value">com.shekinah.tabernacle</div>
+      </div>
+      <div class="info-item">
+        <div class="label">Version</div>
+        <div class="value">5.1.0</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Données collectées -->
+  <section>
+    <h2><span class="num">3</span>Données collectées</h2>
+    <p>Nous ne collectons <strong>aucune donnée personnelle à des fins commerciales</strong> : pas de vente, pas de publicité, pas d'analytics publicitaires. L'application utilise uniquement les éléments techniques suivants :</p>
+
+    <h3>A. Notifications push</h3>
+    <p>Un jeton Firebase Cloud Messaging (FCM) est généré pour vous adresser les annonces et les communications de l'église. Ce jeton est stocké sur votre appareil et transmis à nos serveurs uniquement pour l'envoi des notifications. Vous pouvez les désactiver à tout moment dans les paramètres de votre appareil ou de l'application.</p>
+
+    <h3>B. Connexion administrateur (optionnelle)</h3>
+    <p>Un compte administrateur peut se connecter pour gérer les communiqués officiels. Le jeton de session est conservé de manière chiffrée sur l'appareil. Les utilisateurs ordinaires ne créent aucun compte.</p>
+
+    <h3>C. Stockage local</h3>
+    <p>Vos préférences (thème, langue), votre historique de lecture et vos téléchargements hors ligne (prédications, cantiques) sont conservés <strong>uniquement sur votre appareil</strong>.</p>
+
+    <h3>D. Contenus tiers</h3>
+    <ul>
+      <li>Le direct est diffusé via une WebView (Vimeo / flux radio Shekinah) : ces services appliquent leur propre politique de confidentialité.</li>
+      <li>Les liens externes (dons, site officiel) ouvrent votre navigateur et ne transmettent aucune donnée depuis l'app.</li>
+    </ul>
+
+    <div class="no-collect">
+      <div class="title">Ce que nous ne collectons PAS :</div>
+      <ul>
+        <li>Nom, email, téléphone (sauf si vous nous contactez volontairement)</li>
+        <li>Données biométriques</li>
+        <li>Localisation GPS</li>
+        <li>Liste de contacts</li>
+        <li>Données financières (les dons sont traités par des prestataires externes)</li>
+        <li>Historique de navigation</li>
+        <li>Identifiants publicitaires / analytics</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. Utilisation des données -->
+  <section>
+    <h2><span class="num">4</span>Utilisation des données</h2>
+    <ul class="rights-list">
+      <li><strong>Fourniture du service :</strong> streaming en direct, accès aux archives et aux contenus de shekinahgospel.org.</li>
+      <li><strong>Fonctionnement technique :</strong> affichage des contenus web, stockage local des préférences et des téléchargements.</li>
+      <li><strong>Notifications :</strong> envoi des communiqués et annonces de l'église via FCM.</li>
+      <li><strong>Support :</strong> communication uniquement à votre initiative via nos coordonnées.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Partage des données -->
+  <section>
+    <h2><span class="num">5</span>Partage des données</h2>
+    <p>Vos données ne sont ni vendues ni partagées à des tiers à des fins commerciales. Seuls les prestataires techniques strictement nécessaires sont utilisés :</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — notifications push</li>
+      <li><strong>Supabase</strong> — hébergement des contenus publics</li>
+      <li><strong>shekinahgospel.org</strong> — site officiel et archives</li>
+    </ul>
+  </section>
+
+  <!-- 6. Sécurité -->
+  <section>
+    <h2><span class="num">6</span>Sécurité</h2>
+    <p>Les échanges utilisent HTTPS. Les jetons de session sont stockés de façon chiffrée. Les données de l'app restent sur votre appareil autant que vous le souhaitez.</p>
+  </section>
+
+  <!-- 7. Vos droits -->
+  <section>
+    <h2><span class="num">7</span>Vos droits</h2>
+    <p>Conformément à la réglementation applicable, vous pouvez demander l'accès, la rectification ou la suppression de vos données, ainsi que le retrait de votre jeton de notification, en nous contactant à l'adresse ci-dessous.</p>
+  </section>
+
+  <!-- 8. Contact -->
+  <section>
+    <h2><span class="num">8</span>Contact et Support</h2>
+    <div class="contact-box">
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <div class="label">Email</div>
+        <div class="value">jeanmalonga08@gmail.com</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="label">Téléphone</div>
+        <div class="value">+243 846 656 910</div>
+      </div>
+    </div>
+    <p style="margin-top:16px">Réponse sous 48 h ouvrées. Pour les réclamations, précisez l'objet « Confidentialité ».</p>
+  </section>
+
+  <!-- 9. Modifications -->
+  <section>
+    <h2><span class="num">9</span>Modifications</h2>
+    <p>Cette politique peut être mise à jour. La date de dernière modification est indiquée en haut de ce document ; la version en vigueur est celle affichée dans l'application.</p>
+  </section>
+
+  <!-- Engagement -->
+  <section class="commitment">
+    <h2>🙏 Engagement</h2>
+    <p class="subtitle">Pour la gloire de Dieu et le respect de votre vie privée.</p>
+    <p class="footer">Shekinah Tabernacle — Que le Seigneur vous bénisse.</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Shekinah Tabernacle — Tous droits réservés
+</footer>
+
+</body>
+</html>

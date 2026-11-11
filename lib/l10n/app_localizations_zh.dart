@@ -2257,10 +2257,11 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String shareAppMessage(
     String appName,
+    String appStoreUrl,
     String playStoreUrl,
     String websiteUrl,
   ) {
-    return '了解 $appName 应用：礼拜直播、讲道、诗歌等丰富内容。\n\nPlay Store：$playStoreUrl\n\nApple Store：苹果商店链接即将推出\n\n官方网站：$websiteUrl\n\n欢迎分享并邀请亲友加入我们的团契！';
+    return '了解 $appName 应用：礼拜直播、讲道、诗歌等丰富内容。\n\nPlay Store：$playStoreUrl\n\nApple Store：$appStoreUrl\n\n官方网站：$websiteUrl\n\n欢迎分享并邀请亲友加入我们的团契！';
   }
 
   @override
@@ -2268,10 +2269,9 @@ class AppLocalizationsZh extends AppLocalizations {
     String title,
     String subtitle,
     String appName,
-    String playStoreUrl,
     String websiteUrl,
   ) {
-    return '诗歌：$title\n$subtitle\n\n在 $appName 应用中收听此诗歌：\n$playStoreUrl\n\n网站：$websiteUrl';
+    return '诗歌：$title\n$subtitle\n\n在 $appName 应用中收听此诗歌。\n\n网站：$websiteUrl';
   }
 
   @override
@@ -2291,10 +2291,8 @@ class AppLocalizationsZh extends AppLocalizations {
     String subtitle,
     String format,
     String appName,
-    String playStoreUrl,
-    String websiteUrl,
   ) {
-    return '$category：$title\n$subtitle\n$format · 可在应用中使用\n\n在 $appName 应用中查找此内容：\n$playStoreUrl\n\n网站：$websiteUrl';
+    return '$category：$title\n$subtitle\n$format · 可在应用中使用\n\n在 $appName 应用中查找此内容。';
   }
 
   @override
@@ -2303,9 +2301,8 @@ class AppLocalizationsZh extends AppLocalizations {
     String preacher,
     String date,
     String archivesUrl,
-    String playStoreUrl,
   ) {
-    return '讲道：$title\n$preacher\n$date\n\n在 Shekinah Tabernacle 应用中收听此讲道：\n$playStoreUrl\n\n网站：$archivesUrl';
+    return '讲道：$title\n$preacher\n$date\n\n在 Shekinah Tabernacle 应用中收听此讲道。\n\n档案：$archivesUrl';
   }
 
   @override

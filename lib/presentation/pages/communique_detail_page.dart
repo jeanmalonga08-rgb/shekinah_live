@@ -49,6 +49,7 @@ class _CommuniqueDetailPageState extends ConsumerState<CommuniqueDetailPage> {
       final l10n = context.l10n;
       final invitation = l10n.shareAppMessage(
         AppConstants.appName,
+        AppConstants.appStoreUrl,
         AppConstants.playStoreUrl,
         AppConstants.websiteUrl,
       );

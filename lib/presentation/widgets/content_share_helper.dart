@@ -54,16 +54,22 @@ Future<void> sharePredication(
   final dateLabel = formatLongDate(predication.date, locale);
   final dateLine =
       '$dateLabel · ${predicationTypeLabel(l10n, predication.type)} · ${predicationTimeLabel(l10n, predication.timeType)}';
+  final appInvitation = l10n.shareAppMessage(
+    AppConstants.appName,
+    AppConstants.appStoreUrl,
+    AppConstants.playStoreUrl,
+    AppConstants.websiteUrl,
+  );
 
   await shareTextContent(
     context,
-    text: l10n.sharePredicationBody(
-      predicationDisplayTitle(l10n, predication),
-      predication.displayPreacher,
-      dateLine,
-      AppConstants.archivesUrl,
-      AppConstants.playStoreUrl,
-    ),
+    text:
+        '${l10n.sharePredicationBody(
+          predicationDisplayTitle(l10n, predication),
+          predication.displayPreacher,
+          dateLine,
+          AppConstants.archivesUrl,
+        )}\n\n$appInvitation',
     subject: l10n.sharePredicationSubject(
       predicationDisplayTitle(l10n, predication),
     ),
@@ -75,16 +81,22 @@ Future<void> shareCantique(BuildContext context, Cantique cantique) async {
   final subtitle = cantique.number > 0
       ? '${l10n.cantiquesNumber(cantique.number)} · ${cantique.displaySubtitle}'
       : cantique.displaySubtitle;
+  final appInvitation = l10n.shareAppMessage(
+    AppConstants.appName,
+    AppConstants.appStoreUrl,
+    AppConstants.playStoreUrl,
+    AppConstants.websiteUrl,
+  );
 
   await shareTextContent(
     context,
-    text: l10n.shareCantiqueBody(
-      cantiqueDisplayTitle(l10n, cantique),
-      subtitle,
-      AppConstants.appName,
-      AppConstants.playStoreUrl,
-      AppConstants.cantiquesUrl,
-    ),
+    text:
+        '${l10n.shareCantiqueBody(
+          cantiqueDisplayTitle(l10n, cantique),
+          subtitle,
+          AppConstants.appName,
+          AppConstants.cantiquesUrl,
+        )}\n\n$appInvitation',
     subject: l10n.shareCantiqueSubject(cantiqueDisplayTitle(l10n, cantique)),
   );
 }
@@ -98,6 +110,7 @@ Future<void> shareOfflineMediaInfo(
 
   final appInvitation = l10n.shareAppMessage(
     AppConstants.appName,
+    AppConstants.appStoreUrl,
     AppConstants.playStoreUrl,
     AppConstants.websiteUrl,
   );
@@ -110,8 +123,6 @@ Future<void> shareOfflineMediaInfo(
       item.subtitle,
       offlineFormatLabel(l10n, item.format),
       AppConstants.appName,
-      AppConstants.playStoreUrl,
-      AppConstants.websiteUrl,
     )}\n\n$appInvitation',
     subject: item.title,
   );
@@ -271,10 +282,17 @@ Future<void> shareMultimediaVideo(
   BuildContext context,
   MultimediaVideo video,
 ) async {
+  final l10n = context.l10n;
+  final appInvitation = l10n.shareAppMessage(
+    AppConstants.appName,
+    AppConstants.appStoreUrl,
+    AppConstants.playStoreUrl,
+    AppConstants.websiteUrl,
+  );
   await shareTextContent(
     context,
     text:
-        '${video.title}\n${video.category.name}\n${AppConstants.cantiquesUrl}\n${AppConstants.playStoreUrl}',
+        '${video.title}\n${video.category.name}\n${l10n.shareSite(AppConstants.cantiquesUrl)}\n\n$appInvitation',
     subject: video.title,
   );
 }

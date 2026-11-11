@@ -4193,9 +4193,10 @@ abstract class AppLocalizations {
   /// No description provided for @shareAppMessage.
   ///
   /// In fr, this message translates to:
-  /// **'Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\n\nApple Store : le lien Apple sera bientôt disponible\n\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !'**
+  /// **'Découvrez l’application {appName} : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : {playStoreUrl}\n\nApple Store : {appStoreUrl}\n\nSite web : {websiteUrl}\n\nPartagez et invitez vos proches à rejoindre la communauté !'**
   String shareAppMessage(
     String appName,
+    String appStoreUrl,
     String playStoreUrl,
     String websiteUrl,
   );
@@ -4203,12 +4204,11 @@ abstract class AppLocalizations {
   /// No description provided for @shareCantiqueBody.
   ///
   /// In fr, this message translates to:
-  /// **'Cantique : {title}\n{subtitle}\n\nÉcoutez ce cantique dans l\'application {appName} :\n{playStoreUrl}\n\nSite : {websiteUrl}'**
+  /// **'Cantique : {title}\n{subtitle}\n\nÉcoutez ce cantique dans l\'application {appName}.\n\nSite : {websiteUrl}'**
   String shareCantiqueBody(
     String title,
     String subtitle,
     String appName,
-    String playStoreUrl,
     String websiteUrl,
   );
 
@@ -4227,27 +4227,24 @@ abstract class AppLocalizations {
   /// No description provided for @shareOfflineBody.
   ///
   /// In fr, this message translates to:
-  /// **'{category} : {title}\n{subtitle}\n{format} · disponible dans l\'app\n\nRetrouvez ce contenu dans l\'application {appName} :\n{playStoreUrl}\n\nSite : {websiteUrl}'**
+  /// **'{category} : {title}\n{subtitle}\n{format} · disponible dans l\'app\n\nRetrouvez ce contenu dans l\'application {appName}.'**
   String shareOfflineBody(
     String category,
     String title,
     String subtitle,
     String format,
     String appName,
-    String playStoreUrl,
-    String websiteUrl,
   );
 
   /// No description provided for @sharePredicationBody.
   ///
   /// In fr, this message translates to:
-  /// **'Prédication : {title}\n{preacher}\n{date}\n\nÉcoutez cette prédication dans l\'application Shekinah Tabernacle :\n{playStoreUrl}\n\nSite : {archivesUrl}'**
+  /// **'Prédication : {title}\n{preacher}\n{date}\n\nÉcoutez cette prédication dans l\'application Shekinah Tabernacle.\n\nArchives : {archivesUrl}'**
   String sharePredicationBody(
     String title,
     String preacher,
     String date,
     String archivesUrl,
-    String playStoreUrl,
   );
 
   /// No description provided for @sharePredicationSubject.

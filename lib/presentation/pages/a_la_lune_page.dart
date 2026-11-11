@@ -88,7 +88,13 @@ class ALaLunePage extends ConsumerWidget {
                 else
                   _CommuniqueCard(communique: selectedCommunique),
                 const SizedBox(height: 14),
-                const _TemplePhotosSlider(),
+                if (_PhotoCardSlider.showPastorAnniversary) ...[
+                  _PhotoCardSlider(
+                    items: _PhotoCardSlider.pastorAnniversaryItems(),
+                  ),
+                  const SizedBox(height: 14),
+                ],
+                _PhotoCardSlider(items: _PhotoCardSlider.templeItems()),
                 const SizedBox(height: 22),
                 _SectionTitle(
                   title: l10n.aLaLuneRecentPredications,
@@ -171,8 +177,8 @@ class _SectionTitle extends StatelessWidget {
   }
 }
 
-class _TemplePhotoItem {
-  const _TemplePhotoItem({
+class _PhotoCardItem {
+  const _PhotoCardItem({
     this.asset,
     this.imageUrl,
     required this.titleKey,
@@ -180,25 +186,27 @@ class _TemplePhotoItem {
 
   final String? asset;
   final String? imageUrl;
-  final _TemplePhotoTitleKey titleKey;
+  final _PhotoCardTitleKey titleKey;
 
   bool get isPastorAnniversary =>
-      titleKey == _TemplePhotoTitleKey.pastorAnniversary;
+      titleKey == _PhotoCardTitleKey.pastorAnniversary;
 }
 
-enum _TemplePhotoTitleKey { sanctuary, balcony, pastorAnniversary }
+enum _PhotoCardTitleKey { sanctuary, balcony, pastorAnniversary }
 
-String _templePhotoTitle(AppLocalizations l10n, _TemplePhotoTitleKey key) {
+String _photoCardTitle(AppLocalizations l10n, _PhotoCardTitleKey key) {
   return switch (key) {
-    _TemplePhotoTitleKey.sanctuary => l10n.aLaLuneSanctuaryAfter,
-    _TemplePhotoTitleKey.balcony => l10n.aLaLuneBalconyAfter,
-    _TemplePhotoTitleKey.pastorAnniversary =>
+    _PhotoCardTitleKey.sanctuary => l10n.aLaLuneSanctuaryAfter,
+    _PhotoCardTitleKey.balcony => l10n.aLaLuneBalconyAfter,
+    _PhotoCardTitleKey.pastorAnniversary =>
       l10n.aLaLunePastorAnniversaryTitle,
   };
 }
 
-class _TemplePhotosSlider extends StatefulWidget {
-  const _TemplePhotosSlider();
+class _PhotoCardSlider extends StatefulWidget {
+  const _PhotoCardSlider({required this.items});
+
+  final List<_PhotoCardItem> items;
 
   /// Photo « 70 ans du Pasteur » affichée pendant Thanksgiving,
   /// jusqu'à la fin du mois de novembre 2026.
@@ -207,32 +215,41 @@ class _TemplePhotosSlider extends StatefulWidget {
   static final _pastorAnniversaryStart = DateTime(2026, 11, 10);
   static final _pastorAnniversaryEnd = DateTime(2026, 12, 1);
 
-  static List<_TemplePhotoItem> items() {
+  static bool get showPastorAnniversary {
     final now = DateTime.now();
-    final showAnniversary = !now.isBefore(_pastorAnniversaryStart) &&
+    return !now.isBefore(_pastorAnniversaryStart) &&
         now.isBefore(_pastorAnniversaryEnd);
-    return [
-      if (showAnniversary)
-        const _TemplePhotoItem(
-          imageUrl: _pastorAnniversaryImageUrl,
-          titleKey: _TemplePhotoTitleKey.pastorAnniversary,
-        ),
-      const _TemplePhotoItem(
+  }
+
+  static List<_PhotoCardItem> pastorAnniversaryItems() {
+    return showPastorAnniversary
+        ? const [
+            _PhotoCardItem(
+              imageUrl: _pastorAnniversaryImageUrl,
+              titleKey: _PhotoCardTitleKey.pastorAnniversary,
+            ),
+          ]
+        : const [];
+  }
+
+  static List<_PhotoCardItem> templeItems() {
+    return const [
+      _PhotoCardItem(
         asset: 'assets/images/sanctuary-after.jpeg',
-        titleKey: _TemplePhotoTitleKey.sanctuary,
+        titleKey: _PhotoCardTitleKey.sanctuary,
       ),
-      const _TemplePhotoItem(
+      _PhotoCardItem(
         asset: 'assets/images/balcony-after.jpeg',
-        titleKey: _TemplePhotoTitleKey.balcony,
+        titleKey: _PhotoCardTitleKey.balcony,
       ),
     ];
   }
 
   @override
-  State<_TemplePhotosSlider> createState() => _TemplePhotosSliderState();
+  State<_PhotoCardSlider> createState() => _PhotoCardSliderState();
 }
 
-class _TemplePhotosSliderState extends State<_TemplePhotosSlider> {
+class _PhotoCardSliderState extends State<_PhotoCardSlider> {
   late final PageController _controller;
   int _index = 0;
 
@@ -251,7 +268,7 @@ class _TemplePhotosSliderState extends State<_TemplePhotosSlider> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final items = _TemplePhotosSlider.items();
+    final items = widget.items;
 
     return Column(
       children: [
@@ -265,7 +282,7 @@ class _TemplePhotosSliderState extends State<_TemplePhotosSlider> {
               final item = items[i];
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
-                child: _TemplePhotoCard(
+                child: _PhotoCard(
                   item: item,
                   indexLabel: '${i + 1}/${items.length}',
                   l10n: l10n,
@@ -275,37 +292,38 @@ class _TemplePhotosSliderState extends State<_TemplePhotosSlider> {
           ),
         ),
         const SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(items.length, (i) {
-            final active = i == _index;
-            return AnimatedContainer(
-              duration: const Duration(milliseconds: 250),
-              margin: const EdgeInsets.symmetric(horizontal: 3),
-              width: active ? 18 : 7,
-              height: 7,
-              decoration: BoxDecoration(
-                color: active
-                    ? AppTheme.accentGold
-                    : AppTheme.grey.withValues(alpha: 0.45),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            );
-          }),
-        ),
+        if (items.length > 1)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(items.length, (i) {
+              final active = i == _index;
+              return AnimatedContainer(
+                duration: const Duration(milliseconds: 250),
+                margin: const EdgeInsets.symmetric(horizontal: 3),
+                width: active ? 18 : 7,
+                height: 7,
+                decoration: BoxDecoration(
+                  color: active
+                      ? AppTheme.accentGold
+                      : AppTheme.grey.withValues(alpha: 0.45),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              );
+            }),
+          ),
       ],
     );
   }
 }
 
-class _TemplePhotoCard extends StatelessWidget {
-  const _TemplePhotoCard({
+class _PhotoCard extends StatelessWidget {
+  const _PhotoCard({
     required this.item,
     required this.indexLabel,
     required this.l10n,
   });
 
-  final _TemplePhotoItem item;
+  final _PhotoCardItem item;
   final String indexLabel;
   final AppLocalizations l10n;
 
@@ -319,8 +337,33 @@ class _TemplePhotoCard extends StatelessWidget {
     );
   }
 
+  Widget _itemImage() {
+    return item.imageUrl != null
+        ? CachedNetworkImage(
+            imageUrl: item.imageUrl!,
+            fit: BoxFit.cover,
+            placeholder: (_, _) => _imageFallback(),
+            errorWidget: (_, _, _) => _imageFallback(),
+          )
+        : Image.asset(
+            item.asset!,
+            fit: BoxFit.cover,
+            errorBuilder: (_, _, _) => _imageFallback(),
+          );
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (item.isPastorAnniversary) {
+      return ShtCard(
+        padding: EdgeInsets.zero,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(AppConstants.cardRadius),
+          child: _itemImage(),
+        ),
+      );
+    }
+
     return ShtCard(
       padding: EdgeInsets.zero,
       child: IntrinsicHeight(
@@ -333,18 +376,7 @@ class _TemplePhotoCard extends StatelessWidget {
               ),
               child: SizedBox(
                 width: 108,
-                child: item.imageUrl != null
-                    ? CachedNetworkImage(
-                        imageUrl: item.imageUrl!,
-                        fit: BoxFit.cover,
-                        placeholder: (_, _) => _imageFallback(),
-                        errorWidget: (_, _, _) => _imageFallback(),
-                      )
-                    : Image.asset(
-                        item.asset!,
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, _, _) => _imageFallback(),
-                      ),
+                child: _itemImage(),
               ),
             ),
             Expanded(
@@ -384,7 +416,7 @@ class _TemplePhotoCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      _templePhotoTitle(l10n, item.titleKey),
+                      _photoCardTitle(l10n, item.titleKey),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(color: AppTheme.white,

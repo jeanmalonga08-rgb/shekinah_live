@@ -2354,10 +2354,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String shareAppMessage(
     String appName,
+    String appStoreUrl,
     String playStoreUrl,
     String websiteUrl,
   ) {
-    return 'Discover the $appName app: live services, sermons, hymns, and more.\n\nPlay Store: $playStoreUrl\n\nApple Store: the Apple link will be available soon\n\nWebsite: $websiteUrl\n\nShare and invite your loved ones to join the community!';
+    return 'Discover the $appName app: live services, sermons, hymns, and more.\n\nPlay Store: $playStoreUrl\n\nApple Store: $appStoreUrl\n\nWebsite: $websiteUrl\n\nShare and invite your loved ones to join the community!';
   }
 
   @override
@@ -2365,10 +2366,9 @@ class AppLocalizationsEn extends AppLocalizations {
     String title,
     String subtitle,
     String appName,
-    String playStoreUrl,
     String websiteUrl,
   ) {
-    return 'Hymn: $title\n$subtitle\n\nListen to this hymn in the $appName app:\n$playStoreUrl\n\nWebsite: $websiteUrl';
+    return 'Hymn: $title\n$subtitle\n\nListen to this hymn in the $appName app.\n\nWebsite: $websiteUrl';
   }
 
   @override
@@ -2388,10 +2388,8 @@ class AppLocalizationsEn extends AppLocalizations {
     String subtitle,
     String format,
     String appName,
-    String playStoreUrl,
-    String websiteUrl,
   ) {
-    return '$category: $title\n$subtitle\n$format · available in the app\n\nFind this content in the $appName app:\n$playStoreUrl\n\nWebsite: $websiteUrl';
+    return '$category: $title\n$subtitle\n$format · available in the app\n\nFind this content in the $appName app.';
   }
 
   @override
@@ -2400,9 +2398,8 @@ class AppLocalizationsEn extends AppLocalizations {
     String preacher,
     String date,
     String archivesUrl,
-    String playStoreUrl,
   ) {
-    return 'Sermon: $title\n$preacher\n$date\n\nListen to this sermon in the Shekinah Tabernacle app:\n$playStoreUrl\n\nWebsite: $archivesUrl';
+    return 'Sermon: $title\n$preacher\n$date\n\nListen to this sermon in the Shekinah Tabernacle app.\n\nArchives: $archivesUrl';
   }
 
   @override

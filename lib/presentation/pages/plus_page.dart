@@ -242,6 +242,7 @@ class PlusPage extends ConsumerWidget {
       ShareParams(
         text: context.l10n.shareAppMessage(
           AppConstants.appName,
+          AppConstants.appStoreUrl,
           AppConstants.playStoreUrl,
           AppConstants.websiteUrl,
         ),

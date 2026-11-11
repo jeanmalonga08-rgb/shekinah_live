@@ -64,6 +64,8 @@ class AppConstants {
   static const String androidPackageId = 'com.shekinah.tabernacle';
   static const String playStoreUrl =
       'https://play.google.com/store/apps/details?id=$androidPackageId';
+  static const String appStoreUrl =
+      'https://apps.apple.com/us/app/shekinah-tabernacle/id6832629469';
   static const String archivesUrl = 'https://shekinahgospel.org/archives';
   static const String cantiquesUrl = 'https://shekinahgospel.org/multimedia';
   static const String communiqueDetailsUrl =

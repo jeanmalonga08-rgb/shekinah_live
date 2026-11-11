@@ -2380,10 +2380,11 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String shareAppMessage(
     String appName,
+    String appStoreUrl,
     String playStoreUrl,
     String websiteUrl,
   ) {
-    return 'Découvrez l’application $appName : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : $playStoreUrl\n\nApple Store : le lien Apple sera bientôt disponible\n\nSite web : $websiteUrl\n\nPartagez et invitez vos proches à rejoindre la communauté !';
+    return 'Découvrez l’application $appName : cultes en direct, prédications, cantiques et bien plus.\n\nPlay Store : $playStoreUrl\n\nApple Store : $appStoreUrl\n\nSite web : $websiteUrl\n\nPartagez et invitez vos proches à rejoindre la communauté !';
   }
 
   @override
@@ -2391,10 +2392,9 @@ class AppLocalizationsFr extends AppLocalizations {
     String title,
     String subtitle,
     String appName,
-    String playStoreUrl,
     String websiteUrl,
   ) {
-    return 'Cantique : $title\n$subtitle\n\nÉcoutez ce cantique dans l\'application $appName :\n$playStoreUrl\n\nSite : $websiteUrl';
+    return 'Cantique : $title\n$subtitle\n\nÉcoutez ce cantique dans l\'application $appName.\n\nSite : $websiteUrl';
   }
 
   @override
@@ -2414,10 +2414,8 @@ class AppLocalizationsFr extends AppLocalizations {
     String subtitle,
     String format,
     String appName,
-    String playStoreUrl,
-    String websiteUrl,
   ) {
-    return '$category : $title\n$subtitle\n$format · disponible dans l\'app\n\nRetrouvez ce contenu dans l\'application $appName :\n$playStoreUrl\n\nSite : $websiteUrl';
+    return '$category : $title\n$subtitle\n$format · disponible dans l\'app\n\nRetrouvez ce contenu dans l\'application $appName.';
   }
 
   @override
@@ -2426,9 +2424,8 @@ class AppLocalizationsFr extends AppLocalizations {
     String preacher,
     String date,
     String archivesUrl,
-    String playStoreUrl,
   ) {
-    return 'Prédication : $title\n$preacher\n$date\n\nÉcoutez cette prédication dans l\'application Shekinah Tabernacle :\n$playStoreUrl\n\nSite : $archivesUrl';
+    return 'Prédication : $title\n$preacher\n$date\n\nÉcoutez cette prédication dans l\'application Shekinah Tabernacle.\n\nArchives : $archivesUrl';
   }
 
   @override

@@ -1785,6 +1785,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get pastorTitle => 'Richard Diyoka Nsanguluja 牧师';
 
   @override
+  String get pastorAnniversaryVerse => '“他们年老的时候仍要结果子，要满了汁浆而常发青。”';
+
+  @override
+  String get pastorAnniversaryVerseRef => '诗篇 92:14';
+
+  @override
   String get pdf => 'PDF';
 
   @override

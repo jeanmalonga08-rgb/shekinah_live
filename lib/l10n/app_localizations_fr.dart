@@ -1876,6 +1876,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get pastorTitle => 'Pasteur Richard Diyoka Nsanguluja';
 
   @override
+  String get pastorAnniversaryVerse =>
+      '« Ils portent encore des fruits dans la vieillesse, ils sont pleins de sève et verdoyants. »';
+
+  @override
+  String get pastorAnniversaryVerseRef => 'Psaume 92 : 14';
+
+  @override
   String get pdf => 'PDF';
 
   @override

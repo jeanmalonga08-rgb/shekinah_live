@@ -1,11 +1,14 @@
 name: Upload iOS to App Store Connect
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       build_number:
-        description: Numéro de build iOS supérieur à ceux déjà téléversés pour cette version
-        required: true
+        description: Numéro de build iOS (auto = +build pubspec + 1 si vide)
+        required: false
         type: string
 
 permissions:
@@ -39,9 +42,21 @@ jobs:
           sudo xcode-select -s "$xcode_app/Contents/Developer"
           xcodebuild -version
 
+      - name: Resolve build number
+        run: |
+          set -euo pipefail
+          if [ -n "${{ inputs.build_number }}" ]; then
+            echo "IOS_BUILD_NUMBER=${{ inputs.build_number }}" >> "$GITHUB_ENV"
+          else
+            CURRENT=$(grep -E '^version:' pubspec.yaml | sed -E 's/.*\+([0-9]+).*/\1/')
+            [[ "$CURRENT" =~ ^[0-9]+$ ]] || { echo 'Version pubspec illisible.' >&2; exit 1; }
+            echo "IOS_BUILD_NUMBER=$((CURRENT + 1))" >> "$GITHUB_ENV"
+            echo "Build number auto : $((CURRENT + 1))"
+          fi
+
       - name: Validate inputs and install Apple credentials
         env:
-          BUILD_NUMBER: ${{ inputs.build_number }}
+          BUILD_NUMBER: ${{ env.IOS_BUILD_NUMBER }}
           APPLE_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
           APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
@@ -68,7 +83,7 @@ jobs:
 
       - name: Prepare Flutter and archive
         env:
-          BUILD_NUMBER: ${{ inputs.build_number }}
+          BUILD_NUMBER: ${{ env.IOS_BUILD_NUMBER }}
           APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
         run: |

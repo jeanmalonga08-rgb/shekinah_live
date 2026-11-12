@@ -28,8 +28,8 @@ void main() {
       final services = upcomingChurchServices(recurring, now: now);
 
       expect(services, hasLength(2));
-      expect(services.first.dateTime, DateTime(2026, 11, 11, 17));
-      expect(services.last.dateTime, DateTime(2026, 11, 15, 9, 30));
+      expect(services.first.dateTime, DateTime.utc(2026, 11, 11, 17));
+      expect(services.last.dateTime, DateTime.utc(2026, 11, 15, 9, 30));
       expect(services.every((s) => !s.isSpecial), isTrue);
     });
 
@@ -41,7 +41,7 @@ void main() {
       final sunday = services.firstWhere(
         (s) => s.entry.weekday == DateTime.sunday,
       );
-      expect(sunday.dateTime, DateTime(2026, 11, 22, 9, 30));
+      expect(sunday.dateTime, DateTime.utc(2026, 11, 22, 9, 30));
     });
 
     test('special events take priority over recurring services', () {
@@ -73,8 +73,8 @@ void main() {
       expect(services, hasLength(2));
       expect(services.every((s) => s.isSpecial), isTrue);
       expect(services.first.entry.label, 'Réunion de Thanksgiving');
-      expect(services.first.dateTime, DateTime(2026, 11, 12, 9));
-      expect(services.last.dateTime, DateTime(2026, 11, 15, 9));
+      expect(services.first.dateTime, DateTime.utc(2026, 11, 12, 9));
+      expect(services.last.dateTime, DateTime.utc(2026, 11, 15, 9));
 
       // Programme vide de spéciaux passés → retour au récurrent.
       final pastSpecials = ChurchProgram(

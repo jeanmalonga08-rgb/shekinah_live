@@ -12,6 +12,7 @@ import '../../core/l10n/locale_format.dart';
 import '../../core/l10n/l10n_extensions.dart';
 import '../providers/locale_provider.dart';
 import '../../core/utils/network_error_utils.dart';
+import '../../core/utils/pastor_anniversary.dart';
 import '../../domain/entities/communique.dart';
 import '../../domain/entities/predication.dart';
 import '../../l10n/app_localizations.dart';
@@ -19,6 +20,7 @@ import '../providers/communique_provider.dart';
 import '../providers/predication_provider.dart';
 import '../widgets/sht_widgets.dart';
 import '../widgets/sinistre_majeur_card.dart';
+import 'communique_detail_page.dart';
 import 'predication_detail_page.dart';
 
 class ALaLunePage extends ConsumerWidget {
@@ -29,7 +31,6 @@ class ALaLunePage extends ConsumerWidget {
     final communiqueState = ref.watch(communiqueProvider);
     final recentState = ref.watch(recentMonthPredicationsProvider);
     final l10n = context.l10n;
-    final locale = ref.watch(localeProvider) ?? const Locale('fr', 'FR');
 
     return Scaffold(
       backgroundColor: AppTheme.background,
@@ -57,9 +58,7 @@ class ALaLunePage extends ConsumerWidget {
           onRetry: () => ref.read(communiqueProvider.notifier).refresh(),
         ),
         data: (communiques) {
-          final selectedCommunique = communiques.isEmpty
-              ? null
-              : pickCommunique(communiques, locale);
+          final visibleCommuniques = communiques.take(3).toList();
 
           return RefreshIndicator(
             color: AppTheme.accentGold,
@@ -78,7 +77,7 @@ class ALaLunePage extends ConsumerWidget {
                   title: l10n.aLaLuneOfficialCommunique,
                   subtitle: l10n.aLaLuneSubtitle,
                 ),
-                if (selectedCommunique == null)
+                if (visibleCommuniques.isEmpty)
                   ShtCard(
                     child: Text(
                       l10n.aLaLuneNoCommunique,
@@ -86,11 +85,16 @@ class ALaLunePage extends ConsumerWidget {
                     ),
                   )
                 else
-                  _CommuniqueCard(communique: selectedCommunique),
+                  for (final c in visibleCommuniques)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: _CommuniqueCard(communique: c),
+                    ),
                 const SizedBox(height: 14),
                 if (_PhotoCardSlider.showPastorAnniversary) ...[
                   _PhotoCardSlider(
                     items: _PhotoCardSlider.pastorAnniversaryItems(),
+                    height: 300,
                   ),
                   const SizedBox(height: 14),
                 ],
@@ -204,28 +208,20 @@ String _photoCardTitle(AppLocalizations l10n, _PhotoCardTitleKey key) {
 }
 
 class _PhotoCardSlider extends StatefulWidget {
-  const _PhotoCardSlider({required this.items});
+  const _PhotoCardSlider({required this.items, this.height = 156});
 
   final List<_PhotoCardItem> items;
+  final double height;
 
   /// Photo « 70 ans du Pasteur » affichée pendant Thanksgiving,
   /// jusqu'à la fin du mois de novembre 2026.
-  static const _pastorAnniversaryImageUrl =
-      'https://shekinahgospel.org/images/pastor-70-anniversary.png';
-  static final _pastorAnniversaryStart = DateTime(2026, 11, 10);
-  static final _pastorAnniversaryEnd = DateTime(2026, 12, 1);
-
-  static bool get showPastorAnniversary {
-    final now = DateTime.now();
-    return !now.isBefore(_pastorAnniversaryStart) &&
-        now.isBefore(_pastorAnniversaryEnd);
-  }
+  static bool get showPastorAnniversary => PastorAnniversary.isActive;
 
   static List<_PhotoCardItem> pastorAnniversaryItems() {
     return showPastorAnniversary
         ? const [
             _PhotoCardItem(
-              imageUrl: _pastorAnniversaryImageUrl,
+              imageUrl: PastorAnniversary.imageUrl,
               titleKey: _PhotoCardTitleKey.pastorAnniversary,
             ),
           ]
@@ -273,7 +269,7 @@ class _PhotoCardSliderState extends State<_PhotoCardSlider> {
     return Column(
       children: [
         SizedBox(
-          height: 156,
+          height: widget.height,
           child: PageView.builder(
             controller: _controller,
             itemCount: items.length,
@@ -337,17 +333,17 @@ class _PhotoCard extends StatelessWidget {
     );
   }
 
-  Widget _itemImage() {
+  Widget _itemImage({BoxFit fit = BoxFit.cover}) {
     return item.imageUrl != null
         ? CachedNetworkImage(
             imageUrl: item.imageUrl!,
-            fit: BoxFit.cover,
+            fit: fit,
             placeholder: (_, _) => _imageFallback(),
             errorWidget: (_, _, _) => _imageFallback(),
           )
         : Image.asset(
             item.asset!,
-            fit: BoxFit.cover,
+            fit: fit,
             errorBuilder: (_, _, _) => _imageFallback(),
           );
   }
@@ -359,7 +355,7 @@ class _PhotoCard extends StatelessWidget {
         padding: EdgeInsets.zero,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(AppConstants.cardRadius),
-          child: _itemImage(),
+          child: _itemImage(fit: BoxFit.contain),
         ),
       );
     }
@@ -759,12 +755,29 @@ class _CommuniqueCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
+          if (communique.imageUrl != null &&
+              communique.imageUrl!.isNotEmpty) ...[
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: CachedNetworkImage(
+                imageUrl: communique.imageUrl!,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                placeholder: (_, _) => const SizedBox(
+                  height: 160,
+                  child: Center(child: Icon(Icons.image)),
+                ),
+                errorWidget: (_, _, _) => const SizedBox.shrink(),
+              ),
+            ),
+            const SizedBox(height: 12),
+          ],
           _CommuniqueMessage(message: communique.message),
           const SizedBox(height: 18),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
-              onPressed: () => _openDetails(communique.readMoreUrl),
+              onPressed: () => _openDetails(context, communique.readMoreUrl),
               icon: const Icon(Icons.open_in_new),
               label: Text(communique.readMoreLabel),
             ),
@@ -774,7 +787,16 @@ class _CommuniqueCard extends StatelessWidget {
     );
   }
 
-  Future<void> _openDetails(String url) async {
+  Future<void> _openDetails(BuildContext context, String url) async {
+    final id = communique.id;
+    if (id != null && id.isNotEmpty) {
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => CommuniqueDetailPage(communiqueId: id),
+        ),
+      );
+      return;
+    }
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);

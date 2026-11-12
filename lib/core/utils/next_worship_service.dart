@@ -109,17 +109,13 @@ class NextWorshipService {
   /// `true` si [now] tombe dans une plage horaire de culte.
   /// Avec [program], utilise le programme publié sur shekinahgospel.org ;
   /// sinon replie sur l'horaire statique.
-  static bool isDuringWorshipService({
-    DateTime? now,
-    ChurchProgram? program,
-  }) {
-    final reference = now ?? DateTime.now();
+  static bool isDuringWorshipService({DateTime? now, ChurchProgram? program}) {
+    final instant = now ?? DateTime.now();
+    final reference = kinshasaTime(instant);
 
     if (program != null) {
-      for (final window
-          in worshipServiceWindows(program, now: reference)) {
-        if (!reference.isBefore(window.$1) &&
-            reference.isBefore(window.$2)) {
+      for (final window in worshipServiceWindows(program, now: instant)) {
+        if (!reference.isBefore(window.$1) && reference.isBefore(window.$2)) {
           return true;
         }
       }
@@ -128,7 +124,7 @@ class NextWorshipService {
 
     for (final slot in _schedule) {
       if (reference.weekday != slot.weekday) continue;
-      final start = DateTime(
+      final start = DateTime.utc(
         reference.year,
         reference.month,
         reference.day,
@@ -146,25 +142,22 @@ class NextWorshipService {
   /// Prochain culte. Avec [program], reflète le programme en ligne
   /// (événements spéciaux prioritaires) ; sinon horaire statique.
   static NextWorshipService compute({ChurchProgram? program, DateTime? now}) {
-    final reference = now ?? DateTime.now();
+    final instant = now ?? DateTime.now();
+    final reference = kinshasaTime(instant);
 
     if (program != null) {
       // Ne cibler que les services strictement à venir : un événement
       // spécial plus tôt aujourd'hui resterait sinon collé à 00:00:00.
-      var services = upcomingChurchServices(program, now: reference)
-          .where((service) => service.dateTime.isAfter(reference))
-          .toList();
+      var services = upcomingChurchServices(
+        program,
+        now: instant,
+      ).where((service) => service.dateTime.isAfter(reference)).toList();
       if (services.isEmpty) {
         // Tous les événements spéciaux sont passés : revenir au récurrent.
         services = upcomingChurchServices(
-          ChurchProgram(
-            defaults: program.defaults,
-            specials: const [],
-          ),
-          now: reference,
-        )
-            .where((service) => service.dateTime.isAfter(reference))
-            .toList();
+          ChurchProgram(defaults: program.defaults, specials: const []),
+          now: instant,
+        ).where((service) => service.dateTime.isAfter(reference)).toList();
       }
       if (services.isNotEmpty) {
         final first = services.first;
@@ -183,7 +176,7 @@ class NextWorshipService {
     var weekday = DateTime.sunday;
 
     for (final slot in _schedule) {
-      var candidate = DateTime(
+      var candidate = DateTime.utc(
         reference.year,
         reference.month,
         reference.day,

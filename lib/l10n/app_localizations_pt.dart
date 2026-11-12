@@ -1864,6 +1864,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get pastorTitle => 'Pastor Richard Diyoka Nsanguluja';
 
   @override
+  String get pastorAnniversaryVerse =>
+      '«Ainda na velhice produzirão frutos; serão viçosos e frondosos».';
+
+  @override
+  String get pastorAnniversaryVerseRef => 'Salmo 92:14';
+
+  @override
   String get pdf => 'PDF';
 
   @override

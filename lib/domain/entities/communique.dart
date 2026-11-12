@@ -4,6 +4,8 @@ class Communique {
   final String readMoreLabel;
   final String readMoreUrl;
   final String language;
+  final String? id;
+  final String? imageUrl;
 
   const Communique({
     required this.title,
@@ -11,5 +13,7 @@ class Communique {
     required this.readMoreLabel,
     required this.readMoreUrl,
     this.language = 'fr',
+    this.id,
+    this.imageUrl,
   });
 }

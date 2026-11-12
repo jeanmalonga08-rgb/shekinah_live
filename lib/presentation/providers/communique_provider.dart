@@ -2,9 +2,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/network/dio_provider.dart';
 import '../../data/datasources/communique_remote_datasource.dart';
 import '../../domain/entities/communique.dart';
+import 'notifications_api_provider.dart';
 
 final communiqueDataSourceProvider = Provider<CommuniqueRemoteDataSource>(
-  (ref) => CommuniqueRemoteDataSourceImpl(dio: ref.watch(dioProvider)),
+  (ref) => CommuniqueRemoteDataSourceImpl(
+    dio: ref.watch(dioProvider),
+    notificationsDio: ref.watch(notificationsApiDioProvider),
+  ),
 );
 
 final communiqueProvider =

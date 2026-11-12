@@ -57,43 +57,14 @@ class ContactPage extends StatelessWidget {
                   title: l10n.aboutWhyTitle,
                   paragraphs: [
                     l10n.aboutWhyDeveloper,
-                    l10n.aboutWhyIntro,
-                    l10n.aboutWhyP1,
-                    l10n.aboutWhyP2,
-                    l10n.aboutWhyP3,
                     l10n.aboutWhyP4,
-                  ],
-                ),
-                _AboutSection(
-                  title: l10n.aboutChurchFocusedTitle,
-                  paragraphs: [
-                    l10n.aboutChurchFocusedP1,
-                    l10n.aboutChurchFocusedP2,
-                    l10n.aboutChurchFocusedP3,
+                    l10n.aboutContinuityP1,
                   ],
                 ),
                 _AboutSection(
                   title: l10n.aboutLibraryTitle,
                   paragraphs: [
-                    l10n.aboutLibraryP1,
-                    l10n.aboutLibraryP2,
                     l10n.aboutLibraryP3,
-                  ],
-                ),
-                _AboutSection(
-                  title: l10n.aboutContinuityTitle,
-                  paragraphs: [
-                    l10n.aboutContinuityP1,
-                    l10n.aboutContinuityP2,
-                    l10n.aboutContinuityP3,
-                  ],
-                ),
-                _AboutSection(
-                  title: l10n.aboutDeveloperServiceTitle,
-                  paragraphs: [
-                    l10n.aboutDeveloperServiceP1,
-                    l10n.aboutDeveloperServiceP2,
-                    l10n.aboutDeveloperServiceP3,
                   ],
                 ),
               ],

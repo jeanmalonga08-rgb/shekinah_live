@@ -1875,6 +1875,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get pastorTitle => 'Pastor Richard Diyoka Nsanguluja';
 
   @override
+  String get pastorAnniversaryVerse =>
+      '«Aun en la vejez fructificarán; estarán sanos y vigorosos».';
+
+  @override
+  String get pastorAnniversaryVerseRef => 'Salmo 92:14';
+
+  @override
   String get pdf => 'PDF';
 
   @override

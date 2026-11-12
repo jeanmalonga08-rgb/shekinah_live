@@ -8,11 +8,16 @@ abstract class CommuniqueRemoteDataSource {
 
 class CommuniqueRemoteDataSourceImpl implements CommuniqueRemoteDataSource {
   final Dio dio;
+  final Dio? notificationsDio;
 
-  CommuniqueRemoteDataSourceImpl({required this.dio});
+  CommuniqueRemoteDataSourceImpl({required this.dio, this.notificationsDio});
 
   @override
   Future<List<Communique>> fetchActiveCommuniques() async {
+    final apiCommuniques = await _fetchApiCommuniques();
+    if (apiCommuniques.isNotEmpty) {
+      return apiCommuniques;
+    }
     try {
       final mainJs = await _fetchMainScript();
       final communiques = _parseCommuniques(mainJs);
@@ -26,6 +31,51 @@ class CommuniqueRemoteDataSourceImpl implements CommuniqueRemoteDataSource {
     }
 
     return const [];
+  }
+
+  /// Derniers communiqués via l'API notifications
+  /// (`GET /api/v1/communiques` → `List<CommuniqueDto>`),
+  /// triés du plus récent au plus ancien.
+  Future<List<Communique>> _fetchApiCommuniques({int limit = 3}) async {
+    final apiDio = notificationsDio;
+    if (apiDio == null) return const [];
+    try {
+      final response = await apiDio.get<dynamic>('/api/v1/communiques');
+      final data = response.data;
+      final rows = data is List ? data : null;
+      if (rows == null) return const [];
+
+      final items = rows.whereType<Map>().map((e) {
+        final j = Map<String, dynamic>.from(e);
+        final publishedAt = DateTime.tryParse(
+          j['publishedAt']?.toString() ?? '',
+        );
+        return (
+          publishedAt: publishedAt,
+          communique: Communique(
+            id: j['id']?.toString(),
+            title: j['title']?.toString() ?? '',
+            message: j['body']?.toString() ?? '',
+            imageUrl: j['imageUrl']?.toString(),
+            readMoreLabel: 'Lire la suite',
+            readMoreUrl: AppConstants.communiqueDetailsUrl,
+            language: 'fr',
+          ),
+        );
+      }).where((e) => e.communique.title.isNotEmpty).toList()
+        ..sort((a, b) {
+          final ad = a.publishedAt;
+          final bd = b.publishedAt;
+          if (ad == null && bd == null) return 0;
+          if (ad == null) return 1;
+          if (bd == null) return -1;
+          return bd.compareTo(ad);
+        });
+
+      return items.take(limit).map((e) => e.communique).toList();
+    } catch (_) {
+      return const [];
+    }
   }
 
   Future<String> _fetchMainScript() async {

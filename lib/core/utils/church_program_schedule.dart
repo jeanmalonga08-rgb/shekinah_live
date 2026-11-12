@@ -1,5 +1,9 @@
 import '../../domain/entities/church_program.dart';
 
+/// Heure civile de Kinshasa (UTC+01:00), independante du telephone.
+DateTime kinshasaTime([DateTime? instant]) =>
+    (instant ?? DateTime.now()).toUtc().add(const Duration(hours: 1));
+
 /// Culte à venir calculé pour l'affichage.
 class UpcomingChurchService {
   const UpcomingChurchService({
@@ -20,19 +24,20 @@ List<UpcomingChurchService> upcomingChurchServices(
   ChurchProgram program, {
   DateTime? now,
 }) {
-  final reference = now ?? DateTime.now();
-  final today = DateTime(reference.year, reference.month, reference.day);
+  final reference = kinshasaTime(now);
+  final today = DateTime.utc(reference.year, reference.month, reference.day);
 
-  final specials = <UpcomingChurchService>[
-    for (final entry in program.specials)
-      if (entry.date != null)
-        UpcomingChurchService(
-          entry: entry,
-          dateTime: churchProgramEntryDateTime(entry.date!, entry.time),
-          isSpecial: true,
-        ),
-  ].where((service) => !service.dateTime.isBefore(today)).toList()
-    ..sort((a, b) => a.dateTime.compareTo(b.dateTime));
+  final specials =
+      <UpcomingChurchService>[
+          for (final entry in program.specials)
+            if (entry.date != null)
+              UpcomingChurchService(
+                entry: entry,
+                dateTime: churchProgramEntryDateTime(entry.date!, entry.time),
+                isSpecial: true,
+              ),
+        ].where((service) => !service.dateTime.isBefore(today)).toList()
+        ..sort((a, b) => a.dateTime.compareTo(b.dateTime));
 
   if (specials.isNotEmpty) return specials;
 
@@ -44,11 +49,7 @@ List<UpcomingChurchService> upcomingChurchServices(
     // Prochaine occurrence du jour hebdomadaire.
     var daysAhead = (weekday - reference.weekday) % 7;
     if (daysAhead < 0) daysAhead += 7;
-    var date = DateTime(
-      today.year,
-      today.month,
-      today.day + daysAhead,
-    );
+    var date = DateTime.utc(today.year, today.month, today.day + daysAhead);
     var dateTime = churchProgramEntryDateTime(date, entry.time);
     if (!dateTime.isAfter(reference)) {
       date = date.add(const Duration(days: 7));
@@ -56,11 +57,7 @@ List<UpcomingChurchService> upcomingChurchServices(
     }
 
     services.add(
-      UpcomingChurchService(
-        entry: entry,
-        dateTime: dateTime,
-        isSpecial: false,
-      ),
+      UpcomingChurchService(entry: entry, dateTime: dateTime, isSpecial: false),
     );
   }
   services.sort((a, b) => a.dateTime.compareTo(b.dateTime));
@@ -74,8 +71,8 @@ List<(DateTime start, DateTime end)> worshipServiceWindows(
   DateTime? now,
   Duration duration = const Duration(hours: 3),
 }) {
-  final reference = now ?? DateTime.now();
-  final day = DateTime(reference.year, reference.month, reference.day);
+  final reference = kinshasaTime(now);
+  final day = DateTime.utc(reference.year, reference.month, reference.day);
   final windows = <(DateTime start, DateTime end)>[];
 
   void add(DateTime start) {
@@ -109,5 +106,5 @@ DateTime churchProgramEntryDateTime(DateTime date, String time) {
   if (match == null) return date;
   final hour = int.tryParse(match.group(1)!) ?? 0;
   final minute = int.tryParse(match.group(2)!) ?? 0;
-  return DateTime(date.year, date.month, date.day, hour, minute);
+  return DateTime.utc(date.year, date.month, date.day, hour, minute);
 }

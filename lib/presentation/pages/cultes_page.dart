@@ -22,7 +22,7 @@ class CultesPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final programAsync = ref.watch(churchProgramProvider);
-    final now = DateTime.now();
+    final now = kinshasaTime();
     final locale = Localizations.localeOf(context);
 
     return Scaffold(
@@ -59,7 +59,7 @@ class CultesPage extends ConsumerWidget {
     List<UpcomingChurchService> services,
     DateTime now,
   ) {
-    final today = DateTime(now.year, now.month, now.day);
+    final today = DateTime.utc(now.year, now.month, now.day);
 
     return ListView(
       padding: const EdgeInsets.all(16),
@@ -75,7 +75,7 @@ class CultesPage extends ConsumerWidget {
               periodLabel: worshipPeriodLabel(l10n, service.entry.period),
               label: service.entry.label,
               isToday:
-                  DateTime(
+                  DateTime.utc(
                     service.dateTime.year,
                     service.dateTime.month,
                     service.dateTime.day,
@@ -90,10 +90,7 @@ class CultesPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildFallback(
-    AppLocalizations l10n,
-    DateTime now,
-  ) {
+  Widget _buildFallback(AppLocalizations l10n, DateTime now) {
     final schedule = worshipScheduleEntries(l10n);
 
     return ListView(
@@ -144,9 +141,9 @@ class _HeaderCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             l10n.homeScriptureBanner,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppTheme.accentOnSurface,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppTheme.accentOnSurface),
           ),
         ],
       ),
@@ -167,9 +164,9 @@ class _VisionCard extends StatelessWidget {
         children: [
           Text(
             l10n.visionTitle,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppTheme.accentOnSurface,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(color: AppTheme.accentOnSurface),
           ),
           const SizedBox(height: 8),
           Text(
@@ -234,10 +231,7 @@ class _ServiceCard extends StatelessWidget {
                       visualDensity: VisualDensity.compact,
                     ),
                   ),
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
+                Text(title, style: Theme.of(context).textTheme.titleMedium),
                 const SizedBox(height: 4),
                 Text(
                   l10n.worshipAt(time),
@@ -256,10 +250,7 @@ class _ServiceCard extends StatelessWidget {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 8,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
               color: AppTheme.royalBlue.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(12),

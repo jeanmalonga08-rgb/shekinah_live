@@ -12,6 +12,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/theme/theme_sync.dart';
 import '../../core/utils/live_duration_utils.dart';
 import '../../core/utils/next_worship_service.dart';
+import '../../core/utils/pastor_anniversary.dart';
 import '../../domain/entities/church_program.dart';
 import '../../domain/entities/communique.dart';
 import '../../domain/entities/predication.dart';
@@ -318,6 +319,22 @@ class HomePage extends ConsumerWidget {
     final l10n = context.l10n;
     final slides = <_ALaUneSlide>[];
 
+    // 0) Photo « 70 ans du Pasteur » — jusqu'à fin novembre 2026
+    if (PastorAnniversary.isActive) {
+      slides.add(
+        _ALaUneSlide(
+          badge: l10n.aLaLuneThanksgivingBadge,
+          icon: Icons.celebration_outlined,
+          title: l10n.aLaLunePastorAnniversaryTitle,
+          subtitle: l10n.pastorTitle,
+          body: l10n.aLaLunePastorAnniversaryFooter,
+          color: AppTheme.accentGold,
+          imageUrl: PastorAnniversary.imageUrl,
+          onTap: () => _push(context, const ALaLunePage()),
+        ),
+      );
+    }
+
     // 1) Prédications récentes
     if (recentPredications.isEmpty) {
       slides.add(
@@ -351,7 +368,7 @@ class HomePage extends ConsumerWidget {
       }
     }
 
-    // 2) Communiqué — images empilées à gauche, texte à droite
+    // 2) Communiqués — les 3 derniers
     if (communiques.isEmpty) {
       slides.add(
         _ALaUneSlide(
@@ -366,23 +383,24 @@ class HomePage extends ConsumerWidget {
         ),
       );
     } else {
-      final c = pickCommunique(communiques, locale);
-      final plain = c.message
-          .replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), ' ')
-          .replaceAll(RegExp(r'<[^>]+>'), '')
-          .trim();
-      slides.add(
-        _ALaUneSlide(
-          badge: l10n.homeCommuniqueBadge,
-          icon: Icons.campaign_outlined,
-          title: c.title,
-          subtitle: l10n.homeOfficialAnnouncement,
-          body: plain,
-          color: AppTheme.crossRed,
-          stackedTempleImages: true,
-          onTap: () => _push(context, const ALaLunePage()),
-        ),
-      );
+      for (final c in communiques.take(3)) {
+        final plain = c.message
+            .replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), ' ')
+            .replaceAll(RegExp(r'<[^>]+>'), '')
+            .trim();
+        slides.add(
+          _ALaUneSlide(
+            badge: l10n.homeCommuniqueBadge,
+            icon: Icons.campaign_outlined,
+            title: c.title,
+            subtitle: l10n.homeOfficialAnnouncement,
+            body: plain,
+            color: AppTheme.crossRed,
+            stackedTempleImages: true,
+            onTap: () => _push(context, const ALaLunePage()),
+          ),
+        );
+      }
     }
 
     return slides;
@@ -760,7 +778,7 @@ class _LiveBannerState extends ConsumerState<_LiveBanner>
                     ),
                     const SizedBox(width: 6),
                     widget.isLive
-                        ? _LiveElapsedChrono(liveStartedAt: widget.liveStartedAt)
+                        ? _LiveElapsedChrono(liveStartedAt: widget.liveStartedAt, program: _program)
                         : _NextServiceChrono(next: _next),
                   ],
                 ),
@@ -774,13 +792,14 @@ class _LiveBannerState extends ConsumerState<_LiveBanner>
 }
 
 class _LiveElapsedChrono extends StatelessWidget {
-  const _LiveElapsedChrono({this.liveStartedAt});
+  const _LiveElapsedChrono({this.liveStartedAt, this.program});
 
   final DateTime? liveStartedAt;
+  final ChurchProgram? program;
 
   @override
   Widget build(BuildContext context) {
-    final elapsed = liveElapsedSince(liveStartedAt);
+    final elapsed = liveWorshipElapsed(program, liveStartedAt);
 
     return Container(
       constraints: const BoxConstraints(minWidth: 88),
@@ -890,6 +909,7 @@ class _ALaUneSlide {
     required this.color,
     this.predication,
     this.stackedTempleImages = false,
+    this.imageUrl,
     this.onTap,
   }) : imageAsset = null;
 
@@ -901,6 +921,7 @@ class _ALaUneSlide {
   final Color color;
   final Predication? predication;
   final String? imageAsset;
+  final String? imageUrl;
   final bool stackedTempleImages;
   final VoidCallback? onTap;
 }
@@ -965,7 +986,7 @@ class _ALaUneSliderState extends State<_ALaUneSlider> {
                 child: slide.predication != null
                     ? _ALaUnePredicationCard(
                         predication: slide.predication!,
-                        indexLabel: '${i + 1}/${widget.slides.length}',
+                        indexLabel: '',
                         onTap: slide.onTap,
                       )
                     : slide.stackedTempleImages
@@ -974,16 +995,28 @@ class _ALaUneSliderState extends State<_ALaUneSlider> {
                         title: slide.title,
                         subtitle: slide.subtitle,
                         body: slide.body,
-                        indexLabel: '${i + 1}/${widget.slides.length}',
+                        indexLabel: '',
                         onTap: slide.onTap,
+                      )
+                    : slide.imageUrl != null
+                    ? _ALaUneFullPhotoCard(
+                        imageUrl: slide.imageUrl!,
+                        indexLabel: '',
+                        onTap: slide.onTap ??
+                            () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => const ALaLunePage(),
+                                  ),
+                                ),
                       )
                     : slide.imageAsset != null
                     ? _ALaUnePhotoCard(
-                        imageAsset: slide.imageAsset!,
+                        imageAsset: slide.imageAsset,
                         badge: slide.badge,
                         title: slide.title,
                         subtitle: slide.subtitle,
-                        indexLabel: '${i + 1}/${widget.slides.length}',
+                        footer: slide.body,
+                        indexLabel: '',
                         onTap: slide.onTap ??
                             () => Navigator.of(context).push(
                                   MaterialPageRoute(
@@ -1415,20 +1448,50 @@ class _ALaUneCommuniqueCard extends StatelessWidget {
 
 class _ALaUnePhotoCard extends StatelessWidget {
   const _ALaUnePhotoCard({
-    required this.imageAsset,
+    this.imageAsset,
+    this.imageUrl,
     required this.badge,
     required this.title,
     required this.subtitle,
+    required this.footer,
     required this.indexLabel,
     this.onTap,
   });
 
-  final String imageAsset;
+  final String? imageAsset;
+  final String? imageUrl;
   final String badge;
   final String title;
   final String subtitle;
+  final String footer;
   final String indexLabel;
   final VoidCallback? onTap;
+
+  Widget _imageFallback() {
+    return ColoredBox(
+      color: AppTheme.surfaceElevated,
+      child: Icon(
+        Icons.photo,
+        color: AppTheme.accentOnSurface,
+      ),
+    );
+  }
+
+  Widget _photo() {
+    if (imageUrl != null) {
+      return CachedNetworkImage(
+        imageUrl: imageUrl!,
+        fit: BoxFit.cover,
+        placeholder: (_, _) => _imageFallback(),
+        errorWidget: (_, _, _) => _imageFallback(),
+      );
+    }
+    return Image.asset(
+      imageAsset!,
+      fit: BoxFit.cover,
+      errorBuilder: (_, _, _) => _imageFallback(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1445,17 +1508,7 @@ class _ALaUnePhotoCard extends StatelessWidget {
               ),
               child: SizedBox(
                 width: 108,
-                child: Image.asset(
-                  imageAsset,
-                  fit: BoxFit.cover,
-                  errorBuilder: (_, _, _) => ColoredBox(
-                    color: AppTheme.surfaceElevated,
-                    child: Icon(
-                      Icons.photo,
-                      color: AppTheme.accentOnSurface,
-                    ),
-                  ),
-                ),
+                child: _photo(),
               ),
             ),
             Expanded(
@@ -1515,13 +1568,76 @@ class _ALaUnePhotoCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      context.l10n.homeAfterReconstruction,
+                      footer,
                       style: TextStyle(
                         color: AppTheme.grey,
                         fontSize: 12,
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Slide photo plein cadre : l'image occupe toute la carte,
+/// affichée en entier (ses éventuels écrits restent visibles).
+class _ALaUneFullPhotoCard extends StatelessWidget {
+  const _ALaUneFullPhotoCard({
+    required this.imageUrl,
+    required this.indexLabel,
+    this.onTap,
+  });
+
+  final String imageUrl;
+  final String indexLabel;
+  final VoidCallback? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return ShtCard(
+      onTap: onTap,
+      padding: EdgeInsets.zero,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            ColoredBox(
+              color: AppTheme.royalBlue.withValues(alpha: 0.25),
+              child: Center(
+                child: Icon(Icons.photo, color: AppTheme.accentGold),
+              ),
+            ),
+            CachedNetworkImage(
+              imageUrl: imageUrl,
+              fit: BoxFit.contain,
+              placeholder: (_, _) => const SizedBox.shrink(),
+              errorWidget: (_, _, _) => const SizedBox.shrink(),
+            ),
+            if (indexLabel.isNotEmpty)
+              Positioned(
+              top: 8,
+              right: 10,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 3,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: 0.45),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  indexLabel,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: AppTheme.softWhite,
+                      ),
                 ),
               ),
             ),

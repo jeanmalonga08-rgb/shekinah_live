@@ -5,7 +5,7 @@ import 'package:shekinah_live/domain/entities/church_program.dart';
 void main() {
   group('NextWorshipService.isDuringWorshipService', () {
     test('true on Sunday during morning service', () {
-      final sunday = DateTime(2026, 9, 6, 10, 0); // Sunday 10:00
+      final sunday = DateTime.utc(2026, 9, 6, 9, 0); // Sunday 10:00
       expect(NextWorshipService.isDuringWorshipService(now: sunday), isTrue);
     });
 
@@ -16,10 +16,7 @@ void main() {
 
     test('true on Wednesday evening service', () {
       final wednesday = DateTime(2026, 9, 9, 18, 30);
-      expect(
-        NextWorshipService.isDuringWorshipService(now: wednesday),
-        isTrue,
-      );
+      expect(NextWorshipService.isDuringWorshipService(now: wednesday), isTrue);
     });
 
     test('false on Monday', () {
@@ -88,7 +85,7 @@ void main() {
         program: program,
         now: DateTime(2026, 11, 10, 12),
       );
-      expect(next.dateTime, DateTime(2026, 11, 12, 17));
+      expect(next.dateTime, DateTime.utc(2026, 11, 12, 17));
       expect(next.timeText, '17:00');
     });
 
@@ -104,30 +101,53 @@ void main() {
             period: 'AM',
           ),
         ],
-        specials: const [
-          ChurchProgramEntry(
-            dayName: 'Mardi',
-            date: null,
-            time: '09:00',
-            period: 'AM',
-            label: 'Réunion du matin',
-          ),
-        ].map((e) => ChurchProgramEntry(
-              dayName: e.dayName,
-              weekday: e.weekday,
-              date: DateTime(2026, 11, 10),
-              time: e.time,
-              period: e.period,
-              label: e.label,
-            )).toList(),
+        specials:
+            const [
+                  ChurchProgramEntry(
+                    dayName: 'Mardi',
+                    date: null,
+                    time: '09:00',
+                    period: 'AM',
+                    label: 'Réunion du matin',
+                  ),
+                ]
+                .map(
+                  (e) => ChurchProgramEntry(
+                    dayName: e.dayName,
+                    weekday: e.weekday,
+                    date: DateTime(2026, 11, 10),
+                    time: e.time,
+                    period: e.period,
+                    label: e.label,
+                  ),
+                )
+                .toList(),
       );
 
       final next = NextWorshipService.compute(
         program: withTodayEvent,
         now: DateTime(2026, 11, 10, 18),
       );
-      expect(next.dateTime.isAfter(DateTime(2026, 11, 10, 18)), isTrue);
-      expect(next.dateTime, DateTime(2026, 11, 15, 9, 30));
+      expect(next.remaining.isNegative, isFalse);
+      expect(next.dateTime, DateTime.utc(2026, 11, 15, 9, 30));
     });
+  });
+  test('calcule le prochain culte selon la date de Kinshasa', () {
+    final program = ChurchProgram(
+      defaults: const [],
+      specials: [
+        ChurchProgramEntry(
+          dayName: 'Jeudi',
+          date: DateTime(2026, 11, 12),
+          time: '09:00',
+        ),
+      ],
+    );
+    final next = NextWorshipService.compute(
+      program: program,
+      now: DateTime.utc(2026, 11, 11, 23, 30),
+    );
+    expect(next.dateTime, DateTime.utc(2026, 11, 12, 9));
+    expect(next.remaining, const Duration(hours: 8, minutes: 30));
   });
 }

@@ -6,7 +6,9 @@ import '../../core/constants/app_constants.dart';
 import '../../core/l10n/l10n_extensions.dart';
 import '../../core/network/network_ready.dart';
 import '../../core/theme/app_theme.dart';
+import '../../core/utils/pastor_anniversary.dart';
 import '../navigation/notification_navigation.dart';
+import 'pastor_anniversary_page.dart';
 import '../widgets/sht_widgets.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -60,6 +62,12 @@ class _SplashScreenState extends State<SplashScreen>
     await waitForNetwork();
 
     if (!mounted) return;
+    if (PastorAnniversary.isActive) {
+      await Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const PastorAnniversaryPage()),
+      );
+      return;
+    }
     await Navigator.of(context).pushReplacementNamed('/main');
     WidgetsBinding.instance.addPostFrameCallback((_) {
       unawaited(flushPendingNotificationRoute());

@@ -3290,6 +3290,18 @@ abstract class AppLocalizations {
   /// **'Pasteur Richard Diyoka Nsanguluja'**
   String get pastorTitle;
 
+  /// No description provided for @pastorAnniversaryVerse.
+  ///
+  /// In fr, this message translates to:
+  /// **'« Ils portent encore des fruits dans la vieillesse, ils sont pleins de sève et verdoyants. »'**
+  String get pastorAnniversaryVerse;
+
+  /// No description provided for @pastorAnniversaryVerseRef.
+  ///
+  /// In fr, this message translates to:
+  /// **'Psaume 92 : 14'**
+  String get pastorAnniversaryVerseRef;
+
   /// No description provided for @pdf.
   ///
   /// In fr, this message translates to:

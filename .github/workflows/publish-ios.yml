@@ -31,7 +31,7 @@ jobs:
       - name: Install Flutter
         run: |
           git clone --filter=blob:none https://github.com/flutter/flutter.git "$RUNNER_TEMP/flutter"
-          git -C "$RUNNER_TEMP/flutter" checkout f6ff1529fd6d8af5f706051d9251ac9231c83407
+          git -C "$RUNNER_TEMP/flutter" checkout d3b14c876900e553bc736ca19295fc09e3853e8e # Flutter 3.47.2
           echo "$RUNNER_TEMP/flutter/bin" >> "$GITHUB_PATH"
 
       - name: Select Xcode 26 or later

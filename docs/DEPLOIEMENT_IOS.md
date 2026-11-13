@@ -11,11 +11,12 @@ Le workflow GitHub Actions « Upload iOS to App Store Connect » est déclenché
 
    - `APPLE_CERTIFICATE_BASE64` : contenu base64 du fichier `.p12` ;
    - `APPLE_CERTIFICATE_PASSWORD` : mot de passe du fichier `.p12` ;
+   - `APPLE_PROVISIONING_PROFILE_BASE64` : contenu base64 du profil App Store Connect `.mobileprovision`, associé au certificat de distribution ;
    - `APP_STORE_CONNECT_KEY_ID` : identifiant de la clé API ;
    - `APP_STORE_CONNECT_ISSUER_ID` : identifiant de l'émetteur de la clé d'équipe ;
    - `APP_STORE_CONNECT_PRIVATE_KEY` : contenu complet du fichier `.p8`.
 
-   Sur macOS, `base64 -i certificat.p12 | pbcopy` copie le certificat encodé dans le presse-papiers. Ne jamais afficher ni ajouter ces valeurs au dépôt. Restreindre les branches autorisées et configurer les approbateurs de l'environnement si ces protections sont disponibles sur le dépôt.
+   Sur macOS, `base64 -i certificat.p12 | pbcopy` copie le certificat encodé dans le presse-papiers. Pour le profil sous Windows, utiliser `[Convert]::ToBase64String([IO.File]::ReadAllBytes('chemin\vers\profil.mobileprovision')) | Set-Clipboard`. Ne jamais afficher ni ajouter ces valeurs au dépôt. Restreindre les branches autorisées et configurer les approbateurs de l'environnement si ces protections sont disponibles sur le dépôt.
 
 ## Utilisation
 
@@ -24,4 +25,4 @@ Le workflow GitHub Actions « Upload iOS to App Store Connect » est déclenché
 3. Dans **Actions → Upload iOS to App Store Connect → Run workflow**, choisir la branche et saisir un numéro de build entier supérieur aux builds déjà envoyés pour cette version. Chaque nouvel essai après un envoi accepté doit utiliser un nouveau numéro.
 4. Après traitement par Apple, choisir le build dans App Store Connect pour TestFlight ou pour la version App Store, compléter les informations requises puis soumettre à la revue. La mise en ligne suit les réglages de publication choisis dans App Store Connect.
 
-La signature automatique exige que la clé API d'équipe puisse gérer les profils et que le certificat importé soit valide. L'échec de signature ou de téléversement apparaît dans les journaux du workflow ; les secrets et certificats ne doivent pas y être copiés.
+La signature manuelle exige un profil App Store Connect valide associé au certificat importé. La clé API d'équipe reste nécessaire pour l'envoi. L'échec de signature ou de téléversement apparaît dans les journaux du workflow ; les secrets et certificats ne doivent pas y être copiés.

@@ -1,7 +1,9 @@
 name: Publish Android to Google Play
 
 on:
-  # Publication automatique suspendue pendant le dépannage iOS.
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       track:
@@ -50,9 +52,13 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Increment and commit Android version
+      - name: Resolve Android version
         id: commit-version
         run: |
+          if [[ "$GITHUB_EVENT_NAME" == push ]]; then
+            echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           if [[ "$GITHUB_REF" != refs/heads/* ]]; then
             echo "Publishing requires a branch ref." >&2
             exit 1

@@ -1,6 +1,6 @@
 # Envoi iOS vers App Store Connect
 
-Le workflow GitHub Actions « Upload iOS to App Store Connect » est déclenché manuellement. Il compile la branche choisie, signe l'application `com.shekinah.tabernacle` avec l'équipe Apple `8VY74895M3`, conserve l'IPA pendant 14 jours et l'envoie à App Store Connect. Il ne soumet pas la version à Apple et ne la publie pas. L'envoi nécessite un runner macOS et Xcode 26.
+Le workflow GitHub Actions « Upload iOS to App Store Connect » est déclenché sur chaque push vers `main` ou manuellement. Il compile la branche choisie, signe l'application `com.shekinah.tabernacle` avec l'équipe Apple `8VY74895M3`, conserve l'IPA pendant 14 jours et l'envoie à App Store Connect. Il ne soumet pas la version à Apple et ne la publie pas. L'envoi nécessite un runner macOS et Xcode 26.
 
 ## Configuration initiale
 
@@ -20,9 +20,9 @@ Le workflow GitHub Actions « Upload iOS to App Store Connect » est déclenché
 
 ## Utilisation
 
-1. Pousser les modifications et ce workflow sur GitHub. Attendre la fin du workflow Android si celui-ci met à jour la version sur la branche, puis choisir le commit souhaité.
-2. Vérifier la version dans `pubspec.yaml` : elle doit correspondre à une version acceptée dans App Store Connect. Le workflow ne modifie pas cette version.
-3. Dans **Actions → Upload iOS to App Store Connect → Run workflow**, choisir la branche et saisir un numéro de build entier supérieur aux builds déjà envoyés pour cette version. Chaque nouvel essai après un envoi accepté doit utiliser un nouveau numéro.
+1. Avant chaque push sur `main`, choisir dans `pubspec.yaml` un numéro de build supérieur aux builds déjà publiés sur les stores ; les publications automatiques Android et iOS utilisent cette version.
+2. Pousser les modifications sur GitHub : les deux workflows démarrent automatiquement. Le workflow iOS envoie la version et le numéro de build du `pubspec.yaml`.
+3. Pour un lancement manuel, dans **Actions → Upload iOS to App Store Connect → Run workflow**, choisir la branche et, si nécessaire, saisir un numéro de build entier supérieur aux builds déjà envoyés pour cette version.
 4. Après traitement par Apple, choisir le build dans App Store Connect pour TestFlight ou pour la version App Store, compléter les informations requises puis soumettre à la revue. La mise en ligne suit les réglages de publication choisis dans App Store Connect.
 
 La signature manuelle exige un profil App Store Connect valide associé au certificat importé. La clé API d'équipe reste nécessaire pour l'envoi. L'échec de signature ou de téléversement apparaît dans les journaux du workflow ; les secrets et certificats ne doivent pas y être copiés.

@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       build_number:
-        description: Numéro de build iOS (auto = +build pubspec + 1 si vide)
+        description: Numéro de build iOS (numéro du pubspec si vide)
         required: false
         type: string
 
@@ -43,15 +43,18 @@ jobs:
           xcodebuild -version
 
       - name: Resolve build number
+        env:
+          REQUESTED_BUILD_NUMBER: ${{ inputs.build_number }}
         run: |
           set -euo pipefail
-          if [ -n "${{ inputs.build_number }}" ]; then
-            echo "IOS_BUILD_NUMBER=${{ inputs.build_number }}" >> "$GITHUB_ENV"
+          if [ -n "$REQUESTED_BUILD_NUMBER" ]; then
+            [[ "$REQUESTED_BUILD_NUMBER" =~ ^[0-9]+$ ]] || { echo 'Le numéro de build doit être un entier.' >&2; exit 1; }
+            echo "IOS_BUILD_NUMBER=$REQUESTED_BUILD_NUMBER" >> "$GITHUB_ENV"
           else
             CURRENT=$(grep -E '^version:' pubspec.yaml | sed -E 's/.*\+([0-9]+).*/\1/')
             [[ "$CURRENT" =~ ^[0-9]+$ ]] || { echo 'Version pubspec illisible.' >&2; exit 1; }
-            echo "IOS_BUILD_NUMBER=$((CURRENT + 1))" >> "$GITHUB_ENV"
-            echo "Build number auto : $((CURRENT + 1))"
+            echo "IOS_BUILD_NUMBER=$CURRENT" >> "$GITHUB_ENV"
+            echo "Build number : $CURRENT"
           fi
 
       - name: Validate inputs and install Apple credentials

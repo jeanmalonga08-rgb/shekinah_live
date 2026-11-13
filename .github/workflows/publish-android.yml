@@ -55,6 +55,7 @@ jobs:
       - name: Resolve Android version
         id: commit-version
         run: |
+          python scripts/bump_version_for_aab.py --dry-run
           if [[ "$GITHUB_EVENT_NAME" == push ]]; then
             echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
             exit 0

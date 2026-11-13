@@ -1,9 +1,7 @@
 name: Publish Android to Google Play
 
 on:
-  push:
-    branches:
-      - main
+  # Publication automatique suspendue pendant le dépannage iOS.
   workflow_dispatch:
     inputs:
       track:

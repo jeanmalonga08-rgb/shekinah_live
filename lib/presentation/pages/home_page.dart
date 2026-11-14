@@ -565,6 +565,39 @@ class _HomeSearchBar extends StatelessWidget {
   }
 }
 
+/// Mesure la largeur naturelle d'un texte (une seule ligne) en
+/// tenant compte du textScaler du système.
+double _measureTextWidth(
+  BuildContext context,
+  String text,
+  TextStyle style,
+) {
+  final painter = TextPainter(
+    text: TextSpan(text: text, style: style),
+    textDirection: TextDirection.ltr,
+    textScaler: MediaQuery.textScalerOf(context),
+    maxLines: 1,
+  )..layout();
+  return painter.width;
+}
+
+/// Plus grand corps parmi [sizes] permettant au texte de tenir
+/// dans [maxWidth] (largeur interne de la case chrono).
+double _fitChronoFontSize(
+  BuildContext context,
+  String text,
+  double maxWidth,
+  List<double> sizes,
+  TextStyle Function(double fontSize) style,
+) {
+  for (final size in sizes) {
+    if (_measureTextWidth(context, text, style(size)) <= maxWidth) {
+      return size;
+    }
+  }
+  return sizes.last;
+}
+
 class _LiveBanner extends ConsumerStatefulWidget {
   const _LiveBanner({
     required this.onTap,
@@ -683,104 +716,162 @@ class _LiveBannerState extends ConsumerState<_LiveBanner>
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 8, 8, 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    AnimatedBuilder(
-                      animation: _pulse,
-                      builder: (_, child) {
-                        // Zoom avant / zoom arrière continu
-                        final scale = 0.88 + (_pulse.value * 0.24);
-                        return Transform.scale(scale: scale, child: child);
-                      },
-                      child: Container(
-                        width: 36,
-                        height: 36,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppTheme.crossRed,
-                          boxShadow: [
-                            BoxShadow(
-                              color: AppTheme.crossRed.withValues(alpha: 0.45),
-                              blurRadius: 10,
-                            ),
-                          ],
-                        ),
-                        child: Icon(
-                          isLive
-                              ? Icons.sensors
-                              : Icons.play_arrow_rounded,
-                          color: Colors.white,
-                          size: 20,
-                        ),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final avail = constraints.maxWidth;
+                    final compact = avail < 340;
+                    final iconGap = compact ? 6.0 : 10.0;
+                    final boxGap = compact ? 4.0 : 6.0;
+
+                    final titleStyle = TextStyle(
+                      color: isLive
+                          ? Colors.white
+                          : AppTheme.liveBannerTitle,
+                      fontSize: 14.5,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 0.2,
+                      height: 1.1,
+                    );
+                    final subStyle = TextStyle(
+                      color: isLive
+                          ? AppTheme.accentOnSurface.withValues(alpha: 0.95)
+                          : AppTheme.liveBannerSubtitle,
+                      fontSize: 10.5,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
+                    );
+
+                    // Largeur naturelle de la zone centrale (icône du badge
+                    // « EN DIRECT » + libellé + marges internes du pill).
+                    final badgeLabel = isLive
+                        ? l10n.homeLive.toUpperCase()
+                        : l10n.homeChecking;
+                    final showBadge = isLive || widget.isLoading;
+                    final badgeW = showBadge
+                        ? _measureTextWidth(
+                                context,
+                                badgeLabel,
+                                const TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.5,
+                                ),
+                              ) +
+                            34
+                        : 0.0;
+                    final centerW = [
+                      _measureTextWidth(context, l10n.homeTheLive, titleStyle),
+                      _measureTextWidth(
+                        context,
+                        l10n.homeLiveStreaming,
+                        subStyle,
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (isLive) ...[
-                            const LiveBadge(),
-                            const SizedBox(height: 4),
-                          ] else if (widget.isLoading) ...[
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 7,
-                                vertical: 2,
-                              ),
-                              decoration: BoxDecoration(
-                                color: AppTheme.isLight
-                                    ? AppTheme.royalBlue.withValues(alpha: 0.1)
-                                    : Colors.white.withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Text(
-                                l10n.homeChecking,
-                                style: TextStyle(
+                      badgeW,
+                    ].reduce((a, b) => a > b ? a : b);
+
+                    // Largeur max de la case de droite = espace restant après
+                    // icône + centre (largeur naturelle réservée) + espacements.
+                    final fixed =
+                        10 + 36 + iconGap + boxGap + 8 + centerW;
+                    final rightMax = avail - fixed;
+
+                    return Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        AnimatedBuilder(
+                          animation: _pulse,
+                          builder: (_, child) {
+                            // Zoom avant / zoom arrière continu
+                            final scale = 0.88 + (_pulse.value * 0.24);
+                            return Transform.scale(scale: scale, child: child);
+                          },
+                          child: Container(
+                            width: 36,
+                            height: 36,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppTheme.crossRed,
+                              boxShadow: [
+                                BoxShadow(
+                                  color:
+                                      AppTheme.crossRed.withValues(alpha: 0.45),
+                                  blurRadius: 10,
+                                ),
+                              ],
+                            ),
+                            child: Icon(
+                              isLive
+                                  ? Icons.sensors
+                                  : Icons.play_arrow_rounded,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: iconGap),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (isLive) ...[
+                              const LiveBadge(),
+                              const SizedBox(height: 4),
+                            ] else if (widget.isLoading) ...[
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 7,
+                                  vertical: 2,
+                                ),
+                                decoration: BoxDecoration(
                                   color: AppTheme.isLight
                                       ? AppTheme.royalBlue
-                                      : Colors.white70,
-                                  fontSize: 9,
-                                  fontWeight: FontWeight.w600,
+                                          .withValues(alpha: 0.1)
+                                      : Colors.white.withValues(alpha: 0.12),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Text(
+                                  l10n.homeChecking,
+                                  style: TextStyle(
+                                    color: AppTheme.isLight
+                                        ? AppTheme.royalBlue
+                                        : Colors.white70,
+                                    fontSize: 9,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ),
+                              const SizedBox(height: 4),
+                            ],
+                            Text(
+                              l10n.homeTheLive,
+                              maxLines: 1,
+                              softWrap: false,
+                              style: titleStyle,
                             ),
-                            const SizedBox(height: 4),
+                            const SizedBox(height: 1),
+                            Text(
+                              l10n.homeLiveStreaming,
+                              maxLines: 1,
+                              softWrap: false,
+                              style: subStyle,
+                            ),
                           ],
-                          Text(
-                            l10n.homeTheLive,
-                            style: TextStyle(
-                              color: isLive
-                                  ? Colors.white
-                                  : AppTheme.liveBannerTitle,
-                              fontSize: 14.5,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 0.2,
-                              height: 1.1,
-                            ),
+                        ),
+                        SizedBox(width: boxGap),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxWidth: rightMax > 0 ? rightMax : 0,
                           ),
-                          const SizedBox(height: 1),
-                          Text(
-                            l10n.homeLiveStreaming,
-                            style: TextStyle(
-                              color: isLive
-                                  ? AppTheme.accentOnSurface.withValues(alpha: 0.95)
-                                  : AppTheme.liveBannerSubtitle,
-                              fontSize: 10.5,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 6),
-                    widget.isLive
-                        ? _LiveElapsedChrono(liveStartedAt: widget.liveStartedAt, program: _program)
-                        : _NextServiceChrono(next: _next),
-                  ],
+                          child: widget.isLive
+                              ? _LiveElapsedChrono(
+                                  liveStartedAt: widget.liveStartedAt,
+                                  program: _program,
+                                )
+                              : _NextServiceChrono(next: _next),
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             ],
@@ -801,41 +892,64 @@ class _LiveElapsedChrono extends StatelessWidget {
   Widget build(BuildContext context) {
     final elapsed = liveWorshipElapsed(program, liveStartedAt);
 
+    final duration = formatLiveDuration(elapsed);
+
     return Container(
-      constraints: const BoxConstraints(minWidth: 88),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
         color: AppTheme.liveBannerChronoBg,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: AppTheme.live.withValues(alpha: 0.55)),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            context.l10n.homeLiveSince,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppTheme.live,
-              fontSize: 7.5,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 0.8,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            formatLiveDuration(elapsed),
-            textAlign: TextAlign.center,
-            style: TextStyle(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final inner = constraints.maxWidth - 16;
+          final durationSize = _fitChronoFontSize(
+            context,
+            duration,
+            inner > 0 ? inner : 0,
+            const [11.5, 10.5, 9.5],
+            (s) => TextStyle(
               color: AppTheme.liveBannerChronoValue,
-              fontSize: 11.5,
+              fontSize: s,
               fontWeight: FontWeight.w800,
               letterSpacing: 0.3,
               fontFeatures: [FontFeature.tabularFigures()],
             ),
-          ),
-        ],
+          );
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                context.l10n.homeLiveSince,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: TextStyle(
+                  color: AppTheme.live,
+                  fontSize: 7.5,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 0.8,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                duration,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                softWrap: false,
+                style: TextStyle(
+                  color: AppTheme.liveBannerChronoValue,
+                  fontSize: durationSize,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 0.3,
+                  fontFeatures: [FontFeature.tabularFigures()],
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -848,52 +962,79 @@ class _NextServiceChrono extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dayTime =
+        '${next.dayLabel(context.l10n)} · ${next.timeLabel(context.l10n)}';
+    final countdown = next.chronoLabel(context.l10n);
+
     return Container(
-      constraints: const BoxConstraints(minWidth: 88),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
       decoration: BoxDecoration(
         color: AppTheme.liveBannerChronoBg,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: AppTheme.liveBannerChronoBorder),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            context.l10n.homeNextService,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppTheme.liveBannerChronoLabel,
-              fontSize: 7.5,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 0.8,
-            ),
-          ),
-          const SizedBox(height: 3),
-          Text(
-            '${next.dayLabel(context.l10n)} · ${next.timeLabel(context.l10n)}',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppTheme.liveBannerChronoTime,
-              fontSize: 10,
-              fontWeight: FontWeight.w600,
-              height: 1.15,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            next.chronoLabel(context.l10n),
-            textAlign: TextAlign.center,
-            style: TextStyle(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final inner = constraints.maxWidth - 16;
+          final countdownSize = _fitChronoFontSize(
+            context,
+            countdown,
+            inner > 0 ? inner : 0,
+            const [11.5, 10.5, 9.5],
+            (s) => TextStyle(
               color: AppTheme.crossRed,
-              fontSize: 11.5,
+              fontSize: s,
               fontWeight: FontWeight.w800,
               letterSpacing: 0.3,
               fontFeatures: [FontFeature.tabularFigures()],
             ),
-          ),
-        ],
+          );
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                context.l10n.homeNextService,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: TextStyle(
+                  color: AppTheme.liveBannerChronoLabel,
+                  fontSize: 7.5,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 0.8,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: 3),
+              Text(
+                dayTime,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: AppTheme.liveBannerChronoTime,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  height: 1.15,
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                countdown,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                softWrap: false,
+                style: TextStyle(
+                  color: AppTheme.crossRed,
+                  fontSize: countdownSize,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 0.3,
+                  fontFeatures: [FontFeature.tabularFigures()],
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

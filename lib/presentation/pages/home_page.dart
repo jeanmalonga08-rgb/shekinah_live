@@ -6,7 +6,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/l10n/entity_labels.dart';
 import '../../core/l10n/l10n_extensions.dart';
-import '../../core/l10n/locale_content_resolver.dart';
 import '../../core/l10n/locale_format.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/theme/theme_sync.dart';
@@ -963,7 +962,7 @@ class _NextServiceChrono extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dayTime =
-        '${next.dayLabel(context.l10n)} · ${next.timeLabel(context.l10n)}';
+        '${formatWeekdayName(next.dateTime, context.l10n.localeName)} · ${next.timeLabel(context.l10n)}';
     final countdown = next.chronoLabel(context.l10n);
 
     return Container(
@@ -1590,7 +1589,6 @@ class _ALaUneCommuniqueCard extends StatelessWidget {
 class _ALaUnePhotoCard extends StatelessWidget {
   const _ALaUnePhotoCard({
     this.imageAsset,
-    this.imageUrl,
     required this.badge,
     required this.title,
     required this.subtitle,
@@ -1600,7 +1598,6 @@ class _ALaUnePhotoCard extends StatelessWidget {
   });
 
   final String? imageAsset;
-  final String? imageUrl;
   final String badge;
   final String title;
   final String subtitle;
@@ -1619,14 +1616,6 @@ class _ALaUnePhotoCard extends StatelessWidget {
   }
 
   Widget _photo() {
-    if (imageUrl != null) {
-      return CachedNetworkImage(
-        imageUrl: imageUrl!,
-        fit: BoxFit.cover,
-        placeholder: (_, _) => _imageFallback(),
-        errorWidget: (_, _, _) => _imageFallback(),
-      );
-    }
     return Image.asset(
       imageAsset!,
       fit: BoxFit.cover,

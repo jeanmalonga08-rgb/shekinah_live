@@ -73,6 +73,7 @@ class _ArchivesPageState extends ConsumerState<ArchivesPage> {
     final currentQuery = asyncState.valueOrNull?.query ?? const PredicationQuery();
     final extraFilterCount = currentQuery.extraFilterCount;
     final preachersAsync = ref.watch(predicationPreachersProvider);
+    final listData = asyncState.valueOrNull;
 
     return Scaffold(
       backgroundColor: AppTheme.background,
@@ -123,11 +124,19 @@ class _ArchivesPageState extends ConsumerState<ArchivesPage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-            child: TextField(
+      body: RefreshIndicator(
+        color: AppTheme.accentOnSurface,
+        backgroundColor: AppTheme.background,
+        onRefresh: () =>
+            ref.read(predicationListProvider.notifier).refresh(),
+        child: CustomScrollView(
+        controller: _scrollController,
+        physics: const AlwaysScrollableScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+              child: TextField(
               controller: _searchController,
               style: TextStyle(color: AppTheme.white),
               textInputAction: TextInputAction.search,
@@ -164,8 +173,12 @@ class _ArchivesPageState extends ConsumerState<ArchivesPage> {
               onChanged: (_) => setState(() {}),
             ),
           ),
-          const SizedBox(height: 12),
-          Padding(
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 12),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -270,7 +283,9 @@ class _ArchivesPageState extends ConsumerState<ArchivesPage> {
               ],
             ),
           ),
-          Padding(
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
             child: Align(
               alignment: Alignment.centerLeft,
@@ -307,8 +322,10 @@ class _ArchivesPageState extends ConsumerState<ArchivesPage> {
               ),
             ),
           ),
+          ),
           if (extraFilterCount > 0)
-            Padding(
+            SliverToBoxAdapter(
+              child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
               child: Text(
                 archivesExtraFilterSummary(l10n, currentQuery),
@@ -317,76 +334,84 @@ class _ArchivesPageState extends ConsumerState<ArchivesPage> {
                 style: TextStyle(color: AppTheme.muted, fontSize: 12),
               ),
             ),
-          const SizedBox(height: 8),
-          Expanded(
-            child: asyncState.when(
-              loading: () => Center(
+            ),
+          SliverToBoxAdapter(
+            child: SizedBox(height: 8),
+          ),
+          if (asyncState.isLoading)
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Center(
                 child: SpinKitFadingCircle(
                   color: AppTheme.accentOnSurface,
                   size: 48,
                 ),
               ),
-              error: (error, _) => _ErrorState(
-                message: formatNetworkError(context.l10n, error),
+            )
+          else if (asyncState.hasError)
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: _ErrorState(
+                message: formatNetworkError(
+                  context.l10n,
+                  asyncState.error ?? '',
+                ),
                 onRetry: () =>
                     ref.read(predicationListProvider.notifier).refresh(),
               ),
-              data: (state) {
-                if (state.items.isEmpty) {
-                  return const _EmptyState();
-                }
-
-                return RefreshIndicator(
-                  color: AppTheme.accentOnSurface,
-                  backgroundColor: AppTheme.background,
-                  onRefresh: () =>
-                      ref.read(predicationListProvider.notifier).refresh(),
-                  child: ListView.builder(
-                    controller: _scrollController,
-                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-                    itemCount:
-                        state.items.length + (state.isLoadingMore ? 2 : 1),
-                    itemBuilder: (context, index) {
-                      if (index == 0) {
-                        return Padding(
-                          padding: const EdgeInsets.only(bottom: 14),
-                          child: Text(
-                            l10n.predicationCount(state.totalCount),
-                            style: TextStyle(color: AppTheme.grey,
-                              fontSize: 13,
-                            ),
-                          ),
-                        );
-                      }
-
-                      final itemIndex = index - 1;
-                      if (itemIndex >= state.items.length) {
-                        return Padding(
-                          padding: EdgeInsets.symmetric(vertical: 20),
-                          child: Center(
-                            child: SpinKitThreeBounce(
-                              color: AppTheme.accentOnSurface,
-                              size: 24,
-                            ),
-                          ),
-                        );
-                      }
-
-                      final predication = state.items[itemIndex];
+            )
+          else if (listData == null || listData.items.isEmpty)
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: const _EmptyState(),
+            )
+          else
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    if (index == 0) {
                       return Padding(
-                        padding: const EdgeInsets.only(bottom: 12),
-                        child: _PredicationTile(
-                          predication: predication,
-                          onTap: () => _openDetail(predication),
+                        padding: const EdgeInsets.only(bottom: 14),
+                        child: Text(
+                          l10n.predicationCount(listData.totalCount),
+                          style: TextStyle(color: AppTheme.grey,
+                            fontSize: 13,
+                          ),
                         ),
                       );
-                    },
-                  ),
-                );
-              },
+                    }
+
+                    final itemIndex = index - 1;
+                    if (itemIndex >= listData.items.length) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20),
+                        child: Center(
+                          child: SpinKitThreeBounce(
+                            color: AppTheme.accentOnSurface,
+                            size: 24,
+                          ),
+                        ),
+                      );
+                    }
+
+                    final predication = listData.items[itemIndex];
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: _PredicationTile(
+                        predication: predication,
+                        onTap: () => _openDetail(predication),
+                      ),
+                    );
+                  },
+                  childCount:
+                      listData.items.length + (listData.isLoadingMore ? 2 : 1),
+                ),
+              ),
             ),
-          ),
         ],
+        ),
       ),
     );
   }

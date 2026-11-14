@@ -86,28 +86,48 @@ class _LibraryPageState extends ConsumerState<LibraryPage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          if (_section == LibrarySection.publication) ...[
-            _PublicationYearFilter(),
-            const SizedBox(height: 8),
-            _PublicationSortFilter(),
-            const SizedBox(height: 8),
-          ],
-          Expanded(
-            child: IndexedStack(
-              index: _section.index,
-              children: [
-                LibraryHomeTab(
-                  onOpenSection: _selectSection,
-                  onOpenOfflineLibrary: _openOfflineLibrary,
-                ),
-                const LibraryPepitesTab(),
-                const LibraryPublicationTab(),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          // Hauteur réduite (paysage) : filtres côte à côte pour
+          // laisser la place à la liste.
+          final compact = constraints.maxHeight < 340;
+          return Column(
+            children: [
+              if (_section == LibrarySection.publication) ...[
+                if (compact)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                    child: Row(
+                      children: [
+                        Expanded(child: _PublicationYearFilter()),
+                        const SizedBox(width: 10),
+                        Expanded(child: _PublicationSortFilter()),
+                      ],
+                    ),
+                  )
+                else ...[
+                  _PublicationYearFilter(),
+                  const SizedBox(height: 8),
+                  _PublicationSortFilter(),
+                  const SizedBox(height: 8),
+                ],
               ],
-            ),
-          ),
-        ],
+              Expanded(
+                child: IndexedStack(
+                  index: _section.index,
+                  children: [
+                    LibraryHomeTab(
+                      onOpenSection: _selectSection,
+                      onOpenOfflineLibrary: _openOfflineLibrary,
+                    ),
+                    const LibraryPepitesTab(),
+                    const LibraryPublicationTab(),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
